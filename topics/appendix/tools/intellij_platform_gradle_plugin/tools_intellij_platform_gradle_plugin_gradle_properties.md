@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Gradle Properties
 
@@ -57,6 +57,48 @@ org.jetbrains.intellij.platform.intellijPlatformCache=/path/to/intellijPlatformC
 ```
 
 
+## `intellijPlatformIdesCache`
+{#intellijPlatformIdesCache}
+
+Specifies the location of the IntelliJ Platform IDEs cache directory for storing downloaded IDE distributions
+and related artifacts.
+This cache is used to avoid re-downloading the same IDE versions across different project builds and can be shared between multiple projects.
+
+**Note:** this directory can be shared across projects and should be excluded from versioning.
+
+See also:
+- [Extension: `intellijPlatform.caching.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-caching-ides)
+
+{type="narrow"}
+Default value
+: <path>[intellijPlatformCache](#intellijPlatformCache)/ides/</path>
+
+Example
+:
+```
+org.jetbrains.intellij.platform.intellijPlatformIdesCache=/path/to/ides-cache/
+```
+
+## `intellijPlatformIdesCacheEnabled`
+{#intellijPlatformIdesCacheEnabled}
+
+Indicates whether caching for IntelliJ Platform IDEs is enabled globally.
+
+This property can still be overridden locally with `useCache` in an IntelliJ Platform dependency configuration.
+
+See also:
+- [Extension: `intellijPlatform.caching.ides.enabled`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-caching-ides-enabled)
+
+{type="narrow"}
+Default value
+: `false`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.intellijPlatformIdesCacheEnabled=true
+```
+
 ## `localPlatformArtifacts`
 {#localPlatformArtifacts}
 
@@ -86,6 +128,23 @@ Example
 :
 ```
 org.jetbrains.intellij.platform.noSearchableOptionsWarning=false
+```
+
+
+## `forceBuildSearchableOptions`
+{#forceBuildSearchableOptions}
+
+Forces the [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task to run even when descriptor analysis doesn't find any `Configurable` extension points.
+This property overrides both the automatic skip optimization and the [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions) extension property.
+
+{type="narrow"}
+Default value
+: `false`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.forceBuildSearchableOptions=true
 ```
 
 
@@ -127,7 +186,7 @@ org.jetbrains.intellij.platform.productsReleasesAndroidStudioUrl=https://...
 ## `productsReleasesJetBrainsIdesUrl`
 {#productsReleasesJetBrainsIdesUrl}
 
-Specifies the URL from which the list of all Android Studio releases is fetched.
+Specifies the URL from which the list of all JetBrains IDE releases is fetched.
 This listing is later parsed by `ProductReleasesValueSource` to provide a list of IDEs matching the filtering criteria for running the IntelliJ Plugin Verifier tool with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
 {type="narrow"}
@@ -162,6 +221,56 @@ Example
 :
 ```
 org.jetbrains.intellij.platform.selfUpdateCheck=false
+```
+
+
+## `testIdeBundledPluginsClasspathEnabled`
+{#testIdeBundledPluginsClasspathEnabled}
+
+Controls whether bundled plugins declared in the IntelliJ Platform's <path>product-info.json</path> file are added to the classpaths used by the [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde) and ordinary Gradle [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test) tasks.
+
+{type="narrow"}
+Default value
+: `false`
+
+Example
+:
+```text
+org.jetbrains.intellij.platform.testIdeBundledPluginsClasspathEnabled=true
+```
+
+
+## `testIdeBundledPluginsClasspathExcludes`
+{#testIdeBundledPluginsClasspathExcludes}
+
+Specifies a comma-separated list of bundled plugin IDs or module IDs excluded from the classpaths used by the [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde) and ordinary Gradle [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test) tasks.
+This property applies only when [`testIdeBundledPluginsClasspathEnabled`](#testIdeBundledPluginsClasspathEnabled) is enabled.
+Set it to an empty value to include all bundled plugins.
+
+{type="narrow"}
+Default value
+: `com.intellij.openRewrite,com.intellij.ja,com.intellij.ko,com.intellij.zh,org.jetbrains.plugins.vue`
+
+Example
+:
+```text
+org.jetbrains.intellij.platform.testIdeBundledPluginsClasspathExcludes=
+```
+
+
+## `verifyPluginDefaultRecommendedIdes`
+{#verifyPluginDefaultRecommendedIdes}
+
+Controls whether [`intellijPlatform.pluginVerification.ides.recommended()`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-ides) is used automatically when no IntelliJ Plugin Verifier IDEs were configured explicitly.
+
+{type="narrow"}
+Default value
+: `true`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.verifyPluginDefaultRecommendedIdes=false
 ```
 
 
@@ -201,10 +310,28 @@ org.jetbrains.intellij.platform.useCacheRedirector=false
 ```
 
 
-## `addDefaultIntellijPlatformDependencies`
-{#addDefaultIntellijPlatformDependencies}
+## `useDefaultSandboxExclusions`
+{#useDefaultSandboxExclusions}
 
-Controls whether default IntelliJ Platform repositories and coordinates (like `com.intellij` and `intellij.rider`) should be added automatically when creating a dependency on the IntelliJ Platform.
+Controls whether Kotlin standard library and Kotlin Coroutines dependencies provided by the IntelliJ Platform are excluded from sandbox runtime classpaths by default.
+The exclusions apply to sandboxes prepared for running the IDE and tests, including the [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) and [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox) tasks.
+Set this property to `false` to opt out of the default exclusions.
+
+{type="narrow"}
+Default value
+: `true`
+
+Example
+:
+```text
+org.jetbrains.intellij.platform.useDefaultSandboxExclusions=false
+```
+
+
+## `addDefaultIntelliJPlatformDependencies`
+{#addDefaultIntelliJPlatformDependencies}
+
+Controls whether default IntelliJ Platform dependencies (like `com.intellij` and `intellij.rider`) should be added automatically when creating a dependency on the IntelliJ Platform.
 
 {type="narrow"}
 Default value
@@ -213,28 +340,9 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.platform.addDefaultIntellijPlatformDependencies=false
+org.jetbrains.intellij.platform.addDefaultIntelliJPlatformDependencies=false
 ```
 
-
-## `intellijPlatformIdesCache`
-{#intellijPlatformIdesCache}
-
-Specifies the location of the cache directory for storing downloaded IDE distributions and related artifacts.
-This cache can be shared between multiple projects and is used when IDE caching is enabled.
-
-See also:
-- [Extension: `intellijPlatform.caching.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-caching-ides)
-
-{type="narrow"}
-Default value
-: <path>[`intellijPlatformCache`](#intellijPlatformCache)/ides/</path>
-
-Example
-:
-```
-org.jetbrains.intellij.platform.intellijPlatformIdesCache=/path/to/ides-cache/
-```
 
 
 ## `productsReleasesCdnBuildsUrl`
@@ -244,7 +352,7 @@ Specifies the URL from which the list of JetBrains IDE CDN release builds is fet
 
 {type="narrow"}
 Default value
-: `https://data.services.jetbrains.com/products/releases?type=release`
+: `https://data.services.jetbrains.com/products?code={type}&fields=code,releases.type,releases.version,releases.build`
 
 Example
 :

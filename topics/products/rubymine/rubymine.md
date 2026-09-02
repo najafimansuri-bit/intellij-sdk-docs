@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # RubyMine Plugin Development
 
@@ -58,7 +58,7 @@ To see how these attributes appear in a similar Gradle build script for PhpStorm
 | [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | <p>`org.jetbrains.plugins.ruby:2019.2.20191029` for the Ruby plugin.</p><p>See below for Ruby plugin version information.</p>                                                                                                  |
 | [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)           | <p>Path to locally installed target version of RubyMine. For example, on macOS:</p><p><path>/Users/\$USERNAME\$/Library/Application Support/JetBrains/Toolbox/apps/RubyMine/ch-0/192.7142.37/RubyMine.app/Contents</path>.</p> |
 
-The required `org.jetbrains.plugins.ruby` plugin isn't compatible with IntelliJ IDEA Community Edition but is compatible with IntelliJ IDEA Ultimate (`IU`) edition.
+The required `org.jetbrains.plugins.ruby` plugin isn't compatible with IntelliJ IDEA open source builds but is compatible with IntelliJ IDEA (`IU`).
 Product compatibility is determined from the Ruby plugin [version page](https://plugins.jetbrains.com/plugin/1293-ruby/versions).
 The Ruby plugin isn't bundled with `IU`, so the Ruby plugin version must be explicitly declared to support the target RubyMine (and `IU`) BRANCH.BUILD version.
 The correct Ruby plugin version is also determined from the Ruby plugin version page.
@@ -93,3 +93,7 @@ When learning new APIs, it is helpful to have some representative projects for r
 * [Ruby-Doc-Adder](https://github.com/aristotll/RubyDocAdder)
 * [Ruby Dynamic Code Insight](https://github.com/JetBrains/ruby-type-inference)
 * [Railways](https://github.com/basgren/railways)
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>

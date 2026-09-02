@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Content Updates
 
@@ -10,13 +10,115 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 <include from="snippets.topic" element-id="subscribeNews"/>
 
+## 2026
+
+### July
+{#july-26}
+
+Creating a Plugin Project
+: [](creating_plugin_project.md) section has been revamped to describe the newest plugin creation workflow using the IDE Plugin generator.
+
+Error Reporting
+: Add a new page with details about [](error_reporting.md).
+
+Debouncing and Batching Updates
+: Add a new page describing [how to debounce and batch events](debounced_updates.md) with [`DebouncedUpdates`](%gh-ic%/platform/ide-core/src/com/intellij/util/ui/update/DebouncedUpdates.kt) - a builder API for debounced/throttled update queues.
+
+Persisting Sensitive Data
+: Add more information about [persisting sensitive data](persisting_sensitive_data.md).
+
+Integration Tests
+: Update [](integration_tests.md) guide with information about new APIs, debugging, and more.
+
+Minor Changes and Additions
+:
+- Document [CLion Classic engine deprecation and migration hints](clion.md#language-engine).
+- Add a notice about sunsetting [Kotlin Notebooks](tools_kotlin_notebook.md) from IntelliJ IDEA 2026.2.
+
+### March
+{#march-26}
+
+Split Mode (Remote Development)
+: Add a new section about [Split Mode and Remote Development](split_mode_and_remote_development.md).
+
+Top-Level Notifications
+: Describe [notification balloons](notification_balloons.md) showing relevant information without interrupting the developer's flow.
+
+### January
+{#january-26}
+
+Coroutines on EDT and Locks
+:
+Removed most of the content from the [](coroutine_edt_and_locks.md) page.
+The approach described there is obsolete as it was solved internally in the IntelliJ Platform.
+The page and the error pattern are preserved to confirm that no fixes are needed in plugins.
+
 ## 2025
+
+### November
+{#november-25}
+
+Islands Theme Support
+: Add a new section about [supporting the Islands Theme](supporting_islands_theme.md).
+
+Terminal API
+: Add a new section about [extending the Terminal](embedded_terminal.md).
+
+Modular Plugins
+: Add a new section about [](modular_plugins.md) describing how to develop plugins ready for remote development contexts.
+
+Threading Kotlin Notebooks
+: Link [Kotlin Notebooks](threading_model.md#kotlin-notebooks) explaining core threading model concepts.
+
+Minor Changes and Additions
+:
+- Add [](rider.md#using-custom-icons-from-the-dotnet-rider-plugin-part) Using Custom Icons from the Dotnet Rider Plugin Part.
+- Update [LSP supported features](language_server_protocol.md#supported-features).
+
+### October
+{#october-25}
+
+PSI Performance Introduction
+: Describe why [caching get method results](psi_performance.md#overview) is important when working with PSI.
+
+Avoiding `idea-version@until-build`
+: Add information about recommendation to [avoid using `idea-version@until-build`](plugin_configuration_file.md#idea-plugin__idea-version) for plugins.
+
+Minor Changes and Additions
+:
+- [Extending existing themes](themes_customize.md#extending-themes).
+- Clarify [reacting to closing non-modal dialogs](dialog_wrapper.md#displaying-the-dialog).
+- Add an [inspection code sample for Qodana](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples/code_inspection_qodana).
+- Hide the [Kotlin UI DSL Version 1 section](kotlin_ui_dsl.md) and make [Version 2](kotlin_ui_dsl_version_2.md) the default version in content.
+- Add a link to the [](threading_model.md#investigating-ui-freezes) blog post.
+
+### September
+{#september-25}
+
+LSP Module Introduction
+: Add information about specifying a required [dependency on the LSP module](language_server_protocol.md#pluginxml) since 2025.2.1.
+
+### August
+{#august-25}
+
+Minor Changes and Additions
+:
+- Add information about launching coroutines from actions with [`currentThreadCoroutineScope`](launching_coroutines.md).
 
 ### July
 {#july-25}
 
 Kotlin Notebook integration
 : Add a new section about [](tools_kotlin_notebook.md).
+
+Accessibility Guidelines
+: Add information about making UI more [accessible](accessibility.md).
+
+### June
+{#june-25}
+
+Replacement of the Web Symbol API with Poly Symbol API
+: Replace the Web Symbol API documentation with [](polysymbols.md).
 
 ### May
 {#may-25}
@@ -114,7 +216,7 @@ Plugin Internationalization
 Minor Changes and Additions
 :
 - How to mark functionality available during indexing via [](indexing_and_psi_stubs.md#DumbAwareAPI).
-- Move Extension Point and Listener Lists to the _Resources_ section and split the main _Extension Point and Listener List_ into: _IntelliJ Platform_, _IntelliJ Community Plugins_, and _Android Plugin_.
+- Move Extension Point and Listener Lists to the _Resources_ section and split the main _Extension Point and Listener List_ into: _IntelliJ Platform_, _IntelliJ Platfom Plugins_, and _Android Plugin_.
 
 ### March
 {#march-24}
@@ -214,7 +316,7 @@ Poly Symbols
 by utilizing the [](symbols.md) API and supporting custom syntaxes.
 
 Open Source Plugins Extension Points
-: Added [](oss_plugins_extension_point_list.md) for plugins bundled with [](idea_ultimate.md) and other IDEs.
+: Added [](oss_plugins_extension_point_list.md) for plugins bundled with [](idea.md) and other IDEs.
 
 
 
@@ -473,7 +575,7 @@ Dynamic Plugins update
 : Added new sections _Code_ and _Troubleshooting_ to [Dynamic Plugins](dynamic_plugins.md).
 
 GitHub IntelliJ Platform Plugin Template
-: Create new plugins with a preconfigured project scaffold and CI in [one click](plugin_github_template.md).
+: Create new plugins with a preconfigured project scaffold and CI in [one click](https://github.com/JetBrains/intellij-platform-plugin-template).
 
 Disposer & Disposable
 : Added [reference](disposers.md) discussing resource cleanup/management.

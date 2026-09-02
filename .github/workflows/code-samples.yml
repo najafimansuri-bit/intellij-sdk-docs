@@ -8,22 +8,15 @@ on:
 
 jobs:
 
-  checkout:
-    name: Checkout
-    runs-on: ubuntu-latest
-    steps:
-      - name: Fetch Sources
-        uses: actions/checkout@v5
-
   samples:
     name: Code Samples / ${{ matrix.plugin }}
-    needs: checkout
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         plugin:
           - action_basics
+          - code_inspection_qodana/code_inspection
           - comparing_string_references_inspection
           - conditional_operator_intention
           - editor_basics
@@ -32,6 +25,7 @@ jobs:
           - live_templates
           - max_opened_projects
           - module
+          - oauth2
           - project_model
           - project_view_pane
           - project_wizard
@@ -42,8 +36,13 @@ jobs:
           - tool_window
           - tree_structure_provider
     steps:
+      - name: Maximize Build Space
+        uses: jlumbroso/free-disk-space@v1.3.1
+        with:
+          tool-cache: false
+          large-packages: false
       - name: Fetch Sources
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
@@ -52,14 +51,22 @@ jobs:
 
       - name: Build Plugin
         run: (cd code_samples/${{ matrix.plugin }}; ./gradlew buildPlugin)
+
+      # comparing_string_references_inspection fails due to NoClassDefFoundError from Vue plugin, so run without Vue
+      # delete this workaround when the Vue issue is fixed
       - name: Test Plugin
+        if: matrix.plugin != 'comparing_string_references_inspection'
         run: (cd code_samples/${{ matrix.plugin }}; ./gradlew test)
+      - name: Test Plugin
+        if: matrix.plugin == 'comparing_string_references_inspection'
+        run: (cd code_samples/${{ matrix.plugin }}; ./gradlew testWithoutVue)
 
       - name: Export Properties
         id: properties
         shell: bash
         run: |
           echo "pluginVerifierHomeDir=~/.pluginVerifier" >> $GITHUB_OUTPUT
+          echo "sanitizedPluginName=$(echo '${{ matrix.plugin }}' | tr '/' '-')" >> $GITHUB_OUTPUT
 
       - name: Run Plugin Verifier
         run: |
@@ -75,9 +82,9 @@ jobs:
 
       - name: Collect Plugin Verifier Result
         if: ${{ always() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: ${{ matrix.plugin }}-pluginVerifier-result
+          name: ${{ steps.properties.outputs.sanitizedPluginName }}-pluginVerifier-result
           path: ${{ github.workspace }}/code_samples/${{ matrix.plugin }}/build/reports/pluginVerifier
 
   mirror:

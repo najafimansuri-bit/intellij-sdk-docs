@@ -83,7 +83,7 @@ by calling the `getSpacing()` method of the `SpacingBuilder`.
 
 Much of the work when implementing `AbstractBlock` goes into implementing `buildChildren()` that calculates blocks for the children of the current block's AST node.
 Use `getNode().getChildren()` to retrieve the AST node's children of the current block,
-and or each child that is not whitespace, build a subblock which is then added to the list of subblocks.
+and for each child that is not whitespace, build a subblock which is then added to the list of subblocks.
 While the exact method of building a subblock highly depends on the specific language,
 in general, the code for determining the correct `Alignment`, `Indent` and `Wrap` of a block inspects `IElementType`,
 checks if the node is in a specific `TokenSet` or asserts other properties.
@@ -247,4 +247,4 @@ Register [`AsyncDocumentFormattingService`](%gh-ic%/platform/code-style-api/src/
 in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.formattingService"/></include> to invoke external formatter instead of IDE's builtin formatter.
 
 **Example:**
-[`ShExternalFormatter`](%gh-ic%/plugins/sh/core/src/com/intellij/sh/formatter/ShExternalFormatter.java) from _Shell Script_ plugin
+[`ShExternalFormatter`](%gh-ic%/plugins/sh/backend/src/com/intellij/sh/backend/formatter/ShExternalFormatter.java) from _Shell Script_ plugin

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Language Server Protocol (LSP)
 
@@ -27,17 +27,17 @@ Chris Simon shares the challenges faced and offers practical tips for aspiring L
 ## Supported IDEs
 
 The integration with the Language Server Protocol is created as an extension to the commercial IntelliJ-based IDEs.
-Therefore, plugins using Language Server integration are not available in JetBrains products like
-[IntelliJ IDEA](idea.md) Community Edition and [Android Studio](android_studio.md) from Google.
+Therefore, plugins using Language Server integration are not available in
+[IntelliJ IDEA](idea.md) open source builds and [Android Studio](android_studio.md) from Google.
 
 The LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
-IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, DataGrip, GoLand, Rider, and RustRover.
+IntelliJ IDEA, WebStorm, PhpStorm, PyCharm, DataSpell, RubyMine, CLion, DataGrip, GoLand, Rider, and RustRover.
 
 Since 2025.1, it is also supported in unified [PyCharm without Pro subscription](https://blog.jetbrains.com/pycharm/2025/04/unified-pycharm/).
 
 ## LSP Plugin Setup
 
-The plugin must target [](idea_ultimate.md) version `2023.2` or later.
+The plugin must target [](idea.md) version `2023.2` or later.
 
 ### Gradle Build Script
 
@@ -61,7 +61,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaUltimate("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
   }
 }
 ```
@@ -87,7 +87,7 @@ intellij {
 }
 ```
 
-For projects based on the [](plugin_github_template.md), update the Gradle IntelliJ Plugin to the latest version,
+For projects based on the [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template), update the Gradle IntelliJ Plugin to the latest version,
 and amend the values in <path>gradle.properties</path> accordingly.
 
 </tab>
@@ -129,14 +129,14 @@ The <path>plugin.xml</path> configuration file must specify the dependency on th
 
 ### IDE Setup
 
-Since 2024.2, LSP API sources are provided with the `IntelliJ IDEA Ultimate sources` artifact.
+Since 2024.2, LSP API sources are provided with the `IntelliJ IDEA sources` artifact.
 See [](tools_intellij_platform_gradle_plugin.md#attaching-sources-in-the-ide) on how to enable downloading sources.
-Then, use <ui-path>Navigate | Class...</ui-path> to open the `LspServerManager` class.
+Then, use <ui-path>Navigate | Class...</ui-path> to open the `LspServerState` class.
 In the opened editor, invoke <control>Download IntelliJ Platform sources</control> to download and attach sources.
 
 #### Earlier IDE Versions
 
-The LSP API sources are bundled in the IntelliJ IDEA Ultimate distribution and can be found within the <path>\$IDEA_INSTALLATION\$/lib/src/src_lsp-openapi.zip</path> archive.
+The LSP API sources are bundled in the IntelliJ IDEA distribution and can be found within the <path>\$IDEA_INSTALLATION\$/lib/src/src_lsp-openapi.zip</path> archive.
 
 > Due to technical limitations in IDEs before 2024.1, it is necessary to manually attach sources to the IntelliJ IDEA Ultimate dependency.
 > To do so, when reviewing the compiled class which belongs to the LSP API, run the _Choose Sources..._ action, and point to the
@@ -148,9 +148,41 @@ The LSP API sources are bundled in the IntelliJ IDEA Ultimate distribution and c
 
 The LSP support provided by the IntelliJ Platform covers the following features for these releases:
 
+### 2026.1
+
+- Range Formatting ([`textDocument/rangeFormatting`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_rangeFormatting)) ([IJPL-189558](https://youtrack.jetbrains.com/issue/IJPL-189558))
+- Code Lens ([`textDocument/codeLens`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeLens)) ([IJPL-189563](https://youtrack.jetbrains.com/issue/IJPL-189563))
+- Optimize Imports ([`textDocument/codeAction`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction) with `source.organizeImports`) ([IJPL-198789](https://youtrack.jetbrains.com/issue/IJPL-198789))
+- Rename Refactoring ([`textDocument/rename`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_rename)) [2026.1.1] ([IJPL-161013](https://youtrack.jetbrains.com/issue/IJPL-161013))
+- On-Type Formatting ([`textDocument/onTypeFormatting`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_onTypeFormatting)) [2026.1.2] (disabled by default) ([IJPL-189559](https://youtrack.jetbrains.com/issue/IJPL-189559))
+
+> All the above features are enabled by default and can be controlled via [`LspClientDescriptor.lspCustomization`](%gh-ic%/platform/lsp/src/api/LspClientDescriptor.kt) (since 2026.1.4), or [`LspServerDescriptor.lspCustomization`](%gh-ic%/platform/lsp/src/api/LspServerDescriptor.kt)` (before 2026.1.4).
+> See the [Customization](#customization) section for details.
+>
+{style="note"}
+
+### 2025.3
+
+- Server Initiated Progress ([`$/progress`](https://microsoft.github.io/language-server-protocol/specification/#progress))
+- Highlight Usages In File ([`textDocument/documentHighlight`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentHighlight))
+- Go To Symbol ([`workspace/symbol`](https://microsoft.github.io/language-server-protocol/specification/#workspace_symbol))
+- File Structure / Structure ([`textDocument/documentSymbol`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentSymbol))
+- Breadcrumbs ([`textDocument/documentSymbol`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentSymbol))
+- Sticky Lines ([`textDocument/documentSymbol`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentSymbol))
+- Parameter Info ([`textDocument/signatureHelp`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_signatureHelp))
+- Extend Selection / Shrink Selection ([`textDocument/selectionRange`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_selectionRange)) [2025.3.1] ([IJPL-216845](https://youtrack.jetbrains.com/issue/IJPL-216845))
+- Call Hierarchy ([`textDocument/prepareCallHierarchy`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_prepareCallHierarchy), [`callHierarchy/incomingCalls`](https://microsoft.github.io/language-server-protocol/specification/#callHierarchy_incomingCalls), [`callHierarchy/outgoingCalls`](https://microsoft.github.io/language-server-protocol/specification/#callHierarchy_outgoingCalls)) [2025.3.1] ([IJPL-210695](https://youtrack.jetbrains.com/issue/IJPL-210695))
+- Type Hierarchy ([`textDocument/prepareTypeHierarchy`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_prepareTypeHierarchy), [`typeHierarchy/supertypes`](https://microsoft.github.io/language-server-protocol/specification/#typeHierarchy_supertypes), [`typeHierarchy/subtypes`](https://microsoft.github.io/language-server-protocol/specification/#typeHierarchy_subtypes)) [2025.3.1] ([IJPL-216689](https://youtrack.jetbrains.com/issue/IJPL-216689))
+
+### 2025.2
+
+- Inlay Hints ([`textDocument/inlayHint`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_inlayHint)) [2025.2.2]
+- Folding Range ([`textDocument/foldingRange`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_foldingRange)) [2025.2.2]
+
 ### 2025.1
 
 - Document Link ([`textDocument/documentLink`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentLink))
+- Pull Diagnostics ([`textDocument/diagnostic`](https://microsoft.github.io/language-server-protocol/specifications/#diagnostic)) (enabled by default in 2025.2) [2025.1.2]
 
 ### 2024.3
 
@@ -192,29 +224,90 @@ The LSP support provided by the IntelliJ Platform covers the following features 
 
 As a reference, check out the [Prisma ORM](https://plugins.jetbrains.com/plugin/20686-prisma-orm) open-source plugin implementation: [Prisma ORM LSP](%gh-ij-plugins%/prisma/src/org/intellij/prisma/ide/lsp)
 
+> The basic implementation differs between version 2026.1.4 and older because of [LSP API classes renaming](#lsp-api-refactoring).
+
 <procedure title="Minimal LSP Plugin Setup">
 
-1. Implement `LspServerSupportProvider` and within the `LspServerSupportProvider.fileOpened()` method, spin up the relevant LSP server descriptor, which can decide if the given file is supported by using the `LspServerDescriptor.isSupportedFile()` check method.
+<tabs group="lsp-api-rename-version">
+
+<tab title="2026.1.4+" group-key="2614">
+
+1. Implement [`LspIntegrationProvider`](%gh-ic%/platform/lsp/src/api/LspIntegrationProvider.kt) and within the `LspIntegrationProvider.fileOpened()` method, spin up the relevant LSP client descriptor, which can decide if the given file is supported by using the [`LspClientDescriptor.isSupportedFile()`](%gh-ic%/platform/lsp/src/api/LspClientDescriptor.kt) check method.
+2. [Register](plugin_extensions.md#declaring-extensions) it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.lsp.integrationProvider"/></include>.
+3. Tell how to start the server by implementing `LspClientDescriptor.createCommandLine()`.
+
+   ```kotlin
+   import com.intellij.platform.lsp.api.LspIntegrationProvider
+   import com.intellij.platform.lsp.api.ProjectWideLspClientDescriptor
+
+   internal class FooLspIntegrationProvider : LspIntegrationProvider {
+     override fun fileOpened(
+       project: Project,
+       file: VirtualFile,
+       clientStarter: LspClientStarter
+     ) {
+       if (file.extension == "foo") {
+         clientStarter.ensureClientStarted(
+           FooLspClientDescriptor(project)
+         )
+       }
+     }
+   }
+
+   private class FooLspClientDescriptor(project: Project)
+       : ProjectWideLspClientDescriptor(project, "Foo") {
+
+     override fun isSupportedFile(file: VirtualFile): Boolean {
+       return file.extension == "foo"
+     }
+
+     override fun createCommandLine(): GeneralCommandLine {
+       return GeneralCommandLine("foo", "--stdio")
+     }
+   }
+   ```
+</tab>
+
+<tab title="Pre-2026.1.4" group-key="pre-2614">
+
+1. Implement [`LspServerSupportProvider`](%gh-ic%/platform/lsp/src/api/LspServerSupportProvider.kt) and within the `LspServerSupportProvider.fileOpened()` method, spin up the relevant LSP server descriptor, which can decide if the given file is supported by using the [`LspServerDescriptor.isSupportedFile()`](%gh-ic%/platform/lsp/src/api/LspServerDescriptor.kt) check method.
 2. [Register](plugin_extensions.md#declaring-extensions) it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.lsp.serverSupportProvider"/></include>.
 3. Tell how to start the server by implementing `LspServerDescriptor.createCommandLine()`.
 
-```kotlin
-import com.intellij.platform.lsp.api.LspServerSupportProvider
-import com.intellij.platform.lsp.api.ProjectWideLspServerDescriptor
+   ```kotlin
+   import com.intellij.platform.lsp.api.LspServerSupportProvider
+   import com.intellij.platform.lsp.api.ProjectWideLspServerDescriptor
 
-internal class FooLspServerSupportProvider : LspServerSupportProvider {
-  override fun fileOpened(project: Project, file: VirtualFile, serverStarter: LspServerStarter) {
-    if (file.extension == "foo") {
-      serverStarter.ensureServerStarted(FooLspServerDescriptor(project))
-    }
-  }
-}
+   internal class FooLspServerSupportProvider : LspServerSupportProvider {
+     override fun fileOpened(
+       project: Project,
+       file: VirtualFile,
+       serverStarter: LspServerStarter
+     ) {
+       if (file.extension == "foo") {
+         serverStarter.ensureServerStarted(
+           FooLspServerDescriptor(project)
+         )
+       }
+     }
+   }
 
-private class FooLspServerDescriptor(project: Project) : ProjectWideLspServerDescriptor(project, "Foo") {
-  override fun isSupportedFile(file: VirtualFile) = file.extension == "foo"
-  override fun createCommandLine() = GeneralCommandLine("foo", "--stdio")
-}
-```
+   private class FooLspServerDescriptor(project: Project)
+       : ProjectWideLspServerDescriptor(project, "Foo") {
+
+     override fun isSupportedFile(file: VirtualFile): Boolean {
+       return file.extension == "foo"
+     }
+
+     override fun createCommandLine(): GeneralCommandLine {
+       return GeneralCommandLine("foo", "--stdio")
+     }
+   }
+   ```
+
+</tab>
+
+</tabs>
 
 </procedure>
 
@@ -223,7 +316,29 @@ private class FooLspServerDescriptor(project: Project) : ProjectWideLspServerDes
 <primary-label ref="2024.1"/>
 
 A dedicated <control>Language Services</control> status bar widget is available to monitor the status of all LSP servers.
-Override `LspServerSupportProvider.createLspServerWidgetItem()` to provide a custom icon and link to [Settings](settings.md) page (if available).
+
+<tabs group="lsp-api-rename-version">
+
+<tab title="2026.1.4+" group-key="2614">
+
+Override [`LspIntegrationProvider.createWidgetItem()`](%gh-ic%/platform/lsp/src/api/LspIntegrationProvider.kt) to provide a custom icon and link to [the settings page](settings.md) (if available).
+
+```kotlin
+override fun createWidgetItem(
+  lspClient: LspClient,
+  currentFile: VirtualFile?
+) =
+  LspClientWidgetItem(
+    lspClient, currentFile,
+    FooIcons.PluginIcon, FooConfigurable::class.java
+  )
+```
+
+</tab>
+
+<tab title="Pre-2026.1.4" group-key="pre-2614">
+
+Override [`LspServerSupportProvider.createLspServerWidgetItem()`](%gh-ic%/platform/lsp/src/api/LspServerSupportProvider.kt) to provide a custom icon and link to [the settings page](settings.md) (if available).
 
 ```kotlin
 override fun createLspServerWidgetItem(
@@ -235,6 +350,10 @@ override fun createLspServerWidgetItem(
     FooIcons.PluginIcon, FooConfigurable::class.java
   )
 ```
+
+</tab>
+
+</tabs>
 
 If there are configuration problems preventing from starting an LSP server, the plugin can provide a widget item
 with an error and give the user a hint how to fix the problem.
@@ -261,14 +380,17 @@ For more complex cases, the plugin may request to provide a detailed configurati
 
 <tab title="2025.2+">
 
-To fine-tune or disable the implementation of LSP-based features, plugins may return a customized `LspCustomization` object from the `LspServerDescriptor.lspCustomization` property.
+To fine-tune or disable the implementation of LSP-based features, plugins may return a customized [`LspCustomization`](%gh-ic%/platform/lsp/src/api/customization/LspCustomization.kt) object from the `LspClientDescriptor.lspCustomization` (`LspServerDescriptor.lspCustomization` before 2026.1.4) property.
 Available customization options are described by `LspCustomization`'s properties.
 
-For example, see [`PrismaLspServerDescriptor`](%gh-ij-plugins%/prisma/src/org/intellij/prisma/ide/lsp/PrismaLspServerDescriptor.kt).
+For example, see [`PrismaLspClientDescriptor`](%gh-ij-plugins%/prisma/src/org/intellij/prisma/ide/lsp/PrismaLspClientDescriptor.kt).
 
 The new API is backward-compatible.
 Plugin LSP customizations implemented via deprecated `LspServerDescriptor`'s properties will work in 2025.2.
 New LSP features will be customizable only via the new API.
+
+Starting with 2026.1.2, on-type formatting ([`textDocument/onTypeFormatting`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_onTypeFormatting)) is the first LSP feature disabled by default.
+Review your servers and enable [`LspOnTypeFormattingCustomizer`](%gh-ic%/platform/lsp/src/api/customization/LspOnTypeFormattingCustomizer.kt) via `LspClientDescriptor.lspCustomization` where formatting while typing is appropriate.
 
 </tab>
 
@@ -284,9 +406,9 @@ To fine-tune or disable the implementation of LSP-based features, plugins may ov
 >
 {style="warning"}
 
-To handle custom (undocumented) requests and notifications from the LSP server, override the `LspServerDescriptor.createLsp4jClient()` function and the `Lsp4jClient` class according to their documentation.
+To handle custom (undocumented) requests and notifications from the LSP server, override the `LspClientDescriptor.createLsp4jClient()` (`LspServerDescriptor.createLsp4jClient()` before 2026.1.4) function and the `Lsp4jClient` class according to their documentation.
 
-To send custom (undocumented) requests and notifications to the LSP server, override `LspServerDescriptor.lsp4jServerClass` property and implement the `LspClientNotification` and/or `LspRequest` classes.
+To send custom (undocumented) requests and notifications to the LSP server, override `LspClientDescriptor.lsp4jServerClass` (`LspServerDescriptor.lsp4jServerClass` before 2026.1.4) property and implement the `LspClientNotification` and/or `LspRequest` classes.
 The documentation in the source code includes implementation examples.
 
 ## Troubleshooting
@@ -314,10 +436,25 @@ When considering the LSP-based approach, it is important to assess the following
 
 ## Sample Plugins
 
-The following open-source plugins make use of LSP:
+Explore third-party plugins using LSP:
+- [`com.intellij.platform.lsp.integrationProvider`](https://jb.gg/ipe?extensions=com.intellij.platform.lsp.integrationProvider) - since 2026.1.4
+- [`com.intellij.platform.lsp.serverSupportProvider`](https://jb.gg/ipe?extensions=com.intellij.platform.lsp.serverSupportProvider) - before 2026.1.4
 
-- [Prisma ORM](%gh-ij-plugins%/prisma/src/org/intellij/prisma/ide/lsp)
+## LSP API Refactoring
 
-Explore third-party plugins using LSP on [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.platform.lsp.serverSupportProvider).
+In 2026.1.4, the LSP API classes were renamed to align with LSP terminology, where the IDE acts as the _client_ communicating with an external language server _process_.
+Classes with old names are deprecated, but they are preserved in the API and fully functional.
+
+The following table lists the key classes renaming:
+
+| Old                                                                                                                                              | 	New                                                                                                                                                                                                                                                                                                                            |
+|--------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`LspServerSupportProvider`](%gh-ic%/platform/lsp/src/api/LspServerSupportProvider.kt)<br/>EP: `com.intellij.platform.lsp.serverSupportProvider` | 	[`LspIntegrationProvider`](%gh-ic%/platform/lsp/src/api/LspIntegrationProvider.kt)<br/>EP: `com.intellij.platform.lsp.integrationProvider`                                                                                                                                                                                     |
+| `LspServerSupportProvider.LspServerStarter`                                                                                                      | 	`LspIntegrationProvider.LspClientStarter`                                                                                                                                                                                                                                                                                      |
+| [`LspServerDescriptor`](%gh-ic%/platform/lsp/src/api/LspServerDescriptor.kt)                                                                     | 	[`LspClientDescriptor`](%gh-ic%/platform/lsp/src/api/LspClientDescriptor.kt)                                                                                                                                                                                                                                                   |
+| [`ProjectWideLspServerDescriptor`](%gh-ic%/platform/lsp/src/api/ProjectWideLspServerDescriptor.kt)                                               | 	[`ProjectWideLspClientDescriptor`](%gh-ic%/platform/lsp/src/api/ProjectWideLspClientDescriptor.kt)                                                                                                                                                                                                                             |
+| [`LspServer`](%gh-ic%/platform/lsp/src/api/LspServer.kt)                                                                                         | 	[`LspClient`](%gh-ic%/platform/lsp/src/api/LspClient.kt)                                                                                                                                                                                                                                                                       |
+| [`LspServerManager`](%gh-ic%/platform/lsp/src/api/LspServerManager.kt)                                                                           | 	[`LspClientManager`](%gh-ic%/platform/lsp/src/api/LspClientManager.kt)<br/>Service is registered for the `LspClientManager` interface only;<br/>`project.service<LspServerManager>()` returns null.<br/>Use `LspClientManager.getInstance()` (or `LspServerManager.getInstance(project)` to support versions before 2026.1.4). |
+| [`LspServerWidgetItem`](%gh-ic%/platform/lsp/src/api/lsWidget/LspServerWidgetItem.kt)                                                            | 	[`LspClientWidgetItem`](%gh-ic%/platform/lsp/src/api/lsWidget/LspClientWidgetItem.kt)                                                                                                                                                                                                                                          |
 
 <include from="snippets.topic" element-id="missingContent"/>

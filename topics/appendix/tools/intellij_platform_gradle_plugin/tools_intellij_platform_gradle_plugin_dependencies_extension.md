@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Dependencies Extension
 
@@ -19,11 +19,10 @@ It also includes methods for adding [plugins](#plugins) (including bundled), [Je
 **Example:**
 
 - setup Maven Central and [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories)
-- target IntelliJ IDEA Community %ijPlatform%
+- target IntelliJ IDEA %ijPlatform%
 - add dependency on the bundled Java plugin
-- add IntelliJ Plugin Verifier, Marketplace ZIP Signer CLI, and code instrumentation tools
-- add JUnit4 test dependency
-- add Test Framework for testing plugin with JUnit4
+- add a JUnit4 test dependency
+- add Test Framework for testing a plugin with JUnit4
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -41,7 +40,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
 
     bundledPlugin("com.intellij.java")
 
@@ -69,7 +68,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity '%ijPlatform%'
+    intellijIdea '%ijPlatform%'
 
     bundledPlugin 'com.intellij.java'
 
@@ -95,36 +94,46 @@ dependencies {
 
 See [](#custom-target-platforms) for non-default targets.
 
-| Function                                         | Description                                                      |
-|--------------------------------------------------|------------------------------------------------------------------|
-| `androidStudio(version, configure = {})`         | [Android Studio](android_studio.md)                              |
-| `clion(version, configure = {})`                 | [CLion](clion.md)                                                |
-| `datagrip(version, configure = {})`              | [DataGrip](data_grip.md)                                         |
-| `dataspell(version, configure = {})`             | [DataSpell](https://www.jetbrains.com/dataspell/)                |
-| `fleetBackend(version, configure = {})`          | [Fleet](https://www.jetbrains.com/fleet/) Backend                |
-| `gateway(version, configure = {})`               | [Gateway](https://www.jetbrains.com/remote-development/gateway/) |
-| `goland(version, configure = {})`                | [GoLand](goland.md)                                              |
-| `intellijIdeaCommunity(version, configure = {})` | [IntelliJ IDEA Community](idea.md)                               |
-| `intellijIdeaUltimate(version, configure = {})`  | [IntelliJ IDEA Ultimate](idea_ultimate.md)                       |
-| `mps(version, configure = {})`                   | [MPS](https://www.jetbrains.com/mps/)                            |
-| `phpstorm(version, configure = {})`              | [PhpStorm](phpstorm.md)                                          |
-| `pycharmCommunity(version, configure = {})`      | [PyCharm Community](pycharm.md)                                  |
-| `pycharmProfessional(version, configure = {})`   | [PyCharm Professional](pycharm.md)                               |
-| `rider(version, configure = {})`                 | [Rider](rider.md)                                                |
-| `rubymine(version, configure = {})`              | [RubyMine](rubymine.md)                                          |
-| `rustRover(version, configure = {})`             | [RustRover](https://www.jetbrains.com/rust/)                     |
-| `webstorm(version, configure = {})`              | [WebStorm](webstorm.md)                                          |
+| Function                                 | Description                                                      |
+|------------------------------------------|------------------------------------------------------------------|
+| `androidStudio(version, configure = {})` | [Android Studio](android_studio.md)                              |
+| `clion(version, configure = {})`         | [CLion](clion.md)                                                |
+| `datagrip(version, configure = {})`      | [DataGrip](data_grip.md)                                         |
+| `dataspell(version, configure = {})`     | [DataSpell](https://www.jetbrains.com/dataspell/)                |
+| `fleetBackend(version, configure = {})`  | [Fleet](https://www.jetbrains.com/fleet/) Backend                |
+| `gateway(version, configure = {})`       | [Gateway](https://www.jetbrains.com/remote-development/gateway/) |
+| `goland(version, configure = {})`        | [GoLand](goland.md)                                              |
+| `intellijIdea(version, configure = {})`  | [IntelliJ IDEA](idea.md)                                         |
+| `mps(version, configure = {})`           | [MPS](https://www.jetbrains.com/mps/)                            |
+| `phpstorm(version, configure = {})`      | [PhpStorm](phpstorm.md)                                          |
+| `pycharm(version, configure = {})`       | [PyCharm](pycharm.md)                                            |
+| `rider(version, configure = {})`         | [Rider](rider.md)                                                |
+| `rubymine(version, configure = {})`      | [RubyMine](rubymine.md)                                          |
+| `rustRover(version, configure = {})`     | [RustRover](https://www.jetbrains.com/rust/)                     |
+| `webstorm(version, configure = {})`      | [WebStorm](webstorm.md)                                          |
 
 Notes:
 - Writerside (`WRS`) is deprecated and no longer available as a target IntelliJ Platform.
-- Aqua (`QA`) has also been removed as a target IntelliJ Platform.
+- Aqua (`QA`) has been removed as a target IntelliJ Platform.
+- IntelliJ IDEA Community (`IC`) and Ultimate (`IU`) legacy helpers remain available for versions earlier than 2025.3.
+- PyCharm Community (`PC`) and Professional (`PY`) legacy helpers remain available for versions earlier than 2025.3.
+
+### Legacy Target Platform Helpers
+
+The following helpers are still available for resolving pre-2025.3 product lines:
+
+| Function                                         | Description                                                      |
+|--------------------------------------------------|------------------------------------------------------------------|
+| `intellijIdeaCommunity(version, configure = {})` | IntelliJ IDEA Community (`IC`) for versions earlier than 2025.3. |
+| `intellijIdeaUltimate(version, configure = {})`  | IntelliJ IDEA Ultimate (`IU`) for versions earlier than 2025.3.  |
+| `pycharmCommunity(version, configure = {})`      | PyCharm Community (`PC`) for versions earlier than 2025.3.       |
+| `pycharmProfessional(version, configure = {})`   | PyCharm Professional (`PY`) for versions earlier than 2025.3.    |
 
 ### Custom Target Platforms
 
 | Function                                | Description                                                                                                                                |
 |-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | `create(type, version, configure = {})` | Adds a configurable dependency on the IntelliJ Platform. See [](tools_intellij_platform_gradle_plugin.md#dependenciesParametrizePlatform). |
-| `create(notation, configure = {})`      | Adds a configurable dependency on the IntelliJ Platform. See [](tools_intellij_platform_gradle_plugin.md#dependenciesParametrizePlatform). |
 | `local(localPath)`                      | Adds a dependency on a local IntelliJ Platform instance. See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform).       |
 
 ### Dependency Configuration Parameters
@@ -139,9 +148,11 @@ It allows you to specify the following parameters:
 | `productMode`       | `ProductMode`          | Describes a mode in which a product may be started. Default: `ProductMode.MONOLITH`.                                                |
 | `useInstaller`      | `Boolean`              | Switches between resolving the IDE installer and a multi-OS archive from the IntelliJ Maven repository. Default: `true`.            |
 | `useCache`          | `Boolean`              | Switches between the Gradle cache and a custom cache directory. Default: `false`. See `GradleProperties.IntellijPlatformIdesCache`. |
-| `configurationName` | `String`               | The name of the configuration to add the dependency to. Default: `Configurations.INTELLIJ_PLATFORM_DEPENDENCY_ARCHIVE`.             |
 
 All of the above parameters support assignment of direct values and Provider instances.
+
+When `productMode = ProductMode.FRONTEND`, the dependency resolves the matching JetBrains Client artifact.
+When `splitMode` is enabled or a non-`MONOLITH` `productMode` is requested, the IDE is extracted into the managed IDE cache even if `useCache` is disabled.
 
 See also:
 
@@ -175,7 +186,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
   }
 }
 ```
@@ -192,7 +203,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity '%ijPlatform%'
+    intellijIdea '%ijPlatform%'
   }
 }
 ```
@@ -213,7 +224,7 @@ To apply required repositories, use [](tools_intellij_platform_gradle_plugin_rep
 
 It is still possible to use Multi-OS ZIP archives resolved from [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories).
 
-To enable resolving this kind of artifacts, opt-out from the installer dependencies by adding `useInstaller = false` argument to helpers described in [](#target-platforms), like:
+To enable resolving this kind of artifacts, opt out from installer dependencies by setting `useInstaller = false` in the helper configuration:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -227,7 +238,9 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%", useInstaller = false)
+    intellijIdea("%ijPlatform%") {
+      useInstaller = false
+    }
   }
 }
 ```
@@ -244,7 +257,9 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity "%ijPlatform%", false
+    intellijIdea("%ijPlatform%") {
+      useInstaller = false
+    }
   }
 }
 ```
@@ -287,11 +302,12 @@ The list of bundled plugin IDs is available via [`printBundledPlugins`](tools_in
 
 Use `bundledModule(id)` or `bundledModules(ids)` to add a dependency on an IntelliJ Platform bundled module.
 This is useful when a specific platform module is required on the classpath.
+The `id` value can be either a bundled module ID or a module alias exported by the target IDE, for example `com.intellij.modules.vcs`.
 
-| Function              | Description                                    |
-|-----------------------|------------------------------------------------|
-| `bundledModule(id)`   | Adds a dependency on a bundled module.         |
-| `bundledModules(ids)` | Adds a dependency on multiple bundled modules. |
+| Function              | Description                                                 |
+|-----------------------|-------------------------------------------------------------|
+| `bundledModule(id)`   | Adds a dependency on a bundled module or module alias.      |
+| `bundledModules(ids)` | Adds dependencies on multiple bundled modules or aliases.   |
 
 ### Non-Bundled Plugin
 
@@ -320,6 +336,7 @@ If defined explicitly, can be used along with any custom plugin repository, like
 ### Compatible Plugins
 
 Helpers that automatically pick a version compatible with the currently configured IntelliJ Platform by requesting the JetBrains Marketplace API.
+These helpers are incubating.
 
 These resolve plugin versions against the target platform configured via this extension.
 Make sure the required [plugin repositories](tools_intellij_platform_gradle_plugin_repositories_extension.md#plugin-repositories) are defined.
@@ -347,6 +364,7 @@ pluginModule(implementation(project(":submodule")))
 ### Local Plugin
 
 Use `localPlugin(localPath)` to add a dependency on a local IntelliJ Platform plugin.
+It accepts a path to a plugin directory/archive or a project dependency.
 
 ## Testing
 
@@ -389,15 +407,68 @@ dependencies {
 See [`TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) reference for other test-frameworks,
 for example, `Plugin.Java` when testing Java-based functionality.
 
-The provided `testFramework(type, version)` helper method makes it possible to add the base artifact to the test classpath or its variants, such as Java, Go, ReSharper, etc.
+The provided helpers make it possible to add the base artifact to the test classpath or its variants, such as Java, Go, ReSharper, etc.
 
-| Function                       | Description                                                                                                                                            |
-|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `testFramework(type, version)` | Adds a dependency on Test Framework or its variant using [`TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type. |
+| Function                                          | Description                                                                                                                                                                      |
+|---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `testFramework(type, version)`                    | Adds a dependency on Test Framework or its variant using [`TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type.                           |
+| `testFrameworks(vararg types)`                    | Adds dependencies on all provided Test Framework variants. Each version is selected to match the configured IntelliJ Platform build.                                            |
+| `testFrameworks(types: List<TestFrameworkType>)` | Adds dependencies on all Test Framework variants in the provided list. Each version is selected to match the configured IntelliJ Platform build.                                |
 
-> In rare cases, when the presence of a bundled <path>\$PLATFORM_PATH\$/lib/testFramework.jar</path> library is necessary (like in the case of [Rider](rider.md), as its `test-framework` is not published as an artifact),
-> it is possible to attach it by using the [`TestFrameworkType.Platform.Bundled`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type.
-> {style="warning"}
+Use either plural overload to add multiple Test Framework variants at once:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+
+dependencies {
+  intellijPlatform {
+    testFrameworks(
+      TestFrameworkType.Platform,
+      TestFrameworkType.Plugin.Java,
+    )
+    testFrameworks(
+      listOf(
+        TestFrameworkType.JUnit5,
+        TestFrameworkType.Plugin.Maven,
+      )
+    )
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+
+dependencies {
+  intellijPlatform {
+    testFrameworks(
+      TestFrameworkType.Platform.INSTANCE,
+      TestFrameworkType.Plugin.Java.INSTANCE
+    )
+    testFrameworks([
+      TestFrameworkType.JUnit5.INSTANCE,
+      TestFrameworkType.Plugin.Maven.INSTANCE
+    ])
+  }
+}
+```
+
+</tab>
+</tabs>
+
+The plural overloads do not accept an explicit version.
+To pin a specific version, call `testFramework(type, version)` separately.
+
+> In rare cases when the bundled <path>\$PLATFORM_PATH\$/lib/testFramework.jar</path> library is required,
+> attach it with [`TestFrameworkType.Bundled`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType).
+>
+{style="warning"}
 
 There are two known issues related to `Platform` and `JUnit5` Test Frameworks:
 
@@ -419,10 +490,60 @@ The extension also provides helpers to add dependencies needed only for tests:
 | `testBundledPlugin(id)`          | Adds a test dependency on a bundled plugin by ID.                                                               |
 | `testBundledPlugins(vararg ids)` | Adds test dependencies on multiple bundled plugins by IDs.                                                      |
 | `testLocalPlugin(localPath)`     | Adds a test dependency on a local plugin; accepts a path or a project dependency.                               |
-| `testBundledModule(id)`          | Adds a test dependency on a specific bundled platform module.                                                   |
-| `testBundledModules(vararg ids)` | Adds test dependencies on multiple bundled platform modules.                                                    |
+| `testBundledModule(id)`          | Adds a test dependency on a specific bundled platform module or module alias.                                  |
+| `testBundledModules(vararg ids)` | Adds test dependencies on multiple bundled platform modules or aliases.                                        |
 
 Provider and list-based overloads are available for the above helpers, mirroring their production-scope counterparts.
+
+## Sandbox Runtime Classpaths
+{#sandbox-runtime-classpaths}
+
+The plugin uses dedicated resolvable configurations for dependencies copied to the developed plugin's <path>lib/</path> directory in a sandbox:
+
+| Configuration                                    | Description                                                                                                                                                                                   |
+|--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `intellijPlatformSandboxRuntimeClasspath`        | Extends the project's `runtimeClasspath` and supplies runtime dependencies for regular sandboxes, such as the one created by [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox). |
+| `intellijPlatformTestSandboxRuntimeClasspath`    | Extends `intellijPlatformSandboxRuntimeClasspath` and `intellijPlatformTestRuntimeClasspath`, and supplies runtime dependencies for test sandboxes created by [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox). |
+
+Excluding a dependency from either configuration changes only the contents of the corresponding sandbox.
+It does not remove the dependency from the project's compile, runtime, or test classpaths.
+Because the test sandbox configuration extends the regular sandbox configuration, exclusions added to `intellijPlatformSandboxRuntimeClasspath` apply to both regular and test sandboxes.
+Configure `intellijPlatformTestSandboxRuntimeClasspath` instead when an exclusion should apply only to test sandboxes.
+
+For example, the following keeps Joda-Time available to compile the plugin but prevents its JAR from being copied into either sandbox:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+dependencies {
+  implementation("joda-time:joda-time:2.8.1")
+}
+
+configurations.named("intellijPlatformSandboxRuntimeClasspath") {
+  exclude(group = "joda-time", module = "joda-time")
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+  implementation 'joda-time:joda-time:2.8.1'
+}
+
+configurations.named('intellijPlatformSandboxRuntimeClasspath') {
+  exclude group: 'joda-time', module: 'joda-time'
+}
+```
+
+</tab>
+</tabs>
+
+By default, both sandbox configurations exclude `org.jetbrains.kotlin:kotlin-stdlib`, `org.jetbrains.kotlin:kotlin-stdlib-jdk8`, and the known Kotlin Coroutines modules supplied by the IntelliJ Platform.
+The Coroutines exclusions cover the `org.jetbrains.kotlinx`, `com.intellij.platform`, and `org.jetbrains.intellij.deps.kotlinx` groups.
+Set [`org.jetbrains.intellij.platform.useDefaultSandboxExclusions=false`](tools_intellij_platform_gradle_plugin_gradle_properties.md#useDefaultSandboxExclusions) to opt out.
 
 ## Tools
 
@@ -463,8 +584,9 @@ See [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) for more deta
 
 ## Code Instrumentation
 
-The code instrumentation process handled with the [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) task, requires extra dependencies to work and properly adjust the Java bytecode.
-There used to be an `instrumentationTools()` convenience helper that applied the required dependencies using defaults; it is now deprecated and calling it is no longer necessary. You can still add and configure the dependencies separately if needed.
+The code instrumentation process handled with the [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) task requires extra dependencies to work and properly adjust the Java bytecode.
+The removed `instrumentationTools()` convenience helper is no longer necessary.
+You can still add and configure the dependencies separately if needed.
 
 Adds a Java Compiler dependency for code instrumentation.
 The version is determined by the IntelliJ Platform build number.
@@ -472,11 +594,40 @@ If the exact version is unavailable, the closest one is used, found by scanning 
 
 The `javaCompiler()` helper is applied by default and refers to the tool version close to the currently used IntelliJ Platform.
 
-| Function                                              | Description                                                                                 |
-|-------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| <p>`instrumentationTools()`</p>                       | Deprecated: calling this helper is no longer necessary; previously applied `javaCompiler()`. |
-| <p>`javaCompiler()`</p><p>`javaCompiler(version)`</p> | Adds a dependency on Java Compiler.                                                         |
+| Function                                              | Description                         |
+|-------------------------------------------------------|-------------------------------------|
+| <p>`javaCompiler()`</p><p>`javaCompiler(version)`</p> | Adds a dependency on Java Compiler. |
 
 - [](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode)
+
+## Grammar and Parser Generation
+
+Helpers for the [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit) plugin tasks.
+
+| Function                                 | Description                                                                                                              |
+|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| `grammarKit()`<br/>`grammarKit(version)` | Adds a Grammar Kit dependency used by [`generateParser`](tools_intellij_platform_gradle_plugin_tasks.md#generateParser). |
+| `jflex()`<br/>`jflex(version)`           | Adds a JFlex dependency used by [`generateLexer`](tools_intellij_platform_gradle_plugin_tasks.md#generateLexer).         |
+
+## Compose UI
+
+| Function      | Description                                                                             |
+|---------------|-----------------------------------------------------------------------------------------|
+| `composeUI()` | Adds the bundled modules required for working with Compose UI in the IntelliJ Platform. |
+
+`composeUI()` is incubating and resolves bundled modules according to the target IDE build:
+
+| Target build | Added modules                                                                                                                                                             |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2024.3+      | `intellij.libraries.skiko`, `intellij.platform.compose`                                                                                                                   |
+| 2025.1+      | `intellij.libraries.compose.foundation.desktop`, `intellij.platform.jewel.foundation`, `intellij.platform.jewel.ui`, `intellij.platform.jewel.ideLafBridge`               |
+| 2025.3+      | `intellij.libraries.compose.runtime.desktop`                                                                                                                              |
+
+## Dependency Exclusions
+
+| Function                | Description                                                              |
+|-------------------------|--------------------------------------------------------------------------|
+| `excludeKotlinStdlib()` | Excludes transitive Kotlin Standard Library artifacts from a dependency. |
+| `excludeCoroutines()`   | Excludes transitive Kotlin Coroutines artifacts from a dependency.       |
 
 <include from="snippets.topic" element-id="missingContent"/>

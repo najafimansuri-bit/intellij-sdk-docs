@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 7755d82675efadd94c94ddccd67dcbe41f53775e -->
+<!-- Revision: 0b6db099218edf465d512609a04796a0c678177d -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-23 Extension Points and 6 Listeners
+22 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -26,14 +26,20 @@ EP List Directories:
 | [`GoModuleSettings#BUILD_TARGET_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.BuildTargetListener)  ![Project-Level][project-level] | `BuildTargetListener` |
 | [`GoModuleSettings#GO_SUPPORT_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.GoSupportListener)  ![Project-Level][project-level] | `GoSupportListener` |
 | [`GoProjectLifecycleListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoProjectLifecycleListener)  | `GoProjectLifecycleListener` |
+| [`GoDownloadSdkService#SDK_DOWNLOAD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.sdk.download.SdkDownloadListener)  | `SdkDownloadListener` |
 | [`VgoUpdateProgressManager#UPDATE_PROGRESS_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.VgoStatusTracker.VgoUpdateProgressManager.VgoModuleUpdateProgressListener)  ![Project-Level][project-level] | `VgoModuleUpdateProgressListener` |
 | [`VgoProjectSettings#VGO_INTEGRATION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener)  | `IntegrationListener` |
+| [`VgoToolchainService#TOOLCHAIN_SCAN_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.sdk.VgoToolchainService.ToolchainScanListener)  ![Project-Level][project-level] | `ToolchainScanListener` |
+| [`GoLinterFmtOnSaveSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.go.linter.fmt.GoLinterFmtOnSaveSettings.FmtOnSaveListener)  | `FmtOnSaveListener` |
+| [`GoEscapeAnalysisSettingsKt#SETTINGS_CHANGED_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.go.performance.escapeAnalysis.GoEscapeAnalysisSettingsChangeListener)  ![Project-Level][project-level] | `GoEscapeAnalysisSettingsChangeListener` |
+{sticky-header="true"}
 
 
-### goland.xml
+### intellij.go.impl.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.consoleDecorator"/></include> ![Internal][internal] | `GoConsoleDecorator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.dfa.api"/></include> | `GoDfaApi` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.dlv.positionConverterFactory"/></include> | `DlvPositionConverterFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.documentation.packageVersionProvider"/></include> | `GoDocumentationPackageVersionProvider` |
@@ -49,6 +55,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdk.targetSdkVersionProvider"/></include> | `GoTargetSdkVersionProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdkProvider"/></include> | `GoSdkProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.support"/></include> | `GoLangSupport` |
+{sticky-header="true"}
+
+### intellij.go.watchers.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.fileWatcherMigrationHandler"/></include> | `GoFileWatcherMigrationHandler` |
+{sticky-header="true"}
 
 ### openapi.xml
 
@@ -58,15 +72,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importPathsProvider"/></include> | `GoImportPathsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.imports.weigher"/></include> | `GoImportsWeigher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.rootsProvider"/></include> | `GoRootsProvider` |
+{sticky-header="true"}
 
-### org.jetbrains.plugins.go.ide
+### vgo.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.templateOptionProvider"/></include> | `GoWelcomeScreenFileTemplateOptionProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenFeatureProvider"/></include> | `GoWelcomeScreenFeatureProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenFileIconProvider"/></include> | `GoWelcomeScreenFileIconProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenRightTabBannerProvider"/></include> | `GoWelcomeRightTabBannerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.go126FeaturesTabOpener"/></include> | `Go126FeaturesTabOpener` |
+{sticky-header="true"}
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

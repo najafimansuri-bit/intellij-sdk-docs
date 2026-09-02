@@ -22,7 +22,7 @@ For example, in Java this is used to display the class and method in which the c
 ## Define a Structure-Aware Navbar
 
 The [`SimpleStructureAwareNavbar`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureAwareNavbar.java) implements
-[`StructureAwareNavBarModelExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.kt).
+[`StructureAwareNavBarModelExtension`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.kt).
 
 ```java
 ```
@@ -41,7 +41,7 @@ configuration file using the <include from="snippets.topic" element-id="ep"><var
 
 ## Run the Project
 
-Run the project by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.
+[Run](creating_plugin_project.md#running-the-plugin) the plugin.
 
 Open the <path>test.simple</path> file and position the caret on any property.
 The navigation bar displays the name and icon of this property.

@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 7755d82675efadd94c94ddccd67dcbe41f53775e -->
+<!-- Revision: 0b6db099218edf465d512609a04796a0c678177d -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-60 Extension Points and 6 Listeners
+67 Extension Points and 6 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -23,14 +23,15 @@ EP List Directories:
 | Topic | Listener |
 |-------|----------|
 | [`SpringFileSetService#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.facet.SpringFileSetService.SpringFileSetListener)  | `SpringFileSetListener` |
-| [`SpringBeansViewSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.toolWindow.SpringBeansViewSettings.Listener)  | `Listener` |
+| [`SpringBeansViewSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.ide.ux.toolWindow.SpringBeansViewSettings.Listener)  | `Listener` |
+{sticky-header="true"}
 
 
-### com.intellij.spring
+### intellij.spring.core.analysis.services.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.autodetected.filesets"/></include> | `SpringAutodetectedFilesetsSearcher` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.additionalBeanGutterDeclarationsContributor"/></include> | `AdditionalSpringBeanGutterDeclarationsContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.autodetected.models"/></include> | `SpringAutodetectedModelsSearcher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.beanClassLineMarker"/></include> | `BeanClassLineMarker` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.beans.stereotype"/></include> | `SpringBeanStereotype` |
@@ -57,10 +58,19 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.scriptBeanPsiClassDiscoverer"/></include> | `ScriptBeanPsiClassDiscoverer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.settingsProvider"/></include> | `SpringSettingsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.springComponentContainerProvider"/></include> | `SpringComponentContainerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.springDataSourceInfoProvider"/></include> | `SpringDataSourceInfoProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.springTemplateProvider"/></include> | `SpringTemplateProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.testingAnnotationsProvider"/></include> | `SpringTestingAnnotationsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.testingImplicitContextsProvider"/></include> | `SpringTestingImplicitContextsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.valueConverter"/></include> | `SpringValueConvertersProvider` |
+{sticky-header="true"}
+
+### intellij.spring.core.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.autodetected.filesets"/></include> | `SpringAutodetectedFilesetsSearcher` |
+{sticky-header="true"}
 
 ### intellij.spring.el.xml
 
@@ -68,12 +78,14 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.el.contexts"/></include> | `SpringElContextsExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.el.injection.context"/></include> | `SpringElInjectionContext` |
+{sticky-header="true"}
 
 ### intellij.spring.graph.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.gutterDiagramActionProvider"/></include> | `SpringGutterDiagramActionProvider` |
+{sticky-header="true"}
 
 
 ## Spring Boot Plugin
@@ -82,14 +94,17 @@ EP List Directories:
 
 | Topic | Listener |
 |-------|----------|
-| [`SpringBootEndpointsTabSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.boot.run.lifecycle.tabs.SpringBootEndpointsTabSettings.Listener)  | `Listener` |
+| [`SpringBootEndpointsTabSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.boot.run.api.lifecycle.tabs.SpringBootEndpointsTabSettings.Listener)  | `Listener` |
+{sticky-header="true"}
 
 
-### com.intellij.spring.boot
+### intellij.spring.boot.core.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.configFileDetector"/></include> | `SpringBootConfigFileDetector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.configKeyDescriptionExtractor"/></include> | `SpringBootConfigKeyDescriptionExtractor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.configUnresolvedClassReferenceFixesProvider"/></include> | `SpringBootConfigUnresolvedClassReferenceFixesProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.customHintReferenceProvider"/></include> | `SpringBootCustomHintReferenceProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.languageSpecificBridge"/></include> | `SpringBootLanguageSpecificBridge` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.modelConditionalContributor"/></include> | `ConditionalContributor` |
@@ -97,12 +112,22 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.modelConfigFileNameContributor"/></include> | `SpringBootModelConfigFileNameContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.modelExtender"/></include> | `SpringBootModelExtender` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.replacementTokenResolver"/></include> | `SpringBootReplacementTokenResolver` |
+{sticky-header="true"}
 
 ### intellij.spring.boot.mvc.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.mvc.templateAvailabilityProvider"/></include> | `TemplateAvailabilityProvider` |
+{sticky-header="true"}
+
+### intellij.spring.boot.run.shared.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.run.configuration"/></include> | `SpringBootConfigurationExtenderProducer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.run.mainClassInfoProvider"/></include> | `SpringBootMainClassInfoProvider` |
+{sticky-header="true"}
 
 ### intellij.spring.boot.run.xml
 
@@ -114,6 +139,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.run.endpointTabConfigurable"/></include> ![Project-Level][project-level] | `EndpointTabConfigurable` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.run.liveBeansPanelContent"/></include> | `LiveBeansPanelContent` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.run.runtimeApplicationProvider"/></include> | `SpringBootRuntimeApplicationProvider` |
+{sticky-header="true"}
 
 
 ## Spring Data Plugin
@@ -123,6 +149,7 @@ EP List Directories:
 | Topic | Listener |
 |-------|----------|
 | [`SpringRepositoriesViewSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.data.commons.view.SpringRepositoriesViewSettings.Listener)  | `Listener` |
+{sticky-header="true"}
 
 
 
@@ -133,6 +160,7 @@ EP List Directories:
 | Topic | Listener |
 |-------|----------|
 | [`SpringDebugModelListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.debugger.model.SpringDebugModelListener)  | `SpringDebugModelListener` |
+{sticky-header="true"}
 
 
 ### com.intellij.spring.debugger
@@ -142,6 +170,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.debugger.configCodeVisionProvider"/></include> ![Internal][internal] | `SpringConfigFileCodeVisionInfoProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.debugger.runConfigurationExtender"/></include> | `SpringDebuggerRunConfigurationExtender` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.debugger.sessionListener"/></include> | `SpringDebuggerSessionListener` |
+{sticky-header="true"}
 
 
 ## Spring GraphQL Plugin
@@ -151,6 +180,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.graphql.appPathProvider"/></include> | `GraphQLApplicationPathProvider` |
+{sticky-header="true"}
 
 
 ## Spring Messaging Plugin
@@ -160,6 +190,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.messaging.urlProvider"/></include> | `SpringMessagingUrlProvider` |
+{sticky-header="true"}
 
 
 ## Spring Security Plugin
@@ -169,6 +200,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.security.rolesProvider"/></include> | `SpringSecurityRolesProvider` |
+{sticky-header="true"}
 
 
 ## Spring Web Plugin
@@ -178,17 +210,20 @@ EP List Directories:
 | Topic | Listener |
 |-------|----------|
 | [`SpringMvcViewSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.mvc.toolwindow.SpringMvcViewSettings.Listener)  | `Listener` |
+{sticky-header="true"}
 
 
 ### com.intellij.spring.mvc
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.apiversioning.support"/></include> | `SpringWebApiVersioningSupport` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.applicationPathProvider"/></include> | `SpringApplicationPathProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.completion.controllerParamTypeProvider"/></include> | `ControllerParameterProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider"/></include> | `SpringMergingMvcRequestMappingLineMarkerProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.springEndpointsIconProvider"/></include> | `SpringEndpointsIconProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.viewResolverFactory"/></include> | `ViewResolverFactory` |
+{sticky-header="true"}
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

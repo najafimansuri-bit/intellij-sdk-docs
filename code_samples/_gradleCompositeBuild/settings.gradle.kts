@@ -5,6 +5,7 @@
 rootProject.name = "SDK Code Samples"
 
 includeBuild("../action_basics")
+includeBuild("../code_inspection_qodana")
 includeBuild("../comparing_string_references_inspection")
 includeBuild("../conditional_operator_intention")
 includeBuild("../editor_basics")
@@ -13,6 +14,7 @@ includeBuild("../framework_basics")
 includeBuild("../live_templates")
 includeBuild("../max_opened_projects")
 includeBuild("../module")
+includeBuild("../oauth2")
 includeBuild("../project_model")
 includeBuild("../project_view_pane")
 includeBuild("../project_wizard")

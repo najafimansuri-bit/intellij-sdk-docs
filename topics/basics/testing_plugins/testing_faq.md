@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Testing FAQ
 
@@ -165,7 +165,7 @@ Use [`ExternalResourceManagerExImpl.registerResourceTemporarily()`](%gh-ic%/xml/
 
 ### How to replace a component/service in tests?
 
-Provide dedicated test implementation via `testServiceImplementation` in [service declaration](plugin_services.md#declaring-a-service), or use [`ServiceContainerUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ServiceContainerUtil.kt).
+Provide dedicated test implementation via `testServiceImplementation` in [service declaration](plugin_services.md#declaring-a-service), or use [`ServiceContainerUtil`](%gh-ic%/platform/testFramework/common/src/ServiceContainerUtil.kt).
 
 ### How to replace extension points in tests?
 
@@ -184,9 +184,8 @@ Use [`WaitFor`](%gh-ic%/platform/util/src/com/intellij/util/WaitFor.java).
 
 Plugins supporting a JVM language may require JDK and language standard library to be set up in a test project, so that classes like `java.lang.String` can be correctly resolved during tests.
 Tests extending [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) use one of the mock JDKs in the [Java plugin](%gh-ic%/java) sources (notice <path>mockJDK-\$JAVA_VERSION\$</path> directories).
-These JAR files are not available in plugin project dependencies, so the IntelliJ Community sources must be checked out to the machine running the tests, and sources' location must be provided to the test framework.
+These JAR files are not available in plugin project dependencies, so the IntelliJ Platform sources must be checked out to the machine running the tests, and sources' location must be provided to the test framework.
 It's done by setting the `idea.home.path` system property to the absolute path of the checked-out sources in the `test` task configuration:
-
 
 <tabs group="gradle">
 <tab title="Kotlin" group-key="kotlin">

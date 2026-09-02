@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Build Number Ranges
 
@@ -50,7 +50,7 @@ For example, `232.*` for all 2023.2.x releases.
 To denote a release, a multipart build number is used.
 It consists of the following parts:
 
-* Product ID (`IC` for IDEA Community, `IU` for IDEA Ultimate, `RM` for RubyMine, `PY` for PyCharm, `PS` for PhpStorm, etc.)
+* Product ID (`IU` for IDEA Ultimate, `RM` for RubyMine, `PY` for PyCharm, `PS` for PhpStorm, etc.)
 * Branch number (`223`)
 * Build number in the branch (`9559`)
 
@@ -115,14 +115,13 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 | IntelliJ Platform version | Branch                                                          | Java version |
 |---------------------------|-----------------------------------------------------------------|--------------|
+| 2026.2                    | [261](https://github.com/JetBrains/intellij-community/tree/261) | **25**       |
+| 2026.1                    | [261](https://github.com/JetBrains/intellij-community/tree/261) | 21           |
+| 2025.3                    | [253](https://github.com/JetBrains/intellij-community/tree/253) | 21           |
 | 2025.2                    | [252](https://github.com/JetBrains/intellij-community/tree/252) | 21           |
 | 2025.1                    | [251](https://github.com/JetBrains/intellij-community/tree/251) | 21           |
 | 2024.3                    | [243](https://github.com/JetBrains/intellij-community/tree/243) | 21           |
 | 2024.2                    | [242](https://github.com/JetBrains/intellij-community/tree/242) | **21**       |
-| 2024.1                    | [241](https://github.com/JetBrains/intellij-community/tree/241) | 17           |
-| 2023.3                    | [233](https://github.com/JetBrains/intellij-community/tree/233) | 17           |
-| 2023.2                    | [232](https://github.com/JetBrains/intellij-community/tree/232) | 17           |
-| 2023.1                    | [231](https://github.com/JetBrains/intellij-community/tree/231) | 17           |
 
 #### Earlier Versions
 
@@ -130,6 +129,10 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 | IntelliJ Platform version | Branch                                                          | Java version                                                                                            |
 |---------------------------|-----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| 2024.1                    | [241](https://github.com/JetBrains/intellij-community/tree/241) | 17                                                                                                      |
+| 2023.3                    | [233](https://github.com/JetBrains/intellij-community/tree/233) | 17                                                                                                      |
+| 2023.2                    | [232](https://github.com/JetBrains/intellij-community/tree/232) | 17                                                                                                      |
+| 2023.1                    | [231](https://github.com/JetBrains/intellij-community/tree/231) | 17                                                                                                      |
 | 2022.3                    | [223](https://github.com/JetBrains/intellij-community/tree/223) | **17** ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/)) |
 | 2022.2                    | [222](https://github.com/JetBrains/intellij-community/tree/222) | 11                                                                                                      |
 | 2022.1                    | [221](https://github.com/JetBrains/intellij-community/tree/221) | 11                                                                                                      |
@@ -139,4 +142,3 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 | 2020.3                    | [203](https://github.com/JetBrains/intellij-community/tree/203) | **11** ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) |
 | 2020.2                    | [202](https://github.com/JetBrains/intellij-community/tree/202) | 8                                                                                                       |
 | 2020.1                    | [201](https://github.com/JetBrains/intellij-community/tree/201) | 8                                                                                                       |
-

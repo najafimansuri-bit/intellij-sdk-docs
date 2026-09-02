@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ Platform Extension
 
@@ -179,7 +179,7 @@ Type
 : `DirectoryProperty`
 
 Default value
-: <path>[buildDirectory]/idea-sandbox</path>
+: <path>[rootProject]/.intellijPlatform/sandbox</path>
 
 See also:
 - [Tasks: `prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
@@ -189,44 +189,169 @@ See also:
 ### `splitMode`
 {#intellijPlatform-splitMode}
 
-> Split Mode requires the IntelliJ Platform in version `241.14473` or later.
+> [Split Mode](split_mode_and_remote_development.md) requires the IntelliJ Platform in version `241.14473` or later.
 >
 {style="warning"}
 
 Allows for checking how a plugin works in remote development mode, when one machine is running the backend part and another is running a frontend part (JetBrains Client) which connects to the backend.
 
 This property allows running the IDE with backend and frontend parts running in separate processes.
-The developed plugin is installed in the backend part.
+Use [`pluginInstallationTarget`](#intellijPlatform-pluginInstallationTarget) to specify whether the developed plugin is installed in the frontend, backend, or both parts.
 
 {type="narrow"}
 Type
 : `Property<Boolean>`
 
 Default value
-: `true`
+: `false`
 
 See also:
 - [Task Awares: `SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware)
 
 
-### `splitModeTarget`
-{#intellijPlatform-splitModeTarget}
+### `pluginInstallationTarget` (formerly `splitModeTarget`)
+{#intellijPlatform-pluginInstallationTarget}
 
-> Split Mode requires the IntelliJ Platform in version `241.14473` or later.
+> [Split Mode](split_mode_and_remote_development.md) requires the IntelliJ Platform in version `241.14473` or later.
 >
 {style="warning"}
 
 Specifies in which part of the product the developed plugin should be installed.
+The default is backend-only, but [split plugins](split_mode_and_remote_development.md) often use `BOTH`.
 
 {type="narrow"}
 Type
-: [`Property<SplitModeTarget>`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-SplitModeTarget)
+: [`Property<PluginInstallationTarget>`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-PluginInstallationTarget)
 
 Default value
-: [`SplitModeTarget.BACKEND`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-SplitModeTarget)
+: [`PluginInstallationTarget.BACKEND`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-PluginInstallationTarget)
 
 See also:
 - [Task Awares: `SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware)
+
+
+## Native Variants
+{#intellijPlatform-nativeVariants}
+
+The `nativeVariants` extension configures OS- and architecture-specific files that are added to plugin distributions.
+It is useful when a plugin ships native executables or libraries that differ between target platforms.
+Building the variant archives requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin.
+
+Enabling native variants activates all six combinations of Linux, macOS, and Windows with the `x86_64` and `arm64` architectures.
+Each file collection can be empty, but an empty collection does not disable its corresponding target.
+
+> Native variants require plugin compatibility to start at IntelliJ Platform 2026.1 ([`sinceBuild`](#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild) `261`) or later.
+> Variant preparation fails if the effective `sinceBuild` value is absent or lower than `261`.
+>
+{style="warning"}
+
+**Example:**
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+intellijPlatform {
+  pluginConfiguration.ideaVersion.sinceBuild = "261"
+
+  nativeVariants {
+    enabled = true
+
+    linux {
+      x86_64.from(layout.projectDirectory.dir("native/linux-x86_64"))
+      arm64.from(layout.projectDirectory.dir("native/linux-arm64"))
+    }
+    mac {
+      x86_64.from(layout.projectDirectory.dir("native/mac-x86_64"))
+      arm64.from(layout.projectDirectory.dir("native/mac-arm64"))
+    }
+    windows {
+      x86_64.from(layout.projectDirectory.dir("native/windows-x86_64"))
+      arm64.from(layout.projectDirectory.dir("native/windows-arm64"))
+    }
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  pluginConfiguration.ideaVersion.sinceBuild = '261'
+
+  nativeVariants {
+    enabled = true
+
+    linux {
+      x86_64.from(layout.projectDirectory.dir('native/linux-x86_64'))
+      arm64.from(layout.projectDirectory.dir('native/linux-arm64'))
+    }
+    mac {
+      x86_64.from(layout.projectDirectory.dir('native/mac-x86_64'))
+      arm64.from(layout.projectDirectory.dir('native/mac-arm64'))
+    }
+    windows {
+      x86_64.from(layout.projectDirectory.dir('native/windows-x86_64'))
+      arm64.from(layout.projectDirectory.dir('native/windows-arm64'))
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
+The architecture-specific file collections can also be configured through direct property access, for example, with `windows.x86_64.from(...)`.
+
+The contents of each file collection are copied to the plugin directory in the corresponding distribution while preserving their relative paths.
+The patched variant JAR and variant-specific files take precedence over duplicate paths from the shared plugin sandbox.
+
+Each variant also receives a copy of the composed plugin JAR with its <path>META-INF/plugin.xml</path> descriptor adjusted for the target:
+
+- The plugin version is suffixed with `-<os>-<arch>`.
+- Dependencies on `com.intellij.modules.os.<os>` and `com.intellij.modules.arch.<arch>` are added if they are not already present.
+
+The [`buildPluginVariants`](tools_intellij_platform_gradle_plugin_tasks.md#buildPluginVariants) task builds all six distributions.
+Individual [`buildPluginVariants_<os>_<arch>`](tools_intellij_platform_gradle_plugin_tasks.md#buildPluginVariants-variant-tasks) tasks produce archives with an `-<os>-<arch>` classifier, for example, <path>myPlugin-1.0.0-linux-x86_64.zip</path>.
+The corresponding [`preparePluginVariant_<os>_<arch>`](tools_intellij_platform_gradle_plugin_tasks.md#preparePluginVariant) tasks prepare the patched plugin JARs.
+
+The standard `runIde` and split-mode sandboxes, the ordinary Gradle `test` sandbox, the standard `testIdePerformance` sandbox, and custom `intellijPlatformTesting.runIde` sandboxes use the variant matching the operating system and architecture of the Gradle host.
+In these native-aware sandboxes, the matching files are overlaid onto the shared sandbox and the patched variant JAR replaces the base plugin JAR.
+The base [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) and [`buildPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin) outputs remain platform-independent.
+Custom `testIde`, `testIdeUi`, and `testIdePerformance` sandboxes do not apply a native variant automatically.
+
+
+### `enabled`
+{#intellijPlatform-nativeVariants-enabled}
+
+Enables creation and use of native plugin variants.
+
+{type="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `false`
+
+
+### Variant File Collections
+{#intellijPlatform-nativeVariants-fileCollections}
+
+Each supported OS and architecture pair exposes a `ConfigurableFileCollection`:
+
+| Operating system | `x86_64` | `arm64` |
+|------------------|----------|---------|
+| Linux | `linux.x86_64` | `linux.arm64` |
+| macOS | `mac.x86_64` | `mac.arm64` |
+| Windows | `windows.x86_64` | `windows.arm64` |
+
+{type="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+Default value
+: Empty file collection
 
 
 ## Plugin Configuration
@@ -357,6 +482,9 @@ The provided value is used as a [`<version>`](plugin_configuration_file.md#idea-
 Type
 : `Property<String>`
 
+Default value
+: `project.version`, or empty when the project version is `unspecified`
+
 See also:
 - [Tasks: `patchPluginXml.pluginVersion`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-pluginVersion)
 
@@ -396,6 +524,9 @@ Type
 
 See also:
 - [Tasks: `patchPluginXml.changeNotes`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-changeNotes)
+
+If the Gradle Changelog Plugin (`org.jetbrains.changelog`) is applied, this value defaults to the rendered changelog entry for the current plugin version, or to the unreleased entry when no matching version exists.
+The IntelliJ Platform Gradle Plugin also configures the Changelog Plugin defaults for empty groups, repository URL from `pluginRepositoryUrl`, and an empty version prefix.
 
 
 ## Product Descriptor
@@ -600,14 +731,16 @@ The earliest IDE version that is compatible with the plugin.
 
 The provided value is used for the `<idea-version since-build=""/>` element attribute.
 
-The default value is set to the `MAJOR.MINOR` version based on the currently selected IntelliJ Platform, like `233.12345`.
+When [`nativeVariants`](#intellijPlatform-nativeVariants) are enabled, the effective value must resolve to `261` (IntelliJ Platform 2026.1) or later.
+
+The default value is set to the `MAJOR` build number based on the currently selected IntelliJ Platform, like `233`.
 
 {type="narrow"}
 Type
 : `Property<String>`
 
 Default value
-: `MAJOR.MINOR`
+: `MAJOR`
 
 See also:
 - [Tasks: `patchPluginXml.sinceBuild`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-sinceBuild)
@@ -823,21 +956,19 @@ intellijPlatform {
 ### `path`
 {#intellijPlatform-caching-path}
 
-Provides read-only access to the IntelliJ Platform project cache location.
+Specifies the IntelliJ Platform project cache location.
 
 The IntelliJ Platform cache is used for storing IntelliJ Platform Gradle Plugin-specific files, such as:
 - XML files generated for the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) local Ivy repository
-- coroutines Java agent file created by the [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin) task
+- coroutines Java agent file resolved for tasks using [`CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware)
 - extracted IntelliJ Platform archives instead of using Gradle cache
+- serialized IDE layout indices used for bundled plugin and module dependency resolution
 
 This path can be changed with the [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache) Gradle property
 
 {type="narrow"}
-Access
-: Read-only
-
 Type
-: `Path`
+: `DirectoryProperty`
 
 Default value
 : <path>[rootProject]/.intellijPlatform/</path>
@@ -899,7 +1030,7 @@ Type
 : `DirectoryProperty`
 
 Default value
-:: <path>[rootProject]/.intellijPlatform/ides/</path>
+: <path>[rootProject]/.intellijPlatform/ides/</path>
 
 See also:
 - [Gradle Property: `intellijPlatformIdesCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformIdesCache)
@@ -990,6 +1121,7 @@ See also:
 {#intellijPlatform-publishing-token}
 
 Authorization token.
+Defaults to the `PUBLISH_TOKEN` environment variable.
 
 {type="narrow"}
 Type
@@ -997,6 +1129,9 @@ Type
 
 Required
 : yes
+
+Default value
+: `PUBLISH_TOKEN` environment variable
 
 See also:
 - [Tasks: `publishPlugin.token`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-token)
@@ -1025,7 +1160,7 @@ Specify if the [IDE Services](https://www.jetbrains.com/ide-services/) plugin re
 
 {type="narrow"}
 Type
-: `Property<String>`
+: `Property<Boolean>`
 
 Default value
 : `false`
@@ -1041,7 +1176,7 @@ Publish the plugin update and mark it as hidden to prevent public visibility aft
 
 {type="narrow"}
 Type
-: `Property<String>`
+: `Property<Boolean>`
 
 Default value
 : `false`
@@ -1207,10 +1342,14 @@ Encoded private key in the PEM format.
 Refers to `key` CLI option.
 
 Takes precedence over the [](#intellijPlatform-signing-privateKeyFile) property.
+Defaults to the `PRIVATE_KEY` environment variable when `privateKeyFile` is not set.
 
 {type="narrow"}
 Type
 : `Property<String>`
+
+Default value
+: `PRIVATE_KEY` environment variable
 
 See also:
 - [Tasks: `signPlugin.privateKey`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-privateKey)
@@ -1235,10 +1374,14 @@ See also:
 
 Password required to decrypt the private key.
 Refers to `key-pass` CLI option.
+Defaults to the `PRIVATE_KEY_PASSWORD` environment variable.
 
 {type="narrow"}
 Type
 : `Property<String>`
+
+Default value
+: `PRIVATE_KEY_PASSWORD` environment variable
 
 See also:
 - [Tasks: `signPlugin.password`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-password)
@@ -1252,10 +1395,14 @@ The first certificate from the chain will be used as a certificate authority (CA
 Refers to `cert` CLI option.
 
 Takes precedence over the [](#intellijPlatform-signing-certificateChainFile) property.
+Defaults to the `CERTIFICATE_CHAIN` environment variable when `certificateChainFile` is not set.
 
 {type="narrow"}
 Type
 : `Property<String>`
+
+Default value
+: `CERTIFICATE_CHAIN` environment variable
 
 See also:
 - [Tasks: `signPlugin.certificateChain`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-certificateChain)
@@ -1295,8 +1442,6 @@ intellijPlatform {
   pluginVerification {
     cliPath = file("/path/to/plugin-verifier-cli.jar")
     freeArgs = listOf("foo", "bar")
-    homeDirectory = file("/path/to/pluginVerifierHomeDirectory/")
-    downloadDirectory = file("/path/to/pluginVerifierHomeDirectory/ides/")
     failureLevel = VerifyPluginTask.FailureLevel.ALL
     verificationReportsDirectory = "build/reports/pluginVerifier"
     verificationReportsFormats = VerifyPluginTask.VerificationReportsFormats.ALL
@@ -1324,8 +1469,6 @@ intellijPlatform {
   pluginVerification {
     cliPath = file('/path/to/plugin-verifier-cli.jar')
     freeArgs = ['foo', 'bar']
-    homeDirectory = file('/path/to/pluginVerifierHomeDirectory/')
-    downloadDirectory = file('/path/to/pluginVerifierHomeDirectory/ides/')
     failureLevel = VerifyPluginTask.FailureLevel.ALL
     verificationReportsDirectory = 'build/reports/pluginVerifier'
     verificationReportsFormats = VerifyPluginTask.VerificationReportsFormats.ALL
@@ -1366,19 +1509,6 @@ See also:
 - [Task Awares: `PluginVerifierAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginVerifierAware)
 
 
-### `downloadDirectory`
-{#intellijPlatform-pluginVerification-downloadDirectory}
-
-The path to the directory where IDEs used for the verification will be downloaded.
-
-{type="narrow"}
-Type
-: `DirectoryProperty`
-
-Default value
-: <path>[`homeDirectory`](#intellijPlatform-pluginVerification-homeDirectory)/ides</path>
-
-
 ### `failureLevel`
 {#intellijPlatform-pluginVerification-failureLevel}
 
@@ -1389,7 +1519,7 @@ Type
 : [`ListProperty<FailureLevel>`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
 
 Default value
-: [`FailureLevel.COMPATIBILITY_PROBLEMS`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
+: [`FailureLevel.COMPATIBILITY_PROBLEMS`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel), [`FailureLevel.INTERNAL_API_USAGES`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel), [`FailureLevel.OVERRIDE_ONLY_API_USAGES`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
 
 See also:
 - [Tasks: `verifyPlugin.failureLevel`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-failureLevel)
@@ -1422,23 +1552,6 @@ Type
 
 See also:
 - [Tasks: `verifyPlugin.freeArgs`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-freeArgs)
-
-
-### `homeDirectory`
-{#intellijPlatform-pluginVerification-homeDirectory}
-
-Retrieve the Plugin Verifier home directory used for storing downloaded IDEs.
-Following home directory resolving method is taken directly from the Plugin Verifier to keep the compatibility.
-
-{type="narrow"}
-Type
-: `DirectoryProperty`
-
-Default value
-: - Directory specified with `plugin.verifier.home.dir` system property
-  - Directory specified with `XDG_CACHE_HOME` environment variable
-  - <path>~/.cache/pluginVerifier</path>
-  - <path>[buildDirectory]/tmp/pluginVerifier</path>
 
 
 ### `ignoredProblemsFile`
@@ -1513,7 +1626,7 @@ Type
 : `ListProperty<VerificationReportsFormats>`
 
 Default value
-: [`VerificationReportsFormats.PLAIN`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats), [`FailureVerificationReportsFormats`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats)
+: [`VerificationReportsFormats.PLAIN`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats), [`VerificationReportsFormats.HTML`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats)
 
 See also:
 - [Tasks: `verifyPlugin.verificationReportsFormats`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-verificationReportsFormats)
@@ -1525,6 +1638,8 @@ See also:
 The extension to define the IDEs to be used along with the IntelliJ Plugin Verifier CLI tool for the binary plugin verification.
 
 It provides a set of helpers which add relevant entries to the configuration, which later is used to resolve IntelliJ-based IDE binary releases.
+When no IDEs are configured explicitly, `recommended()` is applied by default.
+Disable this fallback with the [`verifyPluginDefaultRecommendedIdes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#verifyPluginDefaultRecommendedIdes) Gradle property.
 
 **Example:**
 
@@ -1539,8 +1654,10 @@ intellijPlatform {
     // ...
 
     ides {
-      ide(IntelliJPlatformType.RustRover, "2023.3")
+      create(IntelliJPlatformType.RustRover, "2023.3")
       local(file("/path/to/ide/"))
+      current()
+      latest()
       recommended()
       select {
         types = listOf(IntelliJPlatformType.PhpStorm)
@@ -1567,8 +1684,10 @@ intellijPlatform {
     // ...
 
     ides {
-      ide IntelliJPlatformType.RustRover, "2023.3"
+      create IntelliJPlatformType.RustRover, "2023.3"
       local file('/path/to/ide/')
+      current()
+      latest()
       recommended()
       select {
         it.types = [IntelliJPlatformType.PhpStorm]
@@ -1590,14 +1709,18 @@ See also:
 - [Tasks: `verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
 - [Types: `IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType)
 - [Types: `ProductRelease.Channel`](tools_intellij_platform_gradle_plugin_types.md#ProductRelease-Channel)
-- [Types: `ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters)
+- [Types: `ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesFilterParameters)
 
-| Function                                            | Description                                                                                                                                                                                         |
-|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <p>`ide(type, version)`</p><p>`ide(definition)`</p> | Adds a dependency to a binary IDE release to be used for testing with the IntelliJ Plugin Verifier.                                                                                                 |
-| `local(localPath)`                                  | Adds the local IDE to be used for testing with the IntelliJ Plugin Verifier.                                                                                                                        |
-| `recommended()`                                     | Retrieves matching IDEs using the default configuration based on the currently used IntelliJ Platform and applies them for IntelliJ Platform Verifier using the `ide` helper method.                |
-| `select(configure)`                                 | Retrieves matching IDEs using custom [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters) filter parameters. |
+| Function            | Description                                                                                                                                                                                         |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `create(...)`       | Adds a dependency to a binary IDE release to be used for testing with the IntelliJ Plugin Verifier.                                                                                                 |
+| `local(localPath)`  | Adds the local IDE to be used for testing with the IntelliJ Plugin Verifier.                                                                                                                        |
+| `current()`         | Adds the currently targeted IntelliJ Platform to the verification IDE list.                                                                                                                         |
+| `latest(configure)` | Resolves the latest available IDE release for each selected type.                                                                                                                                   |
+| `recommended()`     | Retrieves matching IDEs using the default configuration based on the currently used IntelliJ Platform and applies them for IntelliJ Plugin Verifier.                                                |
+| `select(configure)` | Retrieves matching IDEs using custom [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesFilterParameters) filter parameters. |
+
+Provider-based IDE lists can use `orRecommended()` to fall back to the default recommended IDE list when the provider has no value.
 
 
 <include from="snippets.topic" element-id="missingContent"/>

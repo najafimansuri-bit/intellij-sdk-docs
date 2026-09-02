@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Customizing Themes - Icons and UI Controls
+# Customizing Themes – Icons and UI Controls
 
 <link-summary>Customizing UI controls and icons in a theme plugin.</link-summary>
 
@@ -14,7 +14,7 @@ A theme is customized by adding information to the theme description file that o
 
 For plugin developers, [](themes_metadata.md) discusses the format of customization keys and information about how to provide it to Theme authors.
 
-> [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds additional color preview inside the editor.
+> [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds a color preview inside the editor.
 >
 
 <include from="developing_themes.md" element-id="themeSamplePlugin"/>
@@ -316,3 +316,23 @@ The Laf Defaults inspector will prompt with a list of UI Control keys and their 
 If an inspected component can be styled with the UI control key, it will include its name, for example:
 
 ![UI Inspector Key Names](ui_inspector_key_names.png){width="710"}
+
+## Extending Themes
+
+A new theme can be based on an existing theme and inherit its customizations.
+To define a parent there, in the root of a theme description file, add:
+```json
+{
+  ...
+  "parentTheme": "ParentThemeId",
+  ...
+}
+```
+The parent theme's ID is the `id` attribute of the `themeProvider` element registered in the <path>plugin.xml</path> file, for example:
+
+```xml
+<themeProvider id="ParentThemeId" path="/themes/mytheme.theme.json"/>
+```
+
+> See `themeProvider` elements in [`PlatformExtensions.xml`](%gh-ic%/platform/platform-resources/src/META-INF/PlatformExtensions.xml)
+> for the IDs of built-in themes.

@@ -12,6 +12,21 @@
                   <project path="$PROJECT_DIR$/code_samples/action_basics" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/code_samples/code_inspection_qodana" name="code_inspection_qodana">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/code_inspection_qodana" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/code_inspection_qodana/code_inspection" name="code_inspection">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/code_inspection_qodana/code_inspection" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/code_inspection_qodana/qodana_playground" name="qodana_playground">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/code_inspection_qodana/qodana_playground" />
+                </projects>
+              </build>
               <build path="$PROJECT_DIR$/code_samples/comparing_string_references_inspection" name="comparing_string_references_inspection">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/comparing_string_references_inspection" />
@@ -50,6 +65,11 @@
               <build path="$PROJECT_DIR$/code_samples/module" name="module">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/module" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/oauth2" name="oauth2">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/oauth2" />
                 </projects>
               </build>
               <build path="$PROJECT_DIR$/code_samples/project_model" name="project_model">
@@ -101,11 +121,14 @@
           </compositeBuild>
         </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/_gradleCompositeBuild" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/code_samples/_gradleCompositeBuild" />
             <option value="$PROJECT_DIR$/code_samples/action_basics" />
+            <option value="$PROJECT_DIR$/code_samples/code_inspection_qodana" />
+            <option value="$PROJECT_DIR$/code_samples/code_inspection_qodana/code_inspection" />
+            <option value="$PROJECT_DIR$/code_samples/code_inspection_qodana/qodana_playground" />
             <option value="$PROJECT_DIR$/code_samples/comparing_string_references_inspection" />
             <option value="$PROJECT_DIR$/code_samples/conditional_operator_intention" />
             <option value="$PROJECT_DIR$/code_samples/editor_basics" />
@@ -114,6 +137,7 @@
             <option value="$PROJECT_DIR$/code_samples/live_templates" />
             <option value="$PROJECT_DIR$/code_samples/max_opened_projects" />
             <option value="$PROJECT_DIR$/code_samples/module" />
+            <option value="$PROJECT_DIR$/code_samples/oauth2" />
             <option value="$PROJECT_DIR$/code_samples/project_model" />
             <option value="$PROJECT_DIR$/code_samples/project_view_pane" />
             <option value="$PROJECT_DIR$/code_samples/project_wizard" />

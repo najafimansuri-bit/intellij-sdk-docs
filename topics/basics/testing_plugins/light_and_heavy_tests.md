@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Light and Heavy Tests
 
@@ -35,8 +35,8 @@ for tests that don't have any dependency on Java functionality.
 
 **Examples:**
 - [`JavaCopyrightTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/copyright/JavaCopyrightTest.kt)
-- [`HtmlDocumentationTest`](%gh-ic%/xml/tests/src/com/intellij/html/HtmlDocumentationTest.java)
-- [`AcceptWordAsCorrectTest`](%gh-ic%/spellchecker/testSrc/com/intellij/spellchecker/inspector/AcceptWordAsCorrectTest.java)
+- [`HtmlDocumentationTest`](%gh-ic%/xml/tests/src/com/intellij/html/HtmlDocumentationTest.kt)
+- [`AcceptWordAsCorrectTest`](%gh-ic%/plugins/grazie/src/test/kotlin/com/intellij/grazie/spellchecker/inspector/AcceptWordAsCorrectTest.java)
 
 </tab>
 
@@ -52,7 +52,7 @@ For tests that require the [Java PSI](idea.md#java-plugin) or related functional
 - [`LightJavaCodeInsightFixtureTestCase5`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase5.kt) for JUnit 5 (2021.1 and later)
 
 **Examples:**
-- [`PatternValidatorTest`](%gh-ic%/plugins/IntelliLang/IntelliLang-tests/test/org/intellij/plugins/intelliLang/pattern/PatternValidatorTest.java) (JUnit 3)
+- [`PatternValidatorTest`](%gh-ic%/plugins/IntelliLang/tests/test/org/intellij/plugins/intelliLang/pattern/PatternValidatorTest.java) (JUnit 3)
 - [`JavaCtrlMouseTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/java/codeInsight/javadoc/JavaCtrlMouseTest.kt) (JUnit 4)
 - [`MissingJavadocHighlightingTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/java/codeInsight/daemon/MissingJavadocHighlightingTest.java) (JUnit 5)
 

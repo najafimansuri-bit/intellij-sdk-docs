@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Introduction to Integration Tests
 
-<primary-label ref="2023.2"/>
+<primary-label ref="2024.2"/>
 
 <link-summary>Walkthrough how to create the first integration tests.</link-summary>
 
@@ -20,11 +20,12 @@ The Starter framework exclusively supports JUnit 5, as it leverages JUnit 5's ex
 To create a new task - `integrationTest`, define new test source roots - `integrationTest`, and add required dependencies, update the `build.gradle.kts` file:
 
 ```kotlin
-dependencies {
-  intellijPlatform {
-    //...
-    testFramework(TestFrameworkType.Starter)
-  }
+import org.jetbrains.intellij.platform.gradle.*
+
+plugins {
+  //...
+  id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
+}
 
 sourceSets {
   create("integrationTest") {
@@ -33,23 +34,36 @@ sourceSets {
   }
 }
 
+repositories {
+  //...
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
 val integrationTestImplementation by configurations.getting {
   extendsFrom(configurations.testImplementation.get())
 }
 
 dependencies {
+  intellijPlatform {
+    //...
+    intellijIdea("2026.1")
+    testFramework(TestFrameworkType.Starter, configurationName = "integrationTestImplementation")
+  }
+
   integrationTestImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
   integrationTestImplementation("org.kodein.di:kodein-di-jvm:7.20.2")
   integrationTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1")
 }
 
-val integrationTest = task<Test>("integrationTest") {
-  val integrationTestSourceSet = sourceSets.getByName("integrationTest")
-  testClassesDirs = integrationTestSourceSet.output.classesDirs
-  classpath = integrationTestSourceSet.runtimeClasspath
-  systemProperty("path.to.build.plugin", tasks.prepareSandbox.get().pluginDirectory.get().asFile)
-  useJUnitPlatform()
-  dependsOn(tasks.prepareSandbox)
+val integrationTest by intellijPlatformTesting.testIdeUi.registering {
+  task {
+    val integrationTestSourceSet = sourceSets.getByName("integrationTest")
+    testClassesDirs = integrationTestSourceSet.output.classesDirs
+    classpath = integrationTestSourceSet.runtimeClasspath
+    useJUnitPlatform()
+  }
 }
 ```
 
@@ -58,6 +72,7 @@ The following dependencies are required:
 * `testFramework(TestFrameworkType.Starter)` will add all required dependencies for writing integration tests - Starter and Driver frameworks.
 * `org.kodein.di:kodein-di-jvm` is a dependency injection framework used by Starter for configuration.
 * `org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm` is required for Starter framework which is implemented using Kotlin coroutines.
+* `intellijIdeaUltimate(...)` the IDE version for which the plugin is compiled
 
 This configuration does the following:
 
@@ -86,45 +101,92 @@ Now that the configuration is complete, it's time to write the first integration
 Create a new Kotlin file in `src/integrationTest/kotlin` with the following code:
 
 ```kotlin
+import com.intellij.ide.starter.driver.engine.runIdeWithDriver
+import com.intellij.ide.starter.ide.IdeProductProvider
+import com.intellij.ide.starter.models.TestCase
+import com.intellij.ide.starter.project.NoProject
+import com.intellij.ide.starter.runner.Starter
+import org.junit.jupiter.api.Test
 
 class PluginTest {
   @Test
   fun simpleTestWithoutProject() {
     Starter.newContext(
       testName = "testExample",
-      TestCase(IdeProductProvider.IC, projectInfo = NoProject)
-        .withVersion("2024.3")
+      TestCase(IdeInfo.IdeaUltimate, projectInfo = NoProject)
     ).apply {
       val pathToPlugin = System.getProperty("path.to.build.plugin")
-      PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
+      PluginConfigurator(this).installPluginFromDir(Path.of(pathToPlugin))
     }.runIdeWithDriver().useDriverAndCloseIde {
     }
   }
 }
 ```
 
-Let's break down each part of the test:
+Each part of the test is described below:
 
 ### 1. Context Creation
+
+<tabs>
+
+<tab title="262+">
 
 ```kotlin
 Starter.newContext(
   testName = "testExample",
-  TestCase(IdeProductProvider.IC, projectInfo = NoProject
-).withVersion("2024.3"))
+  TestCase(IdeInfo.IdeaUltimate, projectInfo = NoProject))
 ```
+
+</tab>
+
+<tab title="Pre-262">
+
+```kotlin
+Starter.newContext(
+  testName = "testExample",
+  TestCase(IdeProductProvider.IU, projectInfo = NoProject))
+```
+
+</tab>
+
+</tabs>
+
+> Starting with version 262, the recommended way to indicate the IDE has changed from `IdeProductProvider.IU` to `IdeInfo.IdeaUltimate`.
+>
+{style="note"}
 
 The Context object stores IDE runtime configuration:
 
-* IDE type (e.g., IntelliJ Community, PhpStorm, GoLand).
-* IDE version (2024.3 in this example).
+* IDE type (e.g., IntelliJ IDEA, PhpStorm, GoLand).
 * Project configuration (using `NoProject` for this example).
 * Custom VM options, paths, and SDK settings.
 
-The `testName` parameter defines the folder name for test artifacts, which is useful when running multiple IDE instances in a single test.
-The test case uses IntelliJ IDEA Community Edition version 2024.3, and starts the IDE without any project, so the welcome screen will be shown.
+By default, the IDE version provided by the sandbox is used for tests. A different version can be specified with:
 
-### 2. Plugin Installation
+<tabs>
+
+<tab title="262+">
+
+```kotlin
+TestCase(IdeInfo.IdeaUltimate, projectInfo = NoProject).withVersion("2024.3")
+```
+
+</tab>
+
+<tab title="Pre-262">
+
+```kotlin
+TestCase(IdeProductProvider.IU, projectInfo = NoProject).withVersion("2024.3")
+```
+
+</tab>
+
+</tabs>
+
+The `testName` parameter defines the folder name for test artifacts, which is useful when running multiple IDE instances in a single test.
+The test case starts the IDE without any project, so the welcome screen will be shown.
+
+### 2. Plugin Installation (Optional)
 
 ```kotlin
 .apply {
@@ -133,9 +195,9 @@ The test case uses IntelliJ IDEA Community Edition version 2024.3, and starts th
 }
 ```
 
-This step configures plugin installation using the plugin path defined in the Gradle configuration with the `path.to.build.plugin` system property.
+This step configures the installation of the plugin being developed, using the plugin distribution path defined in the Gradle configuration with the `path.to.build.plugin` system property.
 
-> `PluginConfigurator` can install plugins from local paths or Marketplace.
+> [`PluginConfigurator`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/plugins/PluginConfigurator.kt) can install plugins from local paths or Marketplace.
 >
 {style="note"}
 
@@ -178,16 +240,66 @@ This dual-process architecture explains several key aspects of integration testi
 * Why a built plugin distribution is required.
 * The origin of certain test-specific exceptions.
 
+## Debugging the Test
+
+> To attach the debugger from the console to the test IDE instance automatically, enable the `debugger.auto.attach.from.console` registry key (open <ui-path>Help | Find Action</ui-path> and search for <control>Registry</control>).
+>
+{style="tip"}
+
+Since the IDE runs as a separate process from the test, the test cannot be debugged directly.
+To debug a test, it is required to attach the debugger to the running IDE process.
+
+General debugging workflow:
+
+1. Run the test in debug mode.
+2. In the <control>Console</control> tab of the <control>Debug</control> tool window, click the <control>Attach debugger</control> link that appears once the IDE starts listening for a debugger connection.
+
+## Modifying VM Options
+
+The VM options of the IDE under test (such as heap size or system properties) can be adjusted from the test at two levels:
+
+* `IDETestContext.applyVMOptionsPatch()` applies them to the whole context, so they are reused across every run of that context.
+* `IDERunContext.addVMOptionsPatch()` applies them to the current run only.
+
+The patch block exposes a `VMOptions` receiver with helpers such as `withXmx()` and `addSystemProperty()`:
+
+```kotlin
+context.applyVMOptionsPatch {
+  withXmx(2048)
+  addSystemProperty("idea.trust.all.projects", true)
+  addSystemProperty("ide.show.tips.on.startup.default.value", false)
+}
+```
+
+* `idea.trust.all.projects` trusts opened projects automatically, so the trust confirmation dialog does not block the test.
+* `ide.show.tips.on.startup.default.value` disables the <control>Tips of the Day</control> dialog on startup, so it does not interfere with UI interactions.
+
 ## Opening Projects in Tests
 
 While starting the IDE with an empty project is useful, often it is required to use actual projects to verify real-world scenarios.
-Let's modify the test to open a project.
+The test can be modified to open a project.
 
 The framework supports several ways to specify test projects:
 
-* **GitHub projects**: `GitHubProject.fromGithub( branchName = "master", "JetBrains/ij-perf-report-aggregator" )`
-* **Remote archives**: `RemoteArchiveProjectInfo("https://github.com/JetBrains/intellij-community/archive/master.zip")`
-* **Local projects**: `LocalProjectInfo(Path("src/test/resources/test-projects/simple-project"))`
+* [GitHub projects](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/project/GitHubProject.kt):
+  ```kotlin
+  GitHubProject.fromGithub(
+      branchName = "master",
+      "JetBrains/ij-perf-report-aggregator"
+  )
+  ```
+* [Remote archives](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/project/RemoteArchiveProjectInfo.kt):
+  ```kotlin
+  RemoteArchiveProjectInfo(
+      "https://github.com/example/repo/archive/master.zip"
+  )
+  ```
+* [Local projects](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/project/LocalProjectInfo.kt):
+  ```kotlin
+  LocalProjectInfo(
+      Path("src/test/resources/test-projects/simple-project")
+  )
+  ```
 
 The following example shows how to open a GitHub project:
 
@@ -197,15 +309,15 @@ fun simpleTest() {
   Starter.newContext(
     "testExample",
     TestCase(
-      IdeProductProvider.IC,
+      IdeInfo.IdeaUltimate,
       GitHubProject.fromGithub(
         branchName = "master",
         repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
       )
-    ).withVersion("2024.2")
+    )
   ).apply {
     val pathToPlugin = System.getProperty("path.to.build.plugin")
-    PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
+    PluginConfigurator(this).installPluginFromDir(Path.of(pathToPlugin))
   }.runIdeWithDriver().useDriverAndCloseIde {
     waitForIndicators(5.minutes)
   }
@@ -221,16 +333,16 @@ While simple, this test verifies a critical aspect: the plugin doesn't interfere
 ## Catching Exceptions from IDE
 
 The test has one critical limitation: it won't detect exceptions or freezes occurring within the IDE process.
-Let's understand why and how to fix this.
+The reason and the fix are explained below.
 
 Due to the two-process architecture:
 
 * Exceptions in the IDE process aren't automatically propagated to the test process.
-* A bundled plugin collects exceptions from the IDE's `MessageBus`.
+* A bundled plugin collects exceptions from the IDE's [`MessageBus`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/MessageBus.kt).
 * These exceptions are stored in the error folder within the logs.
-* The Starter framework collects exceptions from the IDE and pass them to the method `reportTestFailure` in object registered as `CIServer` in DI.
+* The Starter framework collects exceptions from the IDE and pass them to the method `reportTestFailure` in object registered as [`CIServer`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/ci/CIServer.kt) in DI.
 
-TeamCity reporting is used by default, falling back to `NoCIServer` for other environments.
+TeamCity reporting is used by default, falling back to [`NoCIServer`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/ci/NoCIServer.kt) for other environments.
 However, this can be customized by using Kodein Dependency Injection.
 
 The following example shows how to make tests fail when IDE exceptions occur:
@@ -267,6 +379,22 @@ This extensibility pattern can be applied to customize other aspects of the Star
 Here's the complete test implementation that forms the foundation for future plugin testing:
 
 ```kotlin
+import com.intellij.driver.sdk.waitForIndicators
+import com.intellij.ide.starter.ci.CIServer
+import com.intellij.ide.starter.ci.NoCIServer
+import com.intellij.ide.starter.di.di
+import com.intellij.ide.starter.driver.engine.runIdeWithDriver
+import com.intellij.ide.starter.ide.IdeProductProvider
+import com.intellij.ide.starter.models.TestCase
+import com.intellij.ide.starter.project.GitHubProject
+import com.intellij.ide.starter.project.NoProject
+import com.intellij.ide.starter.runner.Starter
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.fail
+import org.kodein.di.DI
+import org.kodein.di.bindSingleton
+import kotlin.time.Duration.Companion.minutes
+
 class PluginTest {
   init {
     di = DI {
@@ -290,16 +418,13 @@ class PluginTest {
     val result = Starter.newContext(
       "testExample",
       TestCase(
-        IdeProductProvider.IC,
+        IdeInfo.IdeaUltimate,
         GitHubProject.fromGithub(
           branchName = "master",
           repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
         )
-      ).withVersion("2024.2")
-    ).apply {
-      val pathToPlugin = System.getProperty("path.to.build.plugin")
-      PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
-    }.runIdeWithDriver().useDriverAndCloseIde {
+      )
+    ).runIdeWithDriver().useDriverAndCloseIde {
       waitForIndicators(5.minutes)
     }
   }
@@ -314,4 +439,4 @@ This test provides a robust foundation for more elaborate tests by:
 * Monitoring for exceptions and freezes.
 * Performing a shutdown.
 
-
+Example integration tests are available in the [ide-starter-examples](%gh-starter-examples-master%) repository.

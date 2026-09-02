@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!DOCTYPE instance-profile
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
@@ -29,20 +29,29 @@
       <toc-element topic="plugin_required_experience.md"/>
       <toc-element topic="plugin_types.md" accepts-web-file-names="types-of-plugins.html"/>
     </toc-element>
-    <toc-element topic="developing_plugins.md"
+    <toc-element topic="developing_plugins.md" toc-title="Developing a Plugin"
                  accepts-web-file-names="getting-started.html,gradle-build-system.html,build_system.html">
       <toc-element topic="creating_plugin_project.md" accepts-web-file-names="gradle-prerequisites.html">
-        <toc-element topic="plugin_github_template.md" toc-title="Plugin GitHub Template"
-                     accepts-web-file-names="github-template.html"/>
         <toc-element topic="migrating_plugin_devkit_to_gradle.md"/>
       </toc-element>
-      <toc-element topic="configuring_gradle.md">
-        <toc-element topic="configuring_plugin_project.md" accepts-web-file-names="gradle-guide.html"/>
+      <toc-element toc-title="Configuring a Plugin Project">
+        <toc-element topic="configuring_gradle.md">
+          <toc-element topic="configuring_plugin_project.md" accepts-web-file-names="gradle-guide.html" hidden="true"/>
+        </toc-element>
+        <toc-element topic="configuring_split_mode.md"/>
+        <toc-element topic="using_kotlin.md" accepts-web-file-names="kotlin.html"/>
+        <toc-element topic="ide_development_instance.md" accepts-web-file-names="settings_caches_logs.html"/>
       </toc-element>
-      <toc-element topic="using_kotlin.md" accepts-web-file-names="kotlin.html"/>
-      <toc-element topic="ide_development_instance.md" accepts-web-file-names="settings_caches_logs.html"/>
       <toc-element topic="plugin_signing.md"/>
       <toc-element topic="publishing_plugin.md" accepts-web-file-names="deployment.html"/>
+    </toc-element>
+    <toc-element topic="split_mode_and_remote_development.md" accepts-web-file-names="split-mode-for-remote-development.html">
+      <toc-element topic="modular_plugins.md"/>
+      <toc-element topic="split_mode_feature_development.md"/>
+      <toc-element topic="remote_procedure_calls.md"/>
+      <toc-element topic="frontend_backend_shared_apis.md"/>
+      <toc-element topic="persistent_state_in_split_mode.md"/>
+      <toc-element topic="plugin_management_in_split_mode.md"/>
     </toc-element>
     <toc-element topic="plugin_structure.topic">
       <toc-element topic="plugin_content.md"/>
@@ -64,7 +73,7 @@
   </toc-element>
   <toc-element toc-title="Base Platform">
     <toc-element topic="fundamentals.md" accepts-web-file-names="reference_guide.html,architectural_overview.html">
-      <toc-element toc-title="Component Model"/>
+      <!--<toc-element toc-title="Component Model"/>--> <!--TODO-->
       <toc-element topic="disposers.md"/>
       <toc-element topic="threading_model.md" accepts-web-file-names="general-threading-rules.html">
         <toc-element topic="kotlin_coroutines.md">
@@ -78,11 +87,14 @@
         </toc-element>
         <toc-element topic="background_processes.md"/>
         <toc-element topic="execution_contexts.topic" accepts-web-file-names="coroutine-execution-contexts.html"/>
+        <toc-element topic="debounced_updates.md"/>
       </toc-element>
       <toc-element topic="messaging_infrastructure.md"/>
-      <toc-element toc-title="Queries and Query Executors"/>
+      <!--<toc-element toc-title="Queries and Query Executors"/>--><!--TODO-->
     </toc-element>
-    <toc-element topic="ide_infrastructure.md"/>
+    <toc-element topic="ide_infrastructure.md">
+      <toc-element topic="error_reporting.md"/>
+    </toc-element>
     <toc-element topic="user_interface_components.md">
       <toc-element topic="tool_windows.md"/>
       <toc-element topic="dialog_wrapper.md"/>
@@ -90,7 +102,9 @@
         <toc-element topic="kotlin_ui_dsl.md" hidden="true"/>
       </toc-element>
       <toc-element topic="popups.md"/>
-      <toc-element topic="notifications.md"/>
+      <toc-element topic="informing_users.md" accepts-web-file-names="notifications.html">
+        <toc-element topic="notification_balloons.md"/>
+      </toc-element>
       <toc-element topic="file_and_class_choosers.md"/>
       <toc-element topic="editor_components.md"/>
       <toc-element topic="lists_and_trees.md"/>
@@ -136,15 +150,15 @@
       <toc-element topic="run_configurations_tutorial.md"/>
     </toc-element>
     <toc-element topic="vcs_integration_for_plugins.md">
-      <toc-element toc-title="Diff"/>
-      <toc-element toc-title="Local History"/>
+      <!--<toc-element toc-title="Diff"/>--> <!--TODO-->
+      <!--<toc-element toc-title="Local History"/>--> <!--TODO-->
     </toc-element>
-    <toc-element toc-title="Tasks and Contexts"/>
+    <!--<toc-element toc-title="Tasks and Contexts"/>--> <!--TODO-->
     <toc-element topic="internationalization.md">
       <toc-element topic="providing_translations.md" accepts-web-file-names="localization-guide.html"/>
     </toc-element>
     <toc-element topic="accessibility.md"/>
-    <toc-element toc-title="Diagrams"/>
+    <!--<toc-element toc-title="Diagrams"/>--> <!--TODO-->
   </toc-element>
   <toc-element toc-title="Project Structure">
     <toc-element topic="project_model.md" accepts-web-file-names="project-structure.html">
@@ -195,7 +209,7 @@
     <toc-element topic="xml_dom_api.md"/>
   </toc-element>
   <toc-element toc-title="Features">
-    <toc-element toc-title="Navigation"/>
+    <!--<toc-element toc-title="Navigation"/>--> <!--TODO-->
     <toc-element topic="editing.md">
       <toc-element toc-title="Code Completion"/>
       <toc-element topic="postfix_completion.md">
@@ -229,11 +243,12 @@
       </toc-element>
       <toc-element topic="controlling_highlighting.md"/>
     </toc-element>
-    <toc-element toc-title="Refactoring"/>
+    <!--<toc-element toc-title="Refactoring"/>--> <!--TODO-->
     <toc-element topic="project_view.md">
       <toc-element topic="tree_structure_view.md"/>
     </toc-element>
-    <toc-element toc-title="Unit Testing"/>
+    <toc-element topic="embedded_terminal.md"/>
+    <!--<toc-element toc-title="Unit Testing"/>--> <!--TODO-->
     <toc-element topic="build_system.md">
       <toc-element topic="external_builder_api.md"/>
     </toc-element>
@@ -324,9 +339,9 @@
     </toc-element>
     <toc-element topic="language_injection.md"/>
     <toc-element topic="language_server_protocol.md"/>
-    <toc-element toc-title="Build System"/>
-    <toc-element toc-title="Compiler"/>
-    <toc-element toc-title="Debugger"/>
+    <!--<toc-element toc-title="Build System"/>--> <!--TODO-->
+    <!--<toc-element toc-title="Compiler"/>--> <!--TODO-->
+    <!--<toc-element toc-title="Debugger"/>--> <!--TODO-->
   </toc-element>
   <toc-element toc-title="Product Specific">
     <toc-element topic="dev_alternate_products.md" toc-title="Developing for Multiple Products"/>
@@ -339,10 +354,8 @@
     <toc-element topic="data_grip.md" toc-title="DataGrip"/>
     <toc-element topic="goland.md" toc-title="GoLand"/>
     <toc-element topic="idea.md" toc-title="IntelliJ IDEA">
-      <toc-element topic="idea_ultimate.md">
-        <toc-element topic="spring_api.md"/>
-        <toc-element topic="tomcat_integration.md"/>
-      </toc-element>
+      <toc-element topic="spring_api.md"/>
+      <toc-element topic="tomcat_integration.md"/>
     </toc-element>
     <toc-element topic="phpstorm.md"
                  toc-title="PhpStorm">
@@ -362,10 +375,11 @@
     <toc-element topic="rubymine.md" toc-title="RubyMine"/>
     <toc-element topic="webstorm.md" toc-title="WebStorm"/>
   </toc-element>
-  <toc-element toc-title="Custom IDEs">
+  <!--TODO-->
+  <!--<toc-element toc-title="Custom IDEs">
     <toc-element toc-title="Build Your Own IDE"/>
     <toc-element toc-title="Licensing"/>
-  </toc-element>
+  </toc-element>-->
   <toc-element toc-title="Themes">
     <toc-element topic="themes_getting_started.md" accepts-web-file-names="themes-intro.html"/>
     <toc-element topic="developing_themes.md" accepts-web-file-names="using-dev-kit.html">
@@ -378,6 +392,7 @@
     <toc-element topic="theme_structure.md" accepts-web-file-names="themes.html">
       <toc-element topic="themes_customize.md" toc-title="Customizing a Theme"/>
       <toc-element topic="themes_extras.md" toc-title="Adding Schemes and Images"/>
+      <toc-element topic="supporting_islands_theme.md"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="Resources">
@@ -387,7 +402,7 @@
     <toc-element toc-title="Extension Points and Listeners">
       <toc-element toc-title="IntelliJ Platform" topic="intellij_platform_extension_point_list.md"
                    accepts-web-file-names="extension-point-list.html"/>
-      <toc-element toc-title="IntelliJ Community Plugins" topic="intellij_community_plugins_extension_point_list.md"/>
+      <toc-element toc-title="IntelliJ Platform Plugins" topic="intellij_community_plugins_extension_point_list.md"/>
       <toc-element toc-title="Android Plugin" topic="android_plugin_extension_point_list.md"/>
       <toc-element toc-title="AppCode" topic="appcode_extension_point_list.md"/>
       <toc-element toc-title="CLion" topic="clion_extension_point_list.md"/>
@@ -413,6 +428,7 @@
     <toc-element topic="verifying_plugin_compatibility.md"/>
     <toc-element topic="api_changes_list.md" toc-title="Incompatible API Changes"
                  accepts-web-file-names="api-changes-list-2016.html,api-changes-list-2017.html,api-changes-list-2018.html">
+      <toc-element topic="api_changes_list_2026.md" toc-title="2026.*"/>
       <toc-element topic="api_changes_list_2025.md" toc-title="2025.*"/>
       <toc-element topic="api_changes_list_2024.md" toc-title="2024.*"/>
       <toc-element topic="api_changes_list_2023.md" toc-title="2023.*"/>
@@ -424,6 +440,7 @@
     </toc-element>
     <toc-element topic="api_notable.md" toc-title="Notable API Changes"
                  accepts-web-file-names="api-notable-list-2018.html">
+      <toc-element topic="api_notable_list_2026.md" toc-title="2026.*"/>
       <toc-element topic="api_notable_list_2025.md" toc-title="2025.*"/>
       <toc-element topic="api_notable_list_2024.md" toc-title="2024.*"/>
       <toc-element topic="api_notable_list_2023.md" toc-title="2023.*"/>
@@ -452,7 +469,6 @@
       <toc-element topic="tools_intellij_platform_gradle_plugin_recipes.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_faq.md" toc-title="Frequently Asked Questions"/>
     </toc-element>
-    <toc-element topic="tools_kotlin_notebook.md"/>
     <toc-element topic="tools_gradle_intellij_plugin.md">
       <toc-element topic="tools_gradle_intellij_plugin_examples.md" toc-title="Usage Examples"/>
       <toc-element topic="tools_gradle_intellij_plugin_build_features.md" toc-title="Build Features"/>
@@ -470,6 +486,7 @@
         </toc-element>
       </toc-element>
     </toc-element>
+    <toc-element topic="tools_kotlin_notebook.md"/>
   </toc-element>
   <toc-element topic="ui_guidelines_welcome.topic">
     <toc-element topic="ui_overview.md"/>
@@ -477,6 +494,7 @@
       <toc-element topic="button.topic">
         <toc-element topic="built_in_button.md"/>
         <toc-element topic="split_button.md"/>
+        <toc-element toc-title="Segmented Button"/> <!--TODO-->
       </toc-element>
       <toc-element topic="checkbox.topic"/>
       <toc-element topic="combo_box.md"/>
@@ -496,13 +514,11 @@
       <toc-element toc-title="Menu">
         <toc-element toc-title="Context Menu"/> <!--TODO-->
         <toc-element toc-title="Main Menu"/> <!--TODO-->
-        <toc-element toc-title="Menu List"/> <!--TODO-->
       </toc-element>
       <toc-element topic="notification_types.md">
         <toc-element toc-title="Alert"/> <!--TODO-->
         <toc-element topic="balloon.md"/>
         <toc-element topic="banner.md"/>
-        <toc-element toc-title="Tool Window Balloon"/> <!--TODO-->
       </toc-element>
       <toc-element toc-title="Popup"/> <!--TODO-->
       <toc-element topic="progress_indicators.md">

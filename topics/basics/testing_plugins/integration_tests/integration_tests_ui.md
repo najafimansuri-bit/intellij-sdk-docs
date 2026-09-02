@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Integration Tests: UI Testing
 
-<primary-label ref="2023.2"/>
+<primary-label ref="2024.2"/>
 
 <link-summary>Walkthrough how to interact with UI in integration tests.</link-summary>
 
@@ -21,7 +21,8 @@ These UI frameworks organize elements in a parent-child hierarchy, similar to HT
 
 Every UI element (except top-level containers) must have a parent container, creating a clear hierarchical structure.
 
-The Driver framework provides a Kotlin DSL that mirrors this hierarchy.
+The Driver framework provides a Kotlin DSL that mirrors this hierarchy (see [`com.intellij.driver.sdk.ui.components`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/ui/components/)).
+
 Here's an example:
 
 ```kotlin
@@ -40,6 +41,9 @@ This code demonstrates hierarchical navigation:
 2. Trigger the _Search Everywhere_ action.
 3. Locate the <control>Search Everywhere</control> popup.
 4. Find and click the <control>Preview</control> button within the popup.
+
+`invokeAction()` triggers a registered [action](action_system.md) directly by its action ID, without simulating a click or keyboard shortcut.
+In the example above, `SearchEverywhere` is the ID under which the _Search Everywhere_ action is registered.
 
 The code could be more concise:
 
@@ -92,7 +96,7 @@ Here's an example component:
      visible="true" visible_text="Current File" visible_text_keys=""/>
 ```
 
-There are other attributes which are omitted for clarity.
+There are other attributes, which are omitted for clarity.
 
 The element corresponds to the following button:
 
@@ -140,7 +144,7 @@ To click the <control>Current File</control> button:
 x(xQuery { byVisibleText("Current File") }).click()
 ```
 
-The `x()` call creates a lazy reference to the component.
+The [`x()`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/ui/Finder.kt) call creates a lazy reference to the component.
 It means that the XPath query isn't executed immediately and component lookup happens only when an action (like `click()`) is invoked.
 
 Here's a part of a test that incorporates UI interaction:
@@ -158,14 +162,14 @@ Beyond mouse clicks, keyboard input and shortcuts can be simulated:
 
 ```kotlin
 keyboard {
-  enterText("Sample text")
+  typeText("Sample text")
   enter()
   hotKey(if (SystemInfo.isMac) KeyEvent.VK_META else KeyEvent.VK_CONTROL, KeyEvent.VK_A)
   backspace()
 }
 ```
 
-Keyboard methods perform presses using `java.awt.Robot` so to type to some particular component or invoke a shortcut in the appropriate place, you first need to make the component focused.
+Keyboard methods perform presses using `java.awt.Robot`, so to type into a particular component or invoke a shortcut in the appropriate place, the component must first be focused.
 The most reliable way to do this is to perform `click` on the component first.
 
 > On macOS, the interaction via `java.awt.Robot` requires special permissions.
@@ -183,18 +187,14 @@ fun simpleTestForCustomUIElement() {
   Starter.newContext(
     "testExample",
     TestCase(
-      IdeProductProvider.IC,
+      IdeInfo.IdeaUltimate,
       GitHubProject.fromGithub(
         branchName = "master",
         repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
       )
     )
-      .withVersion("2024.3")
   )
-    .apply {
-      val pathToPlugin = System.getProperty("path.to.build.plugin")
-      PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
-    }.runIdeWithDriver().useDriverAndCloseIde {
+    .runIdeWithDriver().useDriverAndCloseIde {
       waitForIndicators(1.minutes)
       ideFrame {
         x(xQuery { byVisibleText("Current File") }).click() //1
@@ -221,7 +221,76 @@ The test does the following:
 4. Using `shouldBe(<message>, present)` to ensure the list exists.
    This is important because `popup().jBlist` creates a lazy reference without actually checking the results.
    The actual check happens when `shouldBe` calls the `present` method.
-   The `shouldBe` method waits 15 seconds until the condition is met and can be used to assert various properties.
+   See [](#should-methods) for details on how `shouldBe()` waits for and asserts conditions.
 5. Checking list contents by accessing the `rawItems` property to get all list items and asserting `backup-data` exists in the list.
 6. Including the full list content in the error message for debugging.
 
+## Waiting
+
+Integration tests often need to wait until the IDE reaches a certain state.
+The Test SDK provides its own waiting API with two families of methods:
+
+* `should()` methods on UI components, for asserting and waiting on a component state.
+* `waitFor()` methods, for waiting on arbitrary conditions and common IDE states.
+
+### `should()` Methods
+
+The Test SDK adds extension methods on UI components that poll a condition until it holds or the timeout elapses (15 seconds by default).
+Each method returns the same component, so calls can be chained, and a [`WaitForException`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/waits.kt) is thrown when the condition is not met in time.
+
+```kotlin
+// waits until the condition returns true
+component.should { isEnabled() }
+
+// same as should(); reads as a state assertion, often with a predefined condition
+component.shouldBe(enabled)
+
+// waits until the condition returns false
+component.shouldNot(present)
+
+// waits until the block runs without throwing; rethrows the last error on timeout
+component.shouldBeNoExceptions { /* assertions */ }
+```
+
+The condition can use one of the predefined checks: `enabled`, `notEnabled`, `present`, `notPresent`, or `focusOwner`.
+
+Specific component types add their own assertions, for example `JListUiComponent.shouldBeEqualTo()`, `JEditorUiComponent.shouldContainText()`, or `UiComponent.shouldHaveFocus()`.
+The full set of conditions and assertions is available in
+[`conditions.kt`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/ui/conditions.kt).
+
+### `waitFor()` Methods
+
+The general-purpose `waitFor()` polls an arbitrary condition until it returns `true` or the timeout elapses (5 seconds by default, checked once per second), throwing `WaitForException` on timeout:
+
+```kotlin
+waitFor("the expected state description", timeout = 30.seconds) {
+  // return true once the expected state is reached
+}
+```
+
+For common IDE and UI states, the Test SDK provides ready-made helpers built on top of `waitFor()`:
+
+```kotlin
+// waits only until the Project reference becomes available (see the note below)
+waitForProjectOpen(timeout)
+
+// waits until the project is opened and no progress indicators remain for 10 seconds
+waitForIndicators(project, timeout)
+
+// waits until the code analysis daemon has finished analyzing the file
+waitForCodeAnalysis(file = file)
+
+// waits until no dialogs are open
+waitForNoOpenedDialogs()
+```
+
+`waitForCodeAnalysis()` requires the `file` argument to be named, because the first parameter is an optional `Project`.
+
+> `waitForProjectOpen()` only guarantees that the `Project` reference is not `null`.
+> The UI, Project View, and services may still be uninitialized, which can lead to flaky tests.
+> To wait until the IDE is fully ready, prefer `waitForIndicators()`, which also waits for the project to open.
+>
+{style="warning"}
+
+The generic `waitFor()` and the IDE-state helpers are defined in the
+[`com.intellij.driver.sdk`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk) package and its subpackages.

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Web Types
 <primary-label ref="2025.2"/>
@@ -120,7 +120,7 @@ To contribute a `foo` attribute, one could also write it in longer form:
 ```
 
 Each Web Types contribution is represented in the Poly Symbols framework by a
-[`PsiSourcedPolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PsiSourcedPolySymbol.kt)
+[`PsiLinkedPolySymbolProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolProvider.kt)
 object.
 All the Web Types contributions are mapped one-to-one, and custom properties are accessible through `properties` property.
 
@@ -180,7 +180,7 @@ Prior to 2023.1, IDEs were required to have JavaScript plugin installed for the 
 ### Angular
 
 Angular plugin Web Types are available
-[here](%gh-ij-plugins%/Angular/resources/web-types)
+[here](%gh-ij-plugins%/Angular/angular-backend/resources/web-types)
 for reference.
 Any Web Types file targeting only Angular support should have `framework` property set to `angular`.
 Highlights: `js/ng-custom-events` contribute symbols with patterns for any custom events supported by Angular `EventManager`s, e.g.:
@@ -229,7 +229,7 @@ Highlights: `js/ng-custom-events` contribute symbols with patterns for any custo
 ### Vue
 
 Vue plugin Web Types are available
-[here](%gh-ij-plugins%/vuejs/resources/web-types)
+[here](%gh-ij-plugins%/vuejs/vuejs-backend/resources/web-types)
 for reference.
 Any Web Types file targeting only Vue support should have `framework` property set to `vue`.
 Highlights:

@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 7755d82675efadd94c94ddccd67dcbe41f53775e -->
+<!-- Revision: 0b6db099218edf465d512609a04796a0c678177d -->
 
 <!--
 EP List Directories:
@@ -19,7 +19,7 @@ EXCLUDING:
 
 <snippet id="content">
 
-1233 Extension Points and 230 Listeners
+1380 Extension Points and 248 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -67,7 +67,8 @@ EXCLUDING:
 | [`ExecutionManager#EXECUTION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.execution.ExecutionListener)  ![Project-Level][project-level] | [`ExecutionListener`](%gh-ic%/platform/execution/src/com/intellij/execution/ExecutionListener.java) |
 | [`ExecutionTargetManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.execution.ExecutionTargetListener)  | [`ExecutionTargetListener`](%gh-ic%/platform/execution/src/com/intellij/execution/ExecutionTargetListener.java) |
 | [`RunManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.execution.RunManagerListener)  ![Project-Level][project-level] | [`RunManagerListener`](%gh-ic%/platform/platform-impl/src/com/intellij/execution/RunManagerListener.java) |
-| [`RunDashboardManager#DASHBOARD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.execution.dashboard.RunDashboardListener)  | [`RunDashboardListener`](%gh-ic%/platform/execution/src/com/intellij/execution/dashboard/RunDashboardListener.java) |
+| [`RunDashboardListener#DASHBOARD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.execution.dashboard.RunDashboardListener)  | [`RunDashboardListener`](%gh-ic%/platform/execution/src/com/intellij/execution/dashboard/RunDashboardListener.java) |
+| [`RunContentDescriptorLifecycleListenerKt#RUN_CONTENT_DESCRIPTOR_LIFECYCLE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.execution.impl.RunContentDescriptorLifecycleListener)  ![Internal][internal] ![Project-Level][project-level] | [`RunContentDescriptorLifecycleListener`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/impl/RunContentDescriptorLifecycleListener.kt) |
 | [`ExecutionEventsBus#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.execution.multilaunch.execution.messaging.ExecutionNotifier)  | [`ExecutionNotifier`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/multilaunch/execution/messaging/ExecutionNotifier.kt) |
 | [`Listener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.execution.process.elevation.settings.ElevationSettings.Listener)  | [`Listener`](%gh-ic%/platform/execution-process-elevation/src/com/intellij/execution/process/elevation/settings/ElevationSettings.kt) |
 | [`RunToolbarSlotManager#RUN_TOOLBAR_SLOT_CONFIGURATION_MAP_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.execution.runToolbar.data.RWSlotsConfigurationListener)  ![Project-Level][project-level] | [`RWSlotsConfigurationListener`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/runToolbar/data/RWSlotsConfigurationListener.kt) |
@@ -83,8 +84,12 @@ EXCLUDING:
 | [`AppLifecycleListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.AppLifecycleListener)  | [`AppLifecycleListener`](%gh-ic%/platform/ide-core/src/com/intellij/ide/AppLifecycleListener.java) |
 | [`FrameStateListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.FrameStateListener)  | [`FrameStateListener`](%gh-ic%/platform/platform-api/src/com/intellij/ide/FrameStateListener.java) |
 | [`PowerSaveMode#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.PowerSaveMode.Listener)  | [`Listener`](%gh-ic%/platform/core-api/src/com/intellij/ide/PowerSaveMode.java) |
+| [`ProjectWindowCustomizerService#PROJECT_COLOR_CHANGE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.ProjectColorChangeListener)  ![Internal][internal] | [`ProjectColorChangeListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ProjectWindowCustomizerService.kt) |
+| [`RecentProjectsManager.Companion#LAST_PROJECTS_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.RecentProjectsManager.LastProjectsListener)  | [`LastProjectsListener`](%gh-ic%/platform/ide-core/src/com/intellij/ide/RecentProjectsManager.kt) |
 | [`RecentProjectsManager.Companion#RECENT_PROJECTS_CHANGE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.RecentProjectsManager.RecentProjectsChange)  | [`RecentProjectsChange`](%gh-ic%/platform/ide-core/src/com/intellij/ide/RecentProjectsManager.kt) |
 | [`RegionSettingsListener#UPDATE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.RegionSettings.RegionSettingsListener)  ![Experimental][experimental] ![Internal][internal] | [`RegionSettingsListener`](%gh-ic%/platform/platform-api/src/com/intellij/ide/RegionSettings.java) |
+| [`LoggingSettingsChangesListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.actions.LoggingSettingsChangesListener)  ![Internal][internal] | [`LoggingSettingsChangesListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/actions/LoggingSettingsController.kt) |
+| [`UndoManagerStateClearListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.actions.UndoManagerStateClearListener)  ![Experimental][experimental] ![Internal][internal] | [`UndoManagerStateClearListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/actions/UndoDumpHistoryAction.kt) |
 | [`SearchEverywhereUI#PREVIEW_EVENTS`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.actions.searcheverywhere.PreviewListener)  ![Internal][internal] | [`PreviewListener`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/PreviewListener.java) |
 | [`SEHeaderActionListener.Companion#SE_HEADER_ACTION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.actions.searcheverywhere.SEHeaderActionListener)  ![Internal][internal] | [`SEHeaderActionListener`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SEHeaderActionListener.kt) |
 | [`SETabSwitcherListener.Companion#SE_TAB_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.actions.searcheverywhere.SETabSwitcherListener)  ![Internal][internal] | [`SETabSwitcherListener`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SETabSwitcherListener.kt) |
@@ -92,11 +97,12 @@ EXCLUDING:
 | [`BookmarksListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.bookmark.BookmarksListener)  | [`BookmarksListener`](%gh-ic%/platform/lang-api/src/com/intellij/ide/bookmark/BookmarksListener.java) |
 | [`BookmarksListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.bookmarks.BookmarksListener)  | [`BookmarksListener`](%gh-ic%/platform/bookmarks/src/com/intellij/ide/bookmarks/BookmarksListener.java) |
 | [`BatchFileChangeListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.file.BatchFileChangeListener)  | [`BatchFileChangeListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/file/BatchFileChangeListener.java) |
+| [`DataSharingLocalSettingsChangeListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.gdpr.DataSharingLocalSettingsChangeListener)  ![Internal][internal] | [`DataSharingLocalSettingsChangeListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/gdpr/DataSharingLocalSettingsChangeListener.kt) |
 | [`DataSharingSettingsChangeListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.gdpr.DataSharingSettingsChangeListener)  ![Internal][internal] | [`DataSharingSettingsChangeListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/gdpr/DataSharingSettingsChangeListener.kt) |
-| [`LightEditServiceListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.lightEdit.LightEditServiceListener)  ![Experimental][experimental] | [`LightEditServiceListener`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/lightEdit/LightEditServiceListener.java) |
+| [`LightEditServiceListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.lightEdit.LightEditServiceListener)  ![Experimental][experimental] | [`LightEditServiceListener`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/lightEdit/LightEditServiceListener.kt) |
 | [`RiderMainToolbarStateListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.navigationToolbar.rider.RiderMainToolbarStateListener)  ![Project-Level][project-level] | [`RiderMainToolbarStateListener`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/navigationToolbar/rider/RiderMainToolbarRootPaneExtension.kt) |
 | [`DynamicPluginListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.plugins.DynamicPluginListener)  | [`DynamicPluginListener`](%gh-ic%/platform/core-api/src/com/intellij/ide/plugins/DynamicPluginListener.kt) |
-| [`PluginRepositoryAuthListener#PLUGIN_REPO_AUTH_CHANGED_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.plugins.auth.PluginRepositoryAuthListener)  | [`PluginRepositoryAuthListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/auth/PluginRepositoryAuthListener.java) |
+| [`PluginRepositoryAuthListener#PLUGIN_REPO_AUTH_CHANGED_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.plugins.auth.PluginRepositoryAuthListener)  ![Internal][internal] | [`PluginRepositoryAuthListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/auth/PluginRepositoryAuthListener.java) |
 | [`ProjectViewSelectionTopicKt#PROJECT_VIEW_SELECTION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.projectView.ProjectViewSelectionListener)  ![Project-Level][project-level] | [`ProjectViewSelectionListener`](%gh-ic%/platform/lang-api/src/com/intellij/ide/projectView/ProjectViewSelectionTopic.kt) |
 | [`ProjectViewListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.projectView.impl.ProjectViewListener)  ![Project-Level][project-level] | [`ProjectViewListener`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/impl/ProjectViewListener.java) |
 | [`TrustedProjectsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.trustedProjects.TrustedProjectsListener)  ![Experimental][experimental] | [`TrustedProjectsListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/trustedProjects/TrustedProjectsListener.kt) |
@@ -107,7 +113,8 @@ EXCLUDING:
 | [`ComponentHighlightingListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.ui.search.ComponentHighlightingListener)  | [`ComponentHighlightingListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/search/ComponentHighlightingListener.java) |
 | [`FileStructurePopupListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.util.FileStructurePopupListener)  ![Experimental][experimental] ![Internal][internal] ![Project-Level][project-level] | [`FileStructurePopupListener`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/util/FileStructurePopupListener.java) |
 | [`SettingsChangedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ide.util.scopeChooser.ScopeEditorPanel.SettingsChangedListener)  ![Project-Level][project-level] | [`SettingsChangedListener`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/util/scopeChooser/ScopeEditorPanel.java) |
-| [`EventLogConfigOptionsService#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.internal.statistic.eventLog.EventLogConfigOptionsListener)  | [`EventLogConfigOptionsListener`](%gh-ic%/platform/statistics/src/com/intellij/internal/statistic/eventLog/EventLogConfigOptionsListener.java) |
+| [`SmartModeTransitionPhaseListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.internal.statistic.SmartModeTransitionPhaseListener)  ![Internal][internal] | [`SmartModeTransitionPhaseListener`](%gh-ic%/platform/statistics/src/com/intellij/internal/statistic/SmartModeTransitionPhaseListener.kt) |
+| [`EventLogConfigOptionsService#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.internal.statistic.eventLog.EventLogConfigOptionsListener)  ![Internal][internal] | [`EventLogConfigOptionsListener`](%gh-ic%/platform/statistics/src/com/intellij/internal/statistic/eventLog/EventLogConfigOptionsListener.java) |
 | [`ExternalResourceListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.javaee.ExternalResourceListener)  | [`ExternalResourceListener`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/javaee/ExternalResourceListener.java) |
 | [`LocalizationListener.Companion#UPDATE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.l10n.LocalizationListener)  ![Internal][internal] | [`LocalizationListener`](%gh-ic%/platform/core-api/src/com/intellij/l10n/LocalizationListener.kt) |
 | [`DocumentationPopupListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.lang.documentation.ide.impl.DocumentationPopupListener)  ![Project-Level][project-level] | [`DocumentationPopupListener`](%gh-ic%/platform/lang-impl/src/com/intellij/lang/documentation/ide/impl/DocumentationPopupListener.kt) |
@@ -122,7 +129,9 @@ EXCLUDING:
 | [`AnActionListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.actionSystem.ex.AnActionListener)  | [`AnActionListener`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ex/AnActionListener.java) |
 | [`ToolbarActionsUpdatedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.actionSystem.impl.segmentedActionBar.ToolbarActionsUpdatedListener)  ![Internal][internal] | [`ToolbarActionsUpdatedListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/segmentedActionBar/ToolbarActionsUpdatedListener.java) |
 | [`ApplicationActivationListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.application.ApplicationActivationListener)  | [`ApplicationActivationListener`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/ApplicationActivationListener.java) |
+| [`ModalityStateListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.application.ModalityStateListener)  | [`ModalityStateListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityStateListener.java) |
 | [`CommandListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.command.CommandListener)  | [`CommandListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/command/CommandListener.java) |
+| [`SeparatedCommandListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.command.impl.SeparatedCommandListener)  ![Internal][internal] | [`SeparatedCommandListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/command/impl/SeparatedCommandListener.java) |
 | [`UndoRedoListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.command.impl.UndoRedoListener)  ![Experimental][experimental] ![Internal][internal] | [`UndoRedoListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/command/impl/UndoRedoListener.kt) |
 | [`EditorMouseHoverPopupListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.editor.EditorMouseHoverPopupListener)  ![Internal][internal] ![Project-Level][project-level] | [`EditorMouseHoverPopupListener`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/editor/EditorMouseHoverPopupListener.kt) |
 | [`LatencyListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.editor.actionSystem.LatencyListener)  | [`LatencyListener`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/LatencyListener.java) |
@@ -130,16 +139,19 @@ EXCLUDING:
 | [`EditorColorsManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.editor.colors.impl.EditorColorsManagerListener)  ![Internal][internal] | [`EditorColorsManagerListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/editor/colors/impl/EditorColorsManagerListener.kt) |
 | [`DocumentBulkUpdateListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.editor.ex.DocumentBulkUpdateListener)  ![Deprecated][deprecated] ![Removal][removal] | [`DocumentBulkUpdateListener`](%gh-ic%/platform/core-impl/src/com/intellij/openapi/editor/ex/DocumentBulkUpdateListener.java) |
 | [`DocumentMarkupListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.editor.impl.DocumentMarkupListener)  ![Experimental][experimental] ![Internal][internal] | [`DocumentMarkupListener`](%gh-ic%/platform/editor-ui-ex/src/com/intellij/openapi/editor/impl/DocumentMarkupListener.java) |
-| [`AppTopics#FILE_DOCUMENT_SYNC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileEditor.FileDocumentManagerListener)  ![Deprecated][deprecated] | [`FileDocumentManagerListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManagerListener.java) |
 | [`FileDocumentManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileEditor.FileDocumentManagerListener)  | [`FileDocumentManagerListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManagerListener.java) |
+| [`AppTopics#FILE_DOCUMENT_SYNC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileEditor.FileDocumentManagerListener)  ![Deprecated][deprecated] | [`FileDocumentManagerListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManagerListener.java) |
+| [`FileDocumentManagerListenerBackgroundable#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileEditor.FileDocumentManagerListenerBackgroundable)  ![Experimental][experimental] | [`FileDocumentManagerListenerBackgroundable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManagerListenerBackgroundable.kt) |
 | [`FileEditorManagerListener#FILE_EDITOR_MANAGER`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileEditor.FileEditorManagerListener)  ![Project-Level][project-level] | [`FileEditorManagerListener`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/FileEditorManagerListener.java) |
 | [`Before#FILE_EDITOR_MANAGER`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileEditor.FileEditorManagerListener.Before)  ![Project-Level][project-level] | [`Before`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/FileEditorManagerListener.java) |
 | [`FileOpenedSyncListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileEditor.FileOpenedSyncListener)  ![Project-Level][project-level] | [`FileOpenedSyncListener`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/FileOpenedSyncListener.kt) |
+| [`EditorCompositeModalityListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileEditor.impl.EditorCompositeModalityListener)  ![Internal][internal] ![Project-Level][project-level] | [`EditorCompositeModalityListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/FileEditorManagerImpl.kt) |
 | [`FileDocumentBindingListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileEditor.impl.FileDocumentBindingListener)  ![Experimental][experimental] ![Internal][internal] | [`FileDocumentBindingListener`](%gh-ic%/platform/core-impl/src/com/intellij/openapi/fileEditor/impl/FileDocumentBindingListener.kt) |
 | [`RecentFileHistoryOrderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileEditor.impl.IdeDocumentHistoryImpl.RecentFileHistoryOrderListener)  ![Internal][internal] ![Project-Level][project-level] | [`RecentFileHistoryOrderListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/IdeDocumentHistoryImpl.kt) |
 | [`RecentPlacesListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileEditor.impl.IdeDocumentHistoryImpl.RecentPlacesListener)  ![Project-Level][project-level] | [`RecentPlacesListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/IdeDocumentHistoryImpl.kt) |
 | [`FileTypeManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.fileTypes.FileTypeListener)  | [`FileTypeListener`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeListener.java) |
 | [`KeymapManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.keymap.KeymapManagerListener)  | [`KeymapManagerListener`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/keymap/KeymapManagerListener.java) |
+| [`SystemShortcutsListener#CHANGE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.keymap.impl.SystemShortcutsListener)  | [`SystemShortcutsListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/keymap/impl/SystemShortcutsListener.java) |
 | [`KeymapListener#CHANGE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.keymap.impl.ui.KeymapListener)  | [`KeymapListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/keymap/impl/ui/KeymapListener.java) |
 | [`AdvancedSettingsChangeListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.options.advanced.AdvancedSettingsChangeListener)  | [`AdvancedSettingsChangeListener`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/options/advanced/AdvancedSettings.kt) |
 | [`ExternalUpdateRequest#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.options.newEditor.ExternalUpdateRequest)  ![Experimental][experimental] ![Internal][internal] | [`ExternalUpdateRequest`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/options/newEditor/ExternalUpdateRequest.java) |
@@ -148,6 +160,7 @@ EXCLUDING:
 | [`ProgressSuspender#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.progress.impl.ProgressSuspender.SuspenderListener)  | [`SuspenderListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/progress/impl/ProgressSuspender.java) |
 | [`ProgressWindow#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.progress.util.ProgressWindow.Listener)  | [`Listener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/progress/util/ProgressWindow.java) |
 | [`BaseProjectDirectories#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.project.BaseProjectDirectoriesListener)  ![Project-Level][project-level] | [`BaseProjectDirectoriesListener`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/BaseProjectDirectoriesListener.kt) |
+| [`DumbModeListenerBackgroundable#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.project.DumbModeListenerBackgroundable)  ![Experimental][experimental] ![Project-Level][project-level] | [`DumbModeListenerBackgroundable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbModeListenerBackgroundable.kt) |
 | [`DumbService#DUMB_MODE`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.project.DumbService.DumbModeListener)  ![Project-Level][project-level] | [`DumbModeListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbService.kt) |
 | [`ProjectTopics#MODULES`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.project.ModuleListener)  ![Deprecated][deprecated] ![Project-Level][project-level] | [`ModuleListener`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ModuleListener.java) |
 | [`ModuleListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.project.ModuleListener)  ![Project-Level][project-level] | [`ModuleListener`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ModuleListener.java) |
@@ -156,32 +169,33 @@ EXCLUDING:
 | [`ProjectNameListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.project.ProjectNameListener)  ![Project-Level][project-level] | [`ProjectNameListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/project/ProjectNameListener.kt) |
 | [`DefaultProjectListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.project.impl.DefaultProjectListener)  ![Internal][internal] | [`DefaultProjectListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/project/impl/DefaultProjectListener.kt) |
 | [`ProjectLifecycleListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.project.impl.ProjectLifecycleListener)  | [`ProjectLifecycleListener`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/project/impl/ProjectLifecycleListener.java) |
-| [`ConfigFolderChangedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.project.impl.shared.ConfigFolderChangedListener)  | [`ConfigFolderChangedListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/project/impl/shared/SharedConfigFolderUtil.kt) |
 | [`ProjectJdkTable#JDK_TABLE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.projectRoots.ProjectJdkTable.Listener)  | [`Listener`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/projectRoots/ProjectJdkTable.java) |
 | [`AdditionalLibraryRootsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.roots.AdditionalLibraryRootsListener)  ![Experimental][experimental] ![Project-Level][project-level] | [`AdditionalLibraryRootsListener`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/AdditionalLibraryRootsListener.java) |
 | [`ProjectTopics#PROJECT_ROOTS`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.roots.ModuleRootListener)  ![Deprecated][deprecated] ![Project-Level][project-level] | [`ModuleRootListener`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootListener.java) |
 | [`ModuleRootListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.roots.ModuleRootListener)  ![Project-Level][project-level] | [`ModuleRootListener`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootListener.java) |
 | [`BalloonListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.ui.popup.BalloonListener)  | [`BalloonListener`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/popup/BalloonListener.kt) |
-| [`PluginAutoUpdateListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.updateSettings.impl.PluginAutoUpdateListener)  | [`PluginAutoUpdateListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/updateSettings/impl/PluginAutoUpdateService.kt) |
+| [`PluginAutoUpdateListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.updateSettings.impl.PluginAutoUpdateListener)  ![Internal][internal] | [`PluginAutoUpdateListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/updateSettings/impl/PluginAutoUpdateService.kt) |
 | [`RegistryManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.util.registry.RegistryValueListener)  | [`RegistryValueListener`](%gh-ic%/platform/util/src/com/intellij/openapi/util/registry/RegistryValueListener.java) |
 | [`FileStatusListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.FileStatusListener)  ![Project-Level][project-level] | [`FileStatusListener`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/vcs/FileStatusListener.java) |
-| [`LineStatusTrackerSettingListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.impl.LineStatusTrackerSettingListener)  | [`LineStatusTrackerSettingListener`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/vcs/impl/LineStatusTrackerSettingListener.java) |
+| [`LineStatusTrackerSettingListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.impl.LineStatusTrackerSettingListener)  ![Internal][internal] | [`LineStatusTrackerSettingListener`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/vcs/impl/LineStatusTrackerSettingListener.java) |
 | [`VirtualFileManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vfs.VirtualFileManagerListener)  | [`VirtualFileManagerListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManagerListener.java) |
 | [`EncodingManagerListener#ENCODING_MANAGER_CHANGES`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vfs.encoding.EncodingManagerListener)  | [`EncodingManagerListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/encoding/EncodingManagerListener.java) |
 | [`VirtualFileManager#VFS_CHANGES`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vfs.newvfs.BulkFileListener)  | [`BulkFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) |
+| [`VirtualFileManager#VFS_CHANGES_BG`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vfs.newvfs.BulkFileListenerBackgroundable)  | [`BulkFileListenerBackgroundable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListenerBackgroundable.kt) |
 | [`VirtualFilePointerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vfs.pointers.VirtualFilePointerListener)  | [`VirtualFilePointerListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/pointers/VirtualFilePointerListener.java) |
 | [`Info#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.wm.StatusBarInfo)  ![Project-Level][project-level] | [`StatusBarInfo`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/wm/StatusBarInfo.java) |
-| [`ToolWindowManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.wm.ex.ToolWindowManagerListener)  ![Project-Level][project-level] | [`ToolWindowManagerListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/ex/ToolWindowManagerListener.java) |
-| [`WindowManagerListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.wm.ex.WindowManagerListener)  ![Internal][internal] | [`WindowManagerListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/ex/WindowManagerListener.kt) |
+| [`ToolWindowManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.wm.ex.ToolWindowManagerListener)  ![Project-Level][project-level] | [`ToolWindowManagerListener`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ex/ToolWindowManagerListener.java) |
+| [`WindowManagerListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.wm.ex.WindowManagerListener)  ![Internal][internal] | [`WindowManagerListener`](%gh-ic%/platform/project-frame/src/com/intellij/openapi/wm/ex/WindowManagerListener.kt) |
 | [`TitleInfoProvider#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.wm.impl.TitleInfoProvider.TitleInfoProviderListener)  ![Internal][internal] | [`TitleInfoProviderListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/TitleInfoProvider.kt) |
 | [`WelcomeBalloonLayoutImpl#BALLOON_NOTIFICATION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.wm.impl.welcomeScreen.WelcomeBalloonLayoutImpl.BalloonNotificationListener)  | [`BalloonNotificationListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/welcomeScreen/WelcomeBalloonLayoutImpl.java) |
-| [`WelcomeScreenComponentListener#COMPONENT_CHANGED`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.wm.impl.welcomeScreen.WelcomeScreenComponentListener)  ![Internal][internal] | [`WelcomeScreenComponentListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/welcomeScreen/WelcomeScreenComponentListener.java) |
+| [`WelcomeScreenComponentListener#COMPONENT_CHANGED`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.wm.impl.welcomeScreen.WelcomeScreenComponentListener)  ![Internal][internal] | [`WelcomeScreenComponentListener`](%gh-ic%/platform/welcome-screen-impl/src/com/intellij/openapi/wm/impl/welcomeScreen/WelcomeScreenComponentListener.java) |
 | [`CloneableProjectsService#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.wm.impl.welcomeScreen.cloneableProjects.CloneableProjectsService.CloneProjectListener)  | [`CloneProjectListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/welcomeScreen/cloneableProjects/CloneableProjectsService.kt) |
 | [`CourseDataStorageKt#COURSE_DELETED`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.wm.impl.welcomeScreen.learnIde.coursesInProgress.CourseDeletedListener)  ![Internal][internal] | [`CourseDeletedListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/welcomeScreen/learnIde/coursesInProgress/CourseDeletedListener.kt) |
 | [`ModuleAttachListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.platform.ModuleAttachListener)  ![Project-Level][project-level] | [`ModuleAttachListener`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/ModuleAttachListener.kt) |
 | [`WorkspaceModelTopics#CHANGED`](https://jb.gg/ipe/listeners?topics=com.intellij.platform.backend.workspace.WorkspaceModelChangeListener)  ![Obsolete][obsolete] ![Project-Level][project-level] | [`WorkspaceModelChangeListener`](%gh-ic%/platform/backend/workspace/src/WorkspaceModelTopics.kt) |
 | [`WorkspaceModelTopics#UNLOADED_ENTITIES_CHANGED`](https://jb.gg/ipe/listeners?topics=com.intellij.platform.backend.workspace.WorkspaceModelUnloadedStorageChangeListener)  ![Internal][internal] ![Project-Level][project-level] | [`WorkspaceModelUnloadedStorageChangeListener`](%gh-ic%/platform/backend/workspace/src/WorkspaceModelTopics.kt) |
 | [`TelemetryReceivedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.platform.diagnostic.telemetry.impl.TelemetryReceivedListener)  ![Experimental][experimental] ![Internal][internal] | [`TelemetryReceivedListener`](%gh-ic%/platform/diagnostic/telemetry-impl/src/TelemetryReceivedListener.kt) |
+| [`DeferredIconListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.platform.icons.impl.intellij.DeferredIconListener)  ![Internal][internal] | [`DeferredIconListener`](%gh-ic%/platform/icons-impl/intellij/src/com/intellij/platform/icons/impl/intellij/IntelliJIconManager.kt) |
 | [`PolyContextChangeListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.polySymbols.context.PolyContextChangeListener)  | [`PolyContextChangeListener`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContextChangeListener.kt) |
 | [`PolySymbolQueryExecutorListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.polySymbols.query.PolySymbolQueryExecutorListener)  | [`PolySymbolQueryExecutorListener`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutorListener.kt) |
 | [`PsiPolySymbolReferenceProviderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.polySymbols.references.PsiPolySymbolReferenceProviderListener)  | [`PsiPolySymbolReferenceProviderListener`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/references/PsiPolySymbolReferenceProviderListener.kt) |
@@ -192,9 +206,11 @@ EXCLUDING:
 | [`CodeStyleSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.psi.codeStyle.CodeStyleSettingsListener)  ![Project-Level][project-level] | [`CodeStyleSettingsListener`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/codeStyle/CodeStyleSettingsListener.java) |
 | [`PsiManagerImpl#ANY_PSI_CHANGE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.psi.impl.AnyPsiChangeListener)  ![Project-Level][project-level] | [`AnyPsiChangeListener`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/AnyPsiChangeListener.java) |
 | [`PsiDocumentTransactionListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.psi.impl.PsiDocumentTransactionListener)  ![Project-Level][project-level] | [`PsiDocumentTransactionListener`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/PsiDocumentTransactionListener.java) |
+| [`PsiDocumentTransactionListenerBackgroundable#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.psi.impl.PsiDocumentTransactionListenerBackgroundable)  ![Experimental][experimental] ![Project-Level][project-level] | [`PsiDocumentTransactionListenerBackgroundable`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/PsiDocumentTransactionListenerBackgroundable.java) |
 | [`FileTypeIndex#INDEX_CHANGE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.psi.search.FileTypeIndex.IndexChangeListener)  ![Experimental][experimental] | [`IndexChangeListener`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FileTypeIndex.java) |
 | [`PsiModificationTracker#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.psi.util.PsiModificationTracker.Listener)  ![Project-Level][project-level] | [`Listener`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
 | [`RefactoringEventListener#REFACTORING_EVENT_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.refactoring.listeners.RefactoringEventListener)  ![Project-Level][project-level] | [`RefactoringEventListener`](%gh-ic%/platform/refactoring/src/com/intellij/refactoring/listeners/RefactoringEventListener.java) |
+| [`SuggestedRefactoringAvailabilityListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.refactoring.suggested.SuggestedRefactoringAvailabilityListener)  ![Internal][internal] ![Project-Level][project-level] | [`SuggestedRefactoringAvailabilityListener`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/suggested/SuggestedRefactoringAvailabilityListener.kt) |
 | [`RemoteMappingsListener#REMOTE_MAPPINGS_CHANGED`](https://jb.gg/ipe/listeners?topics=com.intellij.remote.RemoteMappingsListener)  | [`RemoteMappingsListener`](%gh-ic%/platform/platform-impl/remote/src/com/intellij/remote/RemoteMappingsListener.java) |
 | [`RemoteServerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.remoteServer.configuration.RemoteServerListener)  | [`RemoteServerListener`](%gh-ic%/platform/remote-servers/api/src/com/intellij/remoteServer/configuration/RemoteServerListener.java) |
 | [`ServerConnectionListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.remoteServer.runtime.ServerConnectionListener)  | [`ServerConnectionListener`](%gh-ic%/platform/remote-servers/api/src/com/intellij/remoteServer/runtime/ServerConnectionListener.java) |
@@ -208,22 +224,44 @@ EXCLUDING:
 | [`ToolWindowViewModelListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.ui.viewModel.extraction.ToolWindowViewModelListener)  ![Project-Level][project-level] | [`ToolWindowViewModelListener`](%gh-ic%/platform/platform-api/src/com/intellij/ui/viewModel/extraction/ToolWindowViewModelListener.java) |
 | [`UnindexedFilesUpdaterListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.util.indexing.UnindexedFilesUpdaterListener)  ![Deprecated][deprecated] | [`UnindexedFilesUpdaterListener`](%gh-ic%/platform/lang-impl/src/com/intellij/util/indexing/UnindexedFilesUpdaterListener.java) |
 | [`ProjectIndexingActivityHistoryListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.util.indexing.diagnostic.ProjectIndexingActivityHistoryListener)  | [`ProjectIndexingActivityHistoryListener`](%gh-ic%/platform/lang-impl/src/com/intellij/util/indexing/diagnostic/ProjectIndexingHistory.kt) |
-| [`JpsGlobalModelLoadedListener.Companion#LOADED`](https://jb.gg/ipe/listeners?topics=com.intellij.workspaceModel.ide.JpsGlobalModelLoadedListener)  ![Internal][internal] | [`JpsGlobalModelLoadedListener`](%gh-ic%/platform/projectModel-api/src/com/intellij/workspaceModel/ide/JpsGlobalModelLoadedListener.kt) |
+| [`WorkspaceFileIndexListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.workspaceModel.core.fileIndex.WorkspaceFileIndexListener)  ![Internal][internal] ![Project-Level][project-level] | [`WorkspaceFileIndexListener`](%gh-ic%/platform/projectModel-impl/src/com/intellij/workspaceModel/core/fileIndex/WorkspaceFileIndexListener.kt) |
 | [`JpsProjectLoadedListener.Companion#LOADED`](https://jb.gg/ipe/listeners?topics=com.intellij.workspaceModel.ide.JpsProjectLoadedListener)  ![Internal][internal] ![Project-Level][project-level] | [`JpsProjectLoadedListener`](%gh-ic%/platform/projectModel-api/src/com/intellij/workspaceModel/ide/JpsProjectLoadedListener.kt) |
 | [`XDebuggerManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.xdebugger.XDebuggerManagerListener)  ![Project-Level][project-level] | [`XDebuggerManagerListener`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/XDebuggerManagerListener.java) |
 | [`XEvaluationListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.xdebugger.XEvaluationListener)  ![Internal][internal] | [`XEvaluationListener`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/XEvaluationListener.kt) |
 | [`XBreakpointListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.xdebugger.breakpoints.XBreakpointListener)  ![Project-Level][project-level] | [`XBreakpointListener`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/breakpoints/XBreakpointListener.java) |
-| [`FrontendXDebuggerManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.xdebugger.impl.FrontendXDebuggerManagerListener)  ![Internal][internal] ![Project-Level][project-level] | [`FrontendXDebuggerManagerListener`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/FrontendXDebuggerManagerListener.kt) |
-| [`XDependentBreakpointListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.xdebugger.impl.breakpoints.XDependentBreakpointListener)  ![Project-Level][project-level] | [`XDependentBreakpointListener`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/breakpoints/XDependentBreakpointListener.java) |
+| [`XDebuggerManagerProxyListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.xdebugger.impl.XDebuggerManagerProxyListener)  ![Internal][internal] ![Project-Level][project-level] | [`XDebuggerManagerProxyListener`](%gh-ic%/platform/xdebugger-impl/shared/src/com/intellij/xdebugger/impl/XDebuggerManagerProxyListener.kt) |
+| [`XDependentBreakpointListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.xdebugger.impl.breakpoints.XDependentBreakpointListener)  ![Project-Level][project-level] | [`XDependentBreakpointListener`](%gh-ic%/platform/xdebugger-impl/shared/src/com/intellij/xdebugger/impl/breakpoints/XDependentBreakpointListener.java) |
 | [`BreadcrumbsInitListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.xml.breadcrumbs.BreadcrumbsInitListener)  ![Internal][internal] ![Project-Level][project-level] | [`BreadcrumbsInitListener`](%gh-ic%/platform/platform-impl/src/com/intellij/xml/breadcrumbs/BreadcrumbsInitListener.java) |
-| [`IndexPatternProvider#INDEX_PATTERNS_CHANGED`](https://jb.gg/ipe/listeners?topics=java.beans.PropertyChangeListener)  | `PropertyChangeListener` |
 | [`TodoConfiguration#PROPERTY_CHANGE`](https://jb.gg/ipe/listeners?topics=java.beans.PropertyChangeListener)  ![Project-Level][project-level] | `PropertyChangeListener` |
-| [`UsageFilteringRuleProvider#RULES_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
+| [`IndexPatternProvider#INDEX_PATTERNS_CHANGED`](https://jb.gg/ipe/listeners?topics=java.beans.PropertyChangeListener)  | `PropertyChangeListener` |
 | [`SeverityRegistrar#SEVERITIES_CHANGED_TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
+| [`BreadcrumbsXmlWrapper#FORCE_RELOAD_BREADCRUMBS`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
+| [`UsageFilteringRuleProvider#RULES_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [`RunToolbarPopupKt#VOID_EXECUTION_TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [`StructureViewWrapperImpl#STRUCTURE_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
-| [`UpdateActionsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.ide.UpdateActionsListener)  | [`UpdateActionsListener`](%gh-ic%/platform/built-in-server/src/org/jetbrains/ide/ToolboxUpdateActions.kt) |
+| [`UpdateActionsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.ide.UpdateActionsListener)  ![Internal][internal] | [`UpdateActionsListener`](%gh-ic%/platform/built-in-server/src/org/jetbrains/ide/ToolboxUpdateActions.kt) |
+{sticky-header="true"}
 
+
+### Analysis.analyzer.xml
+
+[`Analysis.analyzer.xml`](%gh-ic%/platform/analysis-api/resources/META-INF/Analysis.analyzer.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.containerProvider"/></include> | [`ContainerProvider`](%gh-ic%/platform/core-api/src/com/intellij/codeInsight/ContainerProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInspection.InspectionExtension"/></include> | [`InspectionExtensionsFactory`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/lang/InspectionExtensionsFactory.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.documentationProvider"/></include> ![Obsolete][obsolete] | [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dynamicInspectionsProvider"/></include> ![Internal][internal] | [`DynamicInspectionsProvider`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInspection/ex/dynamic-inspections.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.globalInspection"/></include> | [`GlobalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/GlobalInspectionTool.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionElementsMerger"/></include> | [`InspectionElementsMerger`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/ex/InspectionElementsMerger.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionToolProvider"/></include> | [`InspectionToolProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/InspectionToolProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.intentionAction"/></include> | [`CommonIntentionAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/CommonIntentionAction.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.documentationProvider"/></include> ![Obsolete][obsolete] | [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.localInspection"/></include> ![DumbAware][dumb-aware] | [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newRdCompletionVeto"/></include> ![Internal][internal] | [`NewRdCompletionVeto`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/NewRdCompletionVeto.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.weigher"/></include> | [`Weigher`](%gh-ic%/platform/analysis-api/src/com/intellij/psi/Weigher.java) |
+{sticky-header="true"}
 
 ### Analysis.xml
 
@@ -231,25 +269,16 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.containerProvider"/></include> | [`ContainerProvider`](%gh-ic%/platform/core-api/src/com/intellij/codeInsight/ContainerProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInspection.InspectionExtension"/></include> | [`InspectionExtensionsFactory`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/lang/InspectionExtensionsFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.contributor"/></include> ![DumbAware][dumb-aware] | [`CompletionContributor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.skip"/></include> | [`CompletionPreselectSkipper`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionPreselectSkipper.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.documentationProvider"/></include> ![Obsolete][obsolete] | [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dynamicInspectionsProvider"/></include> ![Internal][internal] | [`DynamicInspectionsProvider`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInspection/ex/dynamic-inspections.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileContextProvider"/></include> ![Project-Level][project-level] | [`FileContextProvider`](%gh-ic%/platform/core-api/src/com/intellij/psi/FileContextProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileLookupInfoProvider"/></include> | [`FileLookupInfoProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/psi/file/FileLookupInfoProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.formatting.caretRestorationDecider"/></include> ![Experimental][experimental] | [`CaretRestorationDecider`](%gh-ic%/platform/analysis-api/src/com/intellij/formatting/CaretRestorationDecider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.generatedSourcesFilter"/></include> | [`GeneratedSourcesFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/roots/GeneratedSourcesFilter.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.globalInspection"/></include> | [`GlobalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/GlobalInspectionTool.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.gotoDeclarationHandler"/></include> | [`GotoDeclarationHandler`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/navigation/actions/GotoDeclarationHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.highlightErrorFilter"/></include> ![Project-Level][project-level] | [`HighlightErrorFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/highlighting/HighlightErrorFilter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionCustomComponent"/></include> ![Experimental][experimental] | [`CustomComponentExtension`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/options/CustomComponentExtension.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionElementsMerger"/></include> | [`InspectionElementsMerger`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/ex/InspectionElementsMerger.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionToolProvider"/></include> | [`InspectionToolProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/InspectionToolProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionsReportConverter"/></include> | [`InspectionsReportConverter`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/InspectionsReportConverter.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.intentionAction"/></include> | [`CommonIntentionAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/CommonIntentionAction.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.documentationProvider"/></include> ![Obsolete][obsolete] | [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.inspectionSuppressor"/></include> ![DumbAware][dumb-aware] | [`InspectionSuppressor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/InspectionSuppressor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.languageInjector"/></include> ![DumbAware][dumb-aware] | [`LanguageInjector`](%gh-ic%/platform/analysis-api/src/com/intellij/psi/LanguageInjector.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.liveTemplateContext"/></include> | [`TemplateContextType`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java) |
@@ -257,9 +286,21 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.liveTemplateInternalContext"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.liveTemplateMacro"/></include> | [`Macro`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/template/Macro.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.localFileSystemTimestampEvaluator"/></include> ![Internal][internal] | [`LocalFileSystemTimestampEvaluator`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/vfs/impl/local/LocalFileSystemTimestampEvaluator.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.localInspection"/></include> ![DumbAware][dumb-aware] | [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.optionController"/></include> ![Experimental][experimental] | [`OptionControllerProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/options/OptionControllerProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.weigher"/></include> | [`Weigher`](%gh-ic%/platform/analysis-api/src/com/intellij/psi/Weigher.java) |
+{sticky-header="true"}
+
+### AnalysisImpl.analyzer.xml
+
+[`AnalysisImpl.analyzer.xml`](%gh-ic%/platform/analysis-impl/resources/META-INF/AnalysisImpl.analyzer.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.modCommandCopyHandler"/></include> ![Internal][internal] | [`ModCommandPsiCopyHandler`](%gh-ic%/platform/analysis-api/src/com/intellij/modcommand/ModCommandService.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.resolveScopeEnlarger"/></include> | [`ResolveScopeEnlarger`](%gh-ic%/platform/analysis-impl/src/com/intellij/psi/ResolveScopeEnlarger.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.resolveScopeProvider"/></include> | [`ResolveScopeProvider`](%gh-ic%/platform/analysis-impl/src/com/intellij/psi/ResolveScopeProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.useScopeEnlarger"/></include> | [`UseScopeEnlarger`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/UseScopeEnlarger.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.useScopeOptimizer"/></include> | [`ScopeOptimizer`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/ScopeOptimizer.java) |
+{sticky-header="true"}
 
 ### AnalysisImpl.xml
 
@@ -267,32 +308,22 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.frontendFriendlyInsertHandler"/></include> ![Internal][internal] | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.frontendFriendlyPrefixMatcher"/></include> ![Internal][internal] | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.frontendFriendlyRestartPrefixCondition"/></include> ![Internal][internal] | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.frontendFriendlyTailType"/></include> ![Internal][internal] | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.highlightInfoFilter"/></include> | [`HighlightInfoFilter`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/HighlightInfoFilter.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.intentionActionFilter"/></include> | [`IntentionActionFilter`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/IntentionActionFilter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dataflowIRProvider"/></include> | [`DataFlowIRProvider`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInspection/dataFlow/lang/ir/DataFlowIRProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.elementLookupRenderer"/></include> ![Deprecated][deprecated] ![Removal][removal] | [`ElementLookupRenderer`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/lookup/impl/ElementLookupRenderer.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileRankerMlService"/></include> ![Internal][internal] | [`FileRankerMlService`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FileRankerMlService.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionProblemAddedListener"/></include> ![Experimental][experimental] | [`InspectionProblemAddedListener`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInspection/ui/InspectionProblemAddedListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.liveTemplateOptionalProcessor"/></include> ![DumbAware][dumb-aware] | [`TemplateOptionalProcessor`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/template/impl/TemplateOptionalProcessor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.liveTemplatePreprocessor"/></include> | [`TemplatePreprocessor`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/template/impl/TemplatePreprocessor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.outerLanguageRangePatcher"/></include> | [`OuterLanguageRangePatcher`](%gh-ic%/platform/analysis-impl/src/com/intellij/psi/templateLanguages/TemplateDataElementType.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.fileReferenceHelper"/></include> | [`FileReferenceHelper`](%gh-ic%/platform/analysis-impl/src/com/intellij/psi/impl/source/resolve/reference/impl/providers/FileReferenceHelper.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.resolveScopeEnlarger"/></include> | [`ResolveScopeEnlarger`](%gh-ic%/platform/analysis-impl/src/com/intellij/psi/ResolveScopeEnlarger.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.resolveScopeProvider"/></include> | [`ResolveScopeProvider`](%gh-ic%/platform/analysis-impl/src/com/intellij/psi/ResolveScopeProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.severitiesProvider"/></include> ![Non-Dynamic][non-dynamic] | [`SeveritiesProvider`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/SeveritiesProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.useScopeEnlarger"/></include> | [`UseScopeEnlarger`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/UseScopeEnlarger.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.useScopeOptimizer"/></include> | [`ScopeOptimizer`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/ScopeOptimizer.java) |
-
-### builtInServer.xml
-
-[`builtInServer.xml`](%gh-ic%/platform/built-in-server/resources/META-INF/builtInServer.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.httpRequestHandler"/></include> | [`HttpRequestHandler`](%gh-ic%/platform/platform-util-netty/src/org/jetbrains/ide/HttpRequestHandler.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.toolboxServiceHandler"/></include> ![Internal][internal] | [`ToolboxServiceHandler`](%gh-ic%/platform/built-in-server/src/org/jetbrains/ide/ToolboxRestService.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.binaryRequestHandler"/></include> ![Non-Dynamic][non-dynamic] | [`BinaryRequestHandler`](%gh-ic%/platform/platform-util-netty/src/org/jetbrains/ide/BinaryRequestHandler.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.customPortServerManager"/></include> ![Non-Dynamic][non-dynamic] | [`CustomPortServerManager`](%gh-ic%/platform/built-in-server-api/src/org/jetbrains/ide/CustomPortServerManager.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.jsonRpcDomain"/></include> ![Internal][internal] | `Object` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.webServerFileHandler"/></include> | [`WebServerFileHandler`](%gh-ic%/platform/built-in-server/src/org/jetbrains/builtInWebServer/WebServerFileHandler.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.webServerPathHandler"/></include> | [`WebServerPathHandler`](%gh-ic%/platform/built-in-server/src/org/jetbrains/builtInWebServer/BuiltInWebServer.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.webServerRootsProvider"/></include> | [`WebServerRootsProvider`](%gh-ic%/platform/built-in-server-api/src/org/jetbrains/builtInWebServer/WebServerRootsProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.severitiesProvider"/></include> | [`SeveritiesProvider`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/SeveritiesProvider.java) |
+{sticky-header="true"}
 
 ### CodeStyle.xml
 
@@ -321,6 +352,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.postFormatProcessor"/></include> | [`PostFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.postQuickFixTaskService"/></include> ![Internal][internal] | [`PostQuickFixTaskService`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/service/PostQuickFixTaskService.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.preFormatProcessor"/></include> | [`PreFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java) |
+{sticky-header="true"}
 
 ### com.intellij.platform.images
 
@@ -328,7 +360,8 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.images.themeFilter"/></include> | [`ThemeFilter`](%gh-ic%/images/src/org/intellij/images/thumbnail/actions/ThemeFilter.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.images.svgImageViewerProvider"/></include> | [`SvgImageViewerProvider`](%gh-ic%/images/src/org/intellij/images/editor/impl/SvgImageViewerProvider.kt) |
+{sticky-header="true"}
 
 ### com.intellij.smartUpdate
 
@@ -337,6 +370,7 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.smartUpdateStep"/></include> | [`SmartUpdateStep`](%gh-ic%/platform/smart-update/src/com/intellij/smartUpdate/SmartUpdateStep.kt) |
+{sticky-header="true"}
 
 ### CompletionExtensionPoints.xml
 
@@ -344,6 +378,12 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeCompletionConfigurable"/></include> | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.completion.command.factory"/></include> ![Experimental][experimental] ![DumbAware][dumb-aware] | [`CommandCompletionFactory`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/command/CommandCompletionFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.completion.command.provider"/></include> ![DumbAware][dumb-aware] | [`CommandProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/command/CommandProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.completion.error.intention"/></include> ![DumbAware][dumb-aware] | [`ErrorFixCommandProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/completion/command/commands/DirectIntentionCommandProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.completion.intention.offset.provider"/></include> | [`IntentionCommandOffsetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/completion/command/commands/DirectIntentionCommandProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.completion.intention.skipper"/></include> | [`IntentionCommandSkipper`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/completion/command/commands/DirectIntentionCommandProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.wordCompletionFilter"/></include> | [`WordCompletionElementFilter`](%gh-ic%/platform/lang-api/src/com/intellij/lang/WordCompletionElementFilter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.confidence"/></include> | [`CompletionConfidence`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionConfidence.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.ml.contextFeatures"/></include> ![Internal][internal] | [`ContextFeatureProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/completion/ml/ContextFeatureProvider.java) |
@@ -352,13 +392,47 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.plainTextSymbol"/></include> | [`PlainTextSymbolCompletionContributor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/completion/PlainTextSymbolCompletionContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.preselectionBehaviourProvider"/></include> | [`CompletionPreselectionBehaviourProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/completion/CompletionPreselectionBehaviourProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.createDirectoryCompletionContributor"/></include> | [`CreateDirectoryCompletionContributor`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/CreateDirectoryCompletionContributor.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inlineCompletionConfigurable"/></include> | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.internal.ml.featureProvider"/></include> ![Internal][internal] | [`MLFeatureProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/completion/ml/MLFeatureProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lookup.actionProvider"/></include> | [`LookupActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/lookup/LookupActionProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lookup.bottomPanelAdvertiserCustomizer"/></include> ![Internal][internal] | [`LookupBottomPanelAdvertiserCustomizer`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/lookup/LookupBottomPanelAdvertiserCustomizer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lookup.bottomPanelProvider"/></include> ![Experimental][experimental] | [`LookupBottomPanelProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/lookup/LookupBottomPanelProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lookup.charFilter"/></include> | [`CharFilter`](%gh-ic%/platform/platform-impl/src/com/intellij/codeInsight/lookup/CharFilter.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lookup.customizer"/></include> ![Experimental][experimental] ![Internal][internal] | [`LookupCustomizer`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/lookup/impl/ClientLookupManager.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lookup.customizer"/></include> ![Internal][internal] | [`LookupCustomizer`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/lookup/impl/ClientLookupManager.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lookup.displayStrategy"/></include> ![Experimental][experimental] ![Internal][internal] | [`LookupDisplayStrategy`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/lookup/impl/LookupDisplayStrategy.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lookup.may.have.custom.preview.provider"/></include> ![Internal][internal] | [`LookupMayHaveCustomPreviewProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElementCustomPreviewHolder.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lookup.usageDetails"/></include> ![Internal][internal] | [`LookupUsageDescriptor`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/lookup/impl/LookupUsageDescriptor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lookup.vetoPolicy"/></include> ![Internal][internal] | [`LookupImplVetoPolicy`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/lookup/impl/LookupImplVetoPolicy.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mlCodeCompletionConfigurable"/></include> ![Internal][internal] | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mlCompletionFeaturesCollector"/></include> ![Internal][internal] | [`InlineCompletionFeaturesCollector`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/inline/completion/features/InlineCompletionFeaturesCollector.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.modcompletion.completionItemFilter"/></include> | [`ModCompletionItemFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/modcompletion/ModCompletionItemFilter.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.modcompletion.completionItemProvider"/></include> ![DumbAware][dumb-aware] | [`ModCompletionItemProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/modcompletion/ModCompletionItemProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.templateParameterTraversalPolicy"/></include> | [`TemplateParameterTraversalPolicy`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/completion/TemplateParameterTraversalPolicy.java) |
+{sticky-header="true"}
+
+### Core.analyzer.xml
+
+[`Core.analyzer.xml`](%gh-ic%/platform/core-api/resources/META-INF/Core.analyzer.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eelAlternativeRootProvider"/></include> ![Internal][internal] | [`EelAlternativeRootProvider`](%gh-ic%/platform/eel-provider/src/com/intellij/platform/eel/provider/EelAlternativeRootProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eelEnvironmentInitializer"/></include> ![Internal][internal] | [`EelEnvironmentInitializer`](%gh-ic%/platform/eel-provider/src/com/intellij/platform/eel/provider/EelEnvironmentInitializer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileIconProvider"/></include> | [`FileIconProvider`](%gh-ic%/platform/core-api/src/com/intellij/ide/FileIconProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.filetype.decompiler"/></include> | [`BinaryFileDecompiler`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/BinaryFileDecompiler.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.iconProvider"/></include> ![DumbAware][dumb-aware] | [`IconProvider`](%gh-ic%/platform/core-api/src/com/intellij/ide/IconProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspection.basicVisitor"/></include> ![Experimental][experimental] | [`PsiElementVisitor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElementVisitor.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.commenter"/></include> | [`Commenter`](%gh-ic%/platform/core-api/src/com/intellij/lang/Commenter.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.parserDefinition"/></include> | [`ParserDefinition`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.substitutor"/></include> | [`LanguageSubstitutor`](%gh-ic%/platform/core-api/src/com/intellij/psi/LanguageSubstitutor.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.languageBundle"/></include> ![Internal][internal] | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.metaLanguage"/></include> | [`MetaLanguage`](%gh-ic%/platform/core-api/src/com/intellij/lang/MetaLanguage.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.metaLanguageProvider"/></include> | [`MetaLanguageProvider`](%gh-ic%/platform/core-api/src/com/intellij/lang/MetaLanguageProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.multiverse.codeInsightContextProvider"/></include> | [`CodeInsightContextProvider`](%gh-ic%/platform/core-api/src/com/intellij/codeInsight/multiverse/CodeInsightContextProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.multiverseEnabler"/></include> ![Non-Dynamic][non-dynamic] | [`MultiverseEnabler`](%gh-ic%/platform/core-api/src/com/intellij/codeInsight/multiverse/CodeInsightContexts.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.stubElementTypeHolder"/></include> | [`StubElementTypeHolderEP`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubElementTypeHolderEP.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.virtualFileManagerListener"/></include> | [`VirtualFileManagerListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManagerListener.java) |
+{sticky-header="true"}
 
 ### Core.xml
 
@@ -368,38 +442,43 @@ EXCLUDING:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.backgroundPostStartupActivity"/></include> | [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorFactoryDocumentListener"/></include> | [`DocumentListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/event/DocumentListener.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eelProvider"/></include> ![Internal][internal] | [`EelProvider`](%gh-ic%/platform/eel-provider/src/com/intellij/platform/eel/provider/EelProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileIconPatcher"/></include> | [`FileIconPatcher`](%gh-ic%/platform/core-api/src/com/intellij/ide/FileIconPatcher.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileIconProvider"/></include> | [`FileIconProvider`](%gh-ic%/platform/core-api/src/com/intellij/ide/FileIconProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileTypeDetector"/></include> | [`FileTypeDetector`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/FileTypeRegistry.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileVisibilityProvider"/></include> ![Experimental][experimental] ![Project-Level][project-level] | [`FileVisibilityProvider`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/FileVisibilityProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.filetype.decompiler"/></include> | [`BinaryFileDecompiler`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/BinaryFileDecompiler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.iconLayerProvider"/></include> | [`IconLayerProvider`](%gh-ic%/platform/core-api/src/com/intellij/ide/IconLayerProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.iconProvider"/></include> ![DumbAware][dumb-aware] | [`IconProvider`](%gh-ic%/platform/core-api/src/com/intellij/ide/IconProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.initProjectActivity"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`InitProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.initProjectGeneratorActivity"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`InitProjectGeneratorActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/InitProjectGeneratorActivity.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspection.basicVisitor"/></include> ![Experimental][experimental] | [`PsiElementVisitor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElementVisitor.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.commenter"/></include> | [`Commenter`](%gh-ic%/platform/core-api/src/com/intellij/lang/Commenter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.elementManipulator"/></include> | [`ElementManipulator`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementManipulator.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.fileViewProviderFactory"/></include> | [`FileViewProviderFactory`](%gh-ic%/platform/core-api/src/com/intellij/psi/FileViewProviderFactory.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.parserDefinition"/></include> | [`ParserDefinition`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.substitutor"/></include> | [`LanguageSubstitutor`](%gh-ic%/platform/core-api/src/com/intellij/psi/LanguageSubstitutor.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.languageBundle"/></include> ![Internal][internal] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.languageInjectionContributor"/></include> ![DumbAware][dumb-aware] | [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.languageInjectionPerformer"/></include> | [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.metaLanguage"/></include> | [`MetaLanguage`](%gh-ic%/platform/core-api/src/com/intellij/lang/MetaLanguage.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.multiHostInjector"/></include> ![Project-Level][project-level] ![DumbAware][dumb-aware] | [`MultiHostInjector`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.multiverse.codeInsightContextPresentationProvider"/></include> | [`CodeInsightContextPresentationProvider`](%gh-ic%/platform/core-api/src/com/intellij/codeInsight/multiverse/CodeInsightContextPresentationProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.multiverse.codeInsightContextProvider"/></include> | [`CodeInsightContextProvider`](%gh-ic%/platform/core-api/src/com/intellij/codeInsight/multiverse/CodeInsightContextProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.multiverseEnabler"/></include> ![Non-Dynamic][non-dynamic] | [`MultiverseEnabler`](%gh-ic%/platform/core-api/src/com/intellij/codeInsight/multiverse/CodeInsightContexts.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pom.declarationSearcher"/></include> | [`PomDeclarationSearcher`](%gh-ic%/platform/core-api/src/com/intellij/pom/PomDeclarationSearcher.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.postStartupActivity"/></include> | [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.requiredForSmartModeStartupActivity"/></include> | [`RequiredForSmartMode`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.stubElementTypeHolder"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vfs.asyncListener"/></include> | [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.virtualFileManagerListener"/></include> | [`VirtualFileManagerListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManagerListener.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vfs.asyncListenerBackgroundable"/></include> | [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.virtualFilePreCloseCheck"/></include> ![Experimental][experimental] | [`VirtualFilePreCloseCheck`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFilePreCloseCheck.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.writingAccessProvider"/></include> ![Project-Level][project-level] | [`WritingAccessProvider`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/WritingAccessProvider.java) |
+{sticky-header="true"}
+
+### CoreImpl.analyzer.xml
+
+[`CoreImpl.analyzer.xml`](%gh-ic%/platform/core-impl/resources/META-INF/CoreImpl.analyzer.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.elementsToHighlightFilter"/></include> | [`Condition`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.implicitReferenceProvider"/></include> ![Experimental][experimental] | [`ImplicitReferenceProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/ImplicitReferenceProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.referenceContributor"/></include> | [`PsiReferenceContributor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.symbolReferenceProvider"/></include> ![Experimental][experimental] | [`PsiSymbolReferenceProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/PsiSymbolReferenceProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.treeChangeListener"/></include> ![Project-Level][project-level] | [`PsiTreeChangeListener`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiTreeChangeListener.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.treeChangePreprocessor"/></include> ![Project-Level][project-level] | [`PsiTreeChangePreprocessor`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/PsiTreeChangePreprocessor.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.smartPointer.anchorProvider"/></include> | [`SmartPointerAnchorProvider`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/smartPointers/SmartPointerAnchorProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.treeCopyHandler"/></include> | [`TreeCopyHandler`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/source/tree/TreeCopyHandler.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.virtualFileSystem"/></include> | [`VirtualFileSystem`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) |
+{sticky-header="true"}
 
 ### CoreImpl.xml
 
@@ -410,30 +489,14 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.controlFlowProvider"/></include> | [`ControlFlowProvider`](%gh-ic%/platform/core-impl/src/com/intellij/codeInsight/controlflow/ControlFlowProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diagnostic.freezeProfiler"/></include> ![Internal][internal] | [`FreezeProfiler`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/FreezeProfiler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.documentWriteAccessGuard"/></include> ![Experimental][experimental] | [`DocumentWriteAccessGuard`](%gh-ic%/platform/core-impl/src/com/intellij/openapi/editor/impl/DocumentWriteAccessGuard.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.elementsToHighlightFilter"/></include> | [`Condition`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileEditor.fileSizeChecker"/></include> ![Internal][internal] | [`FileSizeLimit`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/limits/FileSizeLimit.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileEditor.fileSizeChecker"/></include> | [`FileSizeLimit`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/limits/FileSizeLimit.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileEditor.textPresentationTransformer"/></include> ![Internal][internal] | [`TextPresentationTransformer`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/transformer/TextPresentationTransformer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inlineCompletionLineRendererCustomization"/></include> ![Internal][internal] | [`InlineCompletionInlayRenderer`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/completion/render/InlineCompletionInlayRenderer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.ast.factory"/></include> | [`ASTFactory`](%gh-ic%/platform/core-impl/src/com/intellij/lang/ASTFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.tokenSeparatorGenerator"/></include> | [`TokenSeparatorGenerator`](%gh-ic%/platform/core-api/src/com/intellij/lang/TokenSeparatorGenerator.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.treePatcher"/></include> | [`TreePatcher`](%gh-ic%/platform/core-impl/src/com/intellij/psi/templateLanguages/TreePatcher.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.batchReferenceProcessingSuppressor"/></include> ![Experimental][experimental] | [`BatchReferenceProcessingSuppressor`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/PsiFileEx.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.implicitReferenceProvider"/></include> | [`ImplicitReferenceProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/ImplicitReferenceProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.referenceContributor"/></include> | [`PsiReferenceContributor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.symbolReferenceProvider"/></include> | [`PsiSymbolReferenceProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/PsiSymbolReferenceProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.treeChangeListener"/></include> ![Project-Level][project-level] | [`PsiTreeChangeListener`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiTreeChangeListener.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.treeChangePreprocessor"/></include> ![Project-Level][project-level] | [`PsiTreeChangePreprocessor`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/PsiTreeChangePreprocessor.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.smartPointer.anchorProvider"/></include> | [`SmartPointerAnchorProvider`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/smartPointers/SmartPointerAnchorProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.treeCopyHandler"/></include> | [`TreeCopyHandler`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/source/tree/TreeCopyHandler.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.virtualFileSystem"/></include> | [`VirtualFileSystem`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) |
-
-### duplicates-analysis.xml
-
-[`duplicates-analysis.xml`](%gh-ic%/platform/duplicates-analysis/resources/META-INF/duplicates-analysis.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.equivalenceDescriptorProvider"/></include> | [`EquivalenceDescriptorProvider`](%gh-ic%/platform/duplicates-analysis/src/com/intellij/dupLocator/equivalence/EquivalenceDescriptorProvider.java) |
+{sticky-header="true"}
 
 ### Editor.xml
 
@@ -444,6 +507,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorFactoryListener"/></include> | [`EditorFactoryListener`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/event/EditorFactoryListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mergeableGutterIconRendererProvider"/></include> ![Internal][internal] | [`MergeableGutterIconRendererProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/MergeableGutterIconRendererProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.syntaxHighlighter"/></include> | [`SyntaxHighlighter`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighter.java) |
+{sticky-header="true"}
 
 ### EditorExtensionPoints.xml
 
@@ -467,21 +531,25 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.flipCommaIntention.flipper"/></include> | [`Flipper`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/editor/actions/FlipCommaIntention.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.generalEditorOptionsCustomizer"/></include> ![Internal][internal] | [`EditorOptionsPageCustomizer`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/editor/EditorOptionsPageCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.generalEditorOptionsExtension"/></include> | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.editorInsertHandler"/></include> ![Internal][internal] | [`InlineCompletionEditorInsertHandler`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/completion/InlineCompletionEditorInsertHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.editorTypeResolver"/></include> ![Internal][internal] | [`InlineCompletionEditorTypeResolver`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/completion/editor/InlineCompletionEditorType.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.element.manipulator"/></include> ![Experimental][experimental] | [`InlineCompletionElementManipulator`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/completion/elements/InlineCompletionElementManipulator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.handlerInitializer"/></include> ![Internal][internal] | [`InlineCompletionHandlerInitializer`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/completion/InlineCompletionHandlerInitializer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.insertActionIdResolver"/></include> ![Internal][internal] | [`InlineCompletionInsertActionIdResolver`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/completion/tooltip/InlineCompletionInsertActionIdResolver.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.partial.accept.handler"/></include> ![Experimental][experimental] ![Internal][internal] | [`InlineCompletionPartialAcceptHandler`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/completion/suggestion/InlineCompletionPartialAcceptHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.provider"/></include> | [`InlineCompletionProvider`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/completion/InlineCompletionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.quoteHandlerEx"/></include> ![Experimental][experimental] ![Internal][internal] | [`InlineCompletionQuoteHandlerEx`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/inline/completion/suggestion/InlineCompletionQuoteHandlerEx.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.session.logs"/></include> ![Internal][internal] | [`InlineCompletionSessionLogsEP`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/completion/logs/InlineCompletionSessionLogsEP.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.suppress.state.supplier"/></include> ![Internal][internal] | [`InlineCompletionSuppressStateSupplier`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/completion/suppress/InlineCompletionSuppressStateSupplier.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.usage.data"/></include> ![Internal][internal] | [`InlineCompletionProviderSpecificUsageData`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/completion/logs/InlineCompletionProviderSpecificUsageData.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.edit.awaiter"/></include> ![Internal][internal] | [`InlineEditAwaiter`](%gh-ic%/platform/platform-impl/codeinsight-inline/src/com/intellij/codeInsight/inline/edit/InlineEditAwaiter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.joinLinesHandler"/></include> | [`JoinLinesHandlerDelegate`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/JoinLinesHandlerDelegate.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.emacs"/></include> | [`EmacsProcessingHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/emacs/EmacsProcessingHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.quoteHandler"/></include> | [`QuoteHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/QuoteHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.smartEnterProcessor"/></include> | [`SmartEnterProcessor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/smartEnter/SmartEnterProcessor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.listSplitJoinContext"/></include> ![Experimental][experimental] | [`ListSplitJoinContext`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/editor/actions/lists/ListSplitJoinContext.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.moveLeftRightHandler"/></include> | [`MoveElementLeftRightHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveLeftRight/MoveElementLeftRightHandler.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.nonWriteAccessTypedHandler"/></include> ![Experimental][experimental] ![Internal][internal] | [`NonWriteAccessTypedHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/NonWriteAccessTypedHandler.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.nonWriteAccessTypedHandler"/></include> ![Internal][internal] | [`NonWriteAccessTypedHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/NonWriteAccessTypedHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.preserveIndentOnPaste"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.quoteHandler"/></include> | [`QuoteHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/QuoteHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.selectionUnquotingFilter"/></include> | [`UnquotingFilter`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/SelectionQuotingTypedHandler.java) |
@@ -489,6 +557,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.typedHandler"/></include> | [`TypedHandlerDelegate`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.typingActionsExtension"/></include> ![Experimental][experimental] | [`TypingActionsExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/TypingActionsExtension.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.wordBoundaryFilter"/></include> | [`WordBoundaryFilter`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/actions/WordBoundaryFilter.java) |
+{sticky-header="true"}
 
 ### FormatterExtensionPoints.xml
 
@@ -508,6 +577,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.predefinedCodeStyle"/></include> | [`PredefinedCodeStyle`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/codeStyle/PredefinedCodeStyle.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rearranger.ui"/></include> | [`Factory`](%gh-ic%/platform/lang-api/src/com/intellij/psi/codeStyle/arrangement/std/ArrangementUiComponent.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.resultHandlerProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`IncorrectFormattingResultHandlerProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInspection/incorrectFormatting/IncorrectFormattingResultHandlerProvider.kt) |
+{sticky-header="true"}
 
 ### IdeCore.xml
 
@@ -521,14 +591,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.notificationGroup"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.registry.managed"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`ManagedRegistry`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/util/registry/ManagedRegistry.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.registryKey"/></include> | `n/a` |
-
-### IJent.xml
-
-[`IJent.xml`](%gh-ic%/platform/ijent/resources/META-INF/IJent.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.ijent.deploymentListener"/></include> | [`IjentDeploymentListener`](%gh-ic%/platform/ijent/src/com/intellij/platform/ijent/spi/IjentDeployingOverShellProcessStrategy.kt) |
+{sticky-header="true"}
 
 ### Indexing.xml
 
@@ -544,24 +607,15 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileBasedIndexInfrastructureExtension"/></include> ![Internal][internal] | [`FileBasedIndexInfrastructureExtension`](%gh-ic%/platform/indexing-impl/src/com/intellij/util/indexing/FileBasedIndexInfrastructureExtension.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileBasedIndexLayout"/></include> ![Internal][internal] | [`FileBasedIndexLayoutProvider`](%gh-ic%/platform/indexing-impl/src/com/intellij/util/indexing/storage/FileBasedIndexLayoutProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.findModelExtension"/></include> ![Internal][internal] | [`FindModelExtension`](%gh-ic%/platform/indexing-api/src/com/intellij/find/FindModelExtension.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.indexableFilesContributor"/></include> ![Deprecated][deprecated] ![Removal][removal] | [`IndexableFilesContributor`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/roots/IndexableFilesContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.indexedRootsProvider"/></include> | [`IndexableSetContributor`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IndexableSetContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.indexingFlavor"/></include> ![Experimental][experimental] ![Internal][internal] | [`FileIndexingFlavorProvider`](%gh-ic%/platform/core-api/src/com/intellij/util/indexing/flavor/FileIndexingFlavorProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.languageStubDefinition"/></include> ![Experimental][experimental] | [`LanguageStubDefinition`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/LanguageStubDefinition.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.languageStubDefinition"/></include> | [`LanguageStubDefinition`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/LanguageStubDefinition.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectIndexingActivityHistoryListener"/></include> | [`ProjectIndexingActivityHistoryListener`](%gh-ic%/platform/lang-impl/src/com/intellij/util/indexing/diagnostic/ProjectIndexingHistory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.referencesSearch"/></include> | [`QueryExecutor`](%gh-ic%/platform/core-api/src/com/intellij/util/QueryExecutor.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.stubElementRegistryExtension"/></include> ![Experimental][experimental] | [`StubRegistryExtension`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubRegistryExtension.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.stubElementRegistryExtension"/></include> | [`StubRegistryExtension`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubRegistryExtension.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.stubIndex"/></include> | [`StubIndexExtension`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/stubs/StubIndexExtension.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.trigramIndexFilterExcludeExtension"/></include> ![Internal][internal] | [`IndexFilterExcludingExtension`](%gh-ic%/platform/indexing-impl/src/com/intellij/util/indexing/IndexFilterExcludingExtension.kt) |
-
-### Inspect.xml
-
-[`Inspect.xml`](%gh-ic%/platform/inspect/resources/META-INF/Inspect.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectResultsConsumer"/></include> ![Internal][internal] | [`InspectResultsConsumer`](%gh-ic%/platform/inspect/src/com/intellij/codeInspection/InspectResultsConsumer.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionGroupProvider"/></include> | [`InspectionGroupProvider`](%gh-ic%/platform/inspect/src/com/intellij/codeInspection/inspectionProfile/InspectionGroupProvider.kt) |
+{sticky-header="true"}
 
 ### intellij.grid.core.impl.xml
 
@@ -572,6 +626,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.datagrid.extractorsHelper"/></include> | [`ExtractorsHelper`](%gh-ic%/grid/core-impl/src/extractors/ExtractorsHelper.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.datagrid.formatterCreatorProvider"/></include> | [`FormatterCreatorProvider`](%gh-ic%/grid/core-impl/src/datagrid/FormatterCreatorProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.datagrid.objectNormalizerProvider"/></include> | [`ObjectNormalizerProvider`](%gh-ic%/grid/core-impl/src/datagrid/ObjectNormalizerProvider.java) |
+{sticky-header="true"}
 
 ### intellij.grid.impl.xml
 
@@ -580,8 +635,19 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.datagrid.cellViewerFactory"/></include> | [`CellViewerFactory`](%gh-ic%/grid/impl/src/run/ui/CellViewer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.datagrid.customToolbarProvider"/></include> | [`CustomGridToolbarProvider`](%gh-ic%/grid/impl/src/datagrid/CustomGridToolbarProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.datagrid.valueEditorTab"/></include> | [`ValueEditorTab`](%gh-ic%/grid/impl/src/run/ui/ValueEditorTab.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.minimizedFormatDetector"/></include> | [`MinimizedFormatDetector`](%gh-ic%/grid/impl/src/run/ui/MinimizedFormatDetector.java) |
+{sticky-header="true"}
+
+### intellij.notebooks.ui.xml
+
+[`intellij.notebooks.ui.xml`](%gh-ic%/notebooks/notebook-ui/resources/intellij.notebooks.ui.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.notebooks.ui.cellCaretTracker"/></include> | [`NotebookCellCaretTracker`](%gh-ic%/notebooks/notebook-ui/src/com/intellij/notebooks/ui/editor/actions/command/mode/NotebookCellCaretTracker.kt) |
+{sticky-header="true"}
 
 ### intellij.notebooks.visualization.xml
 
@@ -600,6 +666,70 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.notebooks.notebookCellSelectionModelProvider"/></include> | [`NotebookCellSelectionModelProvider`](%gh-ic%/notebooks/visualization/src/com/intellij/notebooks/visualization/NotebookCellSelectionModelProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.notebooks.notebookCellSelfManagedController"/></include> | [`SelfManagedControllerFactory`](%gh-ic%/notebooks/visualization/src/com/intellij/notebooks/visualization/controllers/selfUpdate/SelfManagedControllerFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.notebooks.notebookIntervalPointerFactoryProvider"/></include> | [`NotebookIntervalPointerFactoryProvider`](%gh-ic%/notebooks/visualization/src/com/intellij/notebooks/visualization/NotebookIntervalPointerFactoryProvider.kt) |
+{sticky-header="true"}
+
+### intellij.platform.acp.xml
+
+[`intellij.platform.acp.xml`](%gh-ic%/platform/acp/resources/intellij.platform.acp.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.acp.agentsCatalogProvider"/></include> ![Internal][internal] | [`AcpAgentsCatalogProvider`](%gh-ic%/platform/acp/src/AcpAgentsCatalog.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.acp.processLauncherProvider"/></include> ![Internal][internal] | [`AcpProcessLauncherProvider`](%gh-ic%/platform/acp/src/AcpProcessLauncher.kt) |
+{sticky-header="true"}
+
+### intellij.platform.builtInServer.impl.xml
+
+[`intellij.platform.builtInServer.impl.xml`](%gh-ic%/platform/built-in-server/resources/intellij.platform.builtInServer.impl.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.httpRequestHandler"/></include> | [`HttpRequestHandler`](%gh-ic%/platform/platform-util-netty/src/org/jetbrains/ide/HttpRequestHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.toolboxServiceHandler"/></include> ![Internal][internal] | [`ToolboxServiceHandler`](%gh-ic%/platform/built-in-server/src/org/jetbrains/ide/ToolboxRestService.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.binaryRequestHandler"/></include> ![Non-Dynamic][non-dynamic] | [`BinaryRequestHandler`](%gh-ic%/platform/platform-util-netty/src/org/jetbrains/ide/BinaryRequestHandler.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.customPortServerManager"/></include> ![Non-Dynamic][non-dynamic] | [`CustomPortServerManager`](%gh-ic%/platform/built-in-server-api/src/org/jetbrains/ide/CustomPortServerManager.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.jsonRpcDomain"/></include> ![Internal][internal] | `Object` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.webServerFileHandler"/></include> | [`WebServerFileHandler`](%gh-ic%/platform/built-in-server/src/org/jetbrains/builtInWebServer/WebServerFileHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.webServerPathHandler"/></include> | [`WebServerPathHandler`](%gh-ic%/platform/built-in-server/src/org/jetbrains/builtInWebServer/BuiltInWebServer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.webServerRootsProvider"/></include> | [`WebServerRootsProvider`](%gh-ic%/platform/built-in-server-api/src/org/jetbrains/builtInWebServer/WebServerRootsProvider.kt) |
+{sticky-header="true"}
+
+### intellij.platform.debugger.content.xml
+
+[`intellij.platform.debugger.content.xml`](%gh-ic%/platform/xdebugger-api/resources/intellij.platform.debugger.content.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.breakpointBehaviorPolicy"/></include> ![Experimental][experimental] | [`XBreakpointBehaviorPolicy`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/XBreakpointBehaviorPolicy.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.breakpointFileProhibitionPolicy"/></include> ![Internal][internal] | [`BreakpointFileProhibitionPolicy`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/breakpoints/BreakpointFileProhibitionPolicy.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.breakpointGroupingRule"/></include> | [`XBreakpointGroupingRule`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/breakpoints/ui/XBreakpointGroupingRule.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.breakpointType"/></include> | [`XBreakpointType`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/breakpoints/XBreakpointType.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.configurableProvider"/></include> | [`DebuggerConfigurableProvider`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/settings/DebuggerConfigurableProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.controlExceptionBreakpointSupport"/></include> | [`ControlExceptionBreakpointSupport`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/codeinsight/ControlExceptionBreakpointSupport.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.customXDescriptorSerializerProvider"/></include> ![Internal][internal] | [`CustomXDescriptorSerializerProvider`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/frame/XDescriptor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.hotSwapInDebugSessionEnabler"/></include> ![Experimental][experimental] | [`HotSwapInDebugSessionEnabler`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/hotswap/api.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.inlineBreakpointsDisabler"/></include> ![Experimental][experimental] | [`InlineBreakpointsDisabler`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/breakpoints/InlineBreakpointsDisabler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.settings"/></include> | [`XDebuggerSettings`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/settings/XDebuggerSettings.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.splitDebuggerModeEnabler"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`XDebuggerSplitModeEnabler`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/SplitDebuggerMode.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.textValueVisualizer"/></include> ![Experimental][experimental] | [`TextValueVisualizer`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/ui/TextValueVisualizer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.xTextValueModificationPreparatorProvider"/></include> ![Experimental][experimental] | [`XValueTextModificationPreparatorProvider`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/frame/XValueTextModificationPreparator.kt) |
+{sticky-header="true"}
+
+### intellij.platform.debugger.impl.content.xml
+
+[`intellij.platform.debugger.impl.content.xml`](%gh-ic%/platform/xdebugger-impl/resources/intellij.platform.debugger.impl.content.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.attachDebuggerProvider"/></include> | [`XAttachDebuggerProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/attach/XAttachDebuggerProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.attachHostProvider"/></include> | [`XAttachHostProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/attach/XAttachHostProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.attachHostSettingsProvider"/></include> | [`XAttachHostSettingsProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/ui/attach/dialog/extensions/XAttachHostSettingsProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.breakpointCustomTooltipProvider"/></include> ![Internal][internal] | [`XBreakpointCustomTooltipProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/breakpoints/XBreakpointCustomTooltipProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.debuggerSupport"/></include> ![Deprecated][deprecated] | [`DebuggerSupport`](%gh-ic%/platform/xdebugger-impl/shared/src/com/intellij/xdebugger/impl/DebuggerSupport.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.dialog.item.presentation.provider"/></include> ![Experimental][experimental] | [`XAttachDialogItemPresentationProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/ui/attach/dialog/extensions/XAttachDialogItemPresentationProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.dialog.presentation.provider"/></include> ![Experimental][experimental] | [`XAttachDialogPresentationProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/ui/attach/dialog/extensions/XAttachDialogPresentationProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.dialog.process.view.provider"/></include> ![Internal][internal] | [`XAttachToProcessViewProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/ui/attach/dialog/extensions/XAttachToProcessViewProvider.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.debugger.impl.frontend.xml
 
@@ -607,16 +737,93 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.customQuickEvaluateActionProvider"/></include> ![Internal][internal] | [`CustomQuickEvaluateActionProvider`](%gh-ic%/platform/xdebugger-impl/frontend/src/com/intellij/platform/debugger/impl/frontend/actions/CustomQuickEvaluateActionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.frontendLineBreakpointAttachmentProvider"/></include> ![Internal][internal] | [`FrontendXLineBreakpointAttachmentProvider`](%gh-ic%/platform/xdebugger-impl/frontend/src/com/intellij/platform/debugger/impl/frontend/FrontendXLineBreakpointAttachmentProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.imageEditorUIProvider"/></include> ![Internal][internal] | [`ImageEditorUIProvider`](%gh-ic%/platform/xdebugger-impl/frontend/src/com/intellij/platform/debugger/impl/frontend/frame/ImagePopupUtil.kt) |
+{sticky-header="true"}
 
-### intellij.platform.debugger.impl.shared.xml
+### intellij.platform.debugger.impl.shared.content.xml
 
-[`intellij.platform.debugger.impl.shared.xml`](%gh-ic%/platform/xdebugger-impl/shared/resources/intellij.platform.debugger.impl.shared.xml)
+[`intellij.platform.debugger.impl.shared.content.xml`](%gh-ic%/platform/xdebugger-impl/shared/resources/intellij.platform.debugger.impl.shared.content.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.additionalTabComponentConverter"/></include> ![Internal][internal] | [`XDebugSessionAdditionalTabComponentConverter`](%gh-ic%/platform/xdebugger-impl/shared/src/com/intellij/platform/debugger/impl/shared/XDebugSessionAdditionalTabComponentConverter.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.consoleViewDataConverter"/></include> ![Internal][internal] | [`XDebuggerConsoleViewConverter`](%gh-ic%/platform/xdebugger-impl/shared/src/com/intellij/xdebugger/impl/rpc/XDebuggerConsoleViewData.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.breakpointInterLinePlacementDetector"/></include> ![Internal][internal] | [`XBreakpointInterLinePlacementDetector`](%gh-ic%/platform/xdebugger-impl/shared/src/com/intellij/platform/debugger/impl/shared/XBreakpointInterLinePlacementDetector.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.consoleViewDataConverter"/></include> ![Internal][internal] | [`XDebuggerConsoleViewConverter`](%gh-ic%/platform/xdebugger-impl/rpc/src/com/intellij/platform/debugger/impl/rpc/XDebuggerConsoleViewData.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.descriptorStateManager"/></include> ![Internal][internal] | [`FrontendDescriptorStateManagerExtension`](%gh-ic%/platform/xdebugger-impl/shared/src/com/intellij/platform/debugger/impl/shared/FrontendDescriptorStateManager.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.managerProxy"/></include> ![Internal][internal] | [`XDebugManagerProxy`](%gh-ic%/platform/xdebugger-impl/shared/src/com/intellij/platform/debugger/impl/shared/proxy/XDebugManagerProxy.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.monolithAccessPoint"/></include> ![Internal][internal] | [`XDebuggerMonolithAccessPoint`](%gh-ic%/platform/xdebugger-impl/shared/src/com/intellij/platform/debugger/impl/shared/XDebuggerMonolithAccessPoint.kt) |
+{sticky-header="true"}
+
+### intellij.platform.debugger.impl.ui.xml
+
+[`intellij.platform.debugger.impl.ui.xml`](%gh-ic%/platform/xdebugger-impl/ui/resources/intellij.platform.debugger.impl.ui.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.customEvaluateHandler"/></include> ![Internal][internal] | [`XDebuggerCustomEvaluateHandler`](%gh-ic%/platform/xdebugger-impl/ui/src/com/intellij/xdebugger/impl/actions/handlers/XDebuggerCustomEvaluateHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.customMuteBreakpointHandler"/></include> ![Internal][internal] | [`XDebuggerCustomMuteBreakpointHandler`](%gh-ic%/platform/xdebugger-impl/ui/src/com/intellij/xdebugger/impl/actions/handlers/XDebuggerCustomMuteBreakpointHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.customQuickEvaluateActionProvider"/></include> ![Internal][internal] | [`CustomQuickEvaluateActionProvider`](%gh-ic%/platform/xdebugger-impl/ui/src/com/intellij/platform/debugger/impl/ui/actions/CustomQuickEvaluateActionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.debuggerTabCustomizer"/></include> | [`SessionTabComponentProvider`](%gh-ic%/platform/xdebugger-impl/ui/src/com/intellij/xdebugger/impl/ui/SessionTabComponentProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.hotSwapUiExtension"/></include> ![Internal][internal] | [`HotSwapUiExtension`](%gh-ic%/platform/xdebugger-impl/ui/src/com/intellij/xdebugger/impl/hotswap/ui.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.inlineValuePopupProvider"/></include> | [`InlineValuePopupProvider`](%gh-ic%/platform/xdebugger-impl/ui/src/com/intellij/xdebugger/impl/inline/InlineValuePopupProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.nodeLinkActionProvider"/></include> ![Experimental][experimental] | [`XDebuggerNodeLinkActionProvider`](%gh-ic%/platform/xdebugger-impl/ui/src/com/intellij/xdebugger/impl/collection/visualizer/XDebuggerNodeLinkActionProvider.kt) |
+{sticky-header="true"}
+
+### intellij.platform.discoverability.xml
+
+[`intellij.platform.discoverability.xml`](%gh-ic%/platform/discoverability/resources/intellij.platform.discoverability.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.discoveryInfoContributor"/></include> ![Internal][internal] | [`DiscoveryInfoContributor`](%gh-ic%/platform/discoverability/src/DiscoveryInfoContributor.kt) |
+{sticky-header="true"}
+
+### intellij.platform.duplicates.analysis.xml
+
+[`intellij.platform.duplicates.analysis.xml`](%gh-ic%/platform/duplicates-analysis/resources/intellij.platform.duplicates.analysis.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.equivalenceDescriptorProvider"/></include> | [`EquivalenceDescriptorProvider`](%gh-ic%/platform/duplicates-analysis/src/com/intellij/dupLocator/equivalence/EquivalenceDescriptorProvider.java) |
+{sticky-header="true"}
+
+### intellij.platform.eel.impl.xml
+
+[`intellij.platform.eel.impl.xml`](%gh-ic%/platform/eel-impl/resources/intellij.platform.eel.impl.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eelEnvironment"/></include> | [`EelEnvironmentHousekeepingService`](%gh-ic%/platform/eel-impl-base/src/com/intellij/platform/eel/impl/base/EelEnvironmentHousekeepingService.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eelMachineResolver"/></include> ![Experimental][experimental] | [`EelMachineResolver`](%gh-ic%/platform/eel/src/com/intellij/platform/eel/provider/EelMachineResolver.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.eel.impl.portAccessibleLocally"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`EelPortAccessibleLocally`](%gh-ic%/platform/eel/src/com/intellij/platform/eel/provider/portAccessibleLocally/EelPortAccessibleLocally.kt) |
+{sticky-header="true"}
+
+### intellij.platform.eel.nioFs.impl.xml
+
+[`intellij.platform.eel.nioFs.impl.xml`](%gh-ic%/platform/eel-nioFs-impl/resources/intellij.platform.eel.nioFs.impl.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.multiRoutingFileSystemBackend"/></include> ![Internal][internal] | [`MultiRoutingFileSystemBackend`](%gh-ic%/platform/eel-nioFs-impl/src/com/intellij/platform/eel/nioFs/impl/MultiRoutingFileSystemBackend.kt) |
+{sticky-header="true"}
+
+### intellij.platform.eel.tcp.xml
+
+[`intellij.platform.eel.tcp.xml`](%gh-ic%/platform/eel-tcp/resources/intellij.platform.eel.tcp.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eelTcpPathParser"/></include> | [`TcpEelPathParser`](%gh-ic%/platform/eel-tcp/src/TcpEelPathParser.kt) |
+{sticky-header="true"}
+
+### intellij.platform.execution.dashboard.backend.xml
+
+[`intellij.platform.execution.dashboard.backend.xml`](%gh-ic%/platform/execution.dashboard/backend/resources/intellij.platform.execution.dashboard.backend.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runDashboardChecker"/></include> ![Experimental][experimental] | [`RunDashboardChecker`](%gh-ic%/platform/lang-api/src/com/intellij/execution/dashboard/RunDashboardChecker.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.execution.dashboard.xml
 
@@ -624,7 +831,37 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runDashboardChecker"/></include> ![Experimental][experimental] | [`RunDashboardChecker`](%gh-ic%/platform/lang-api/src/com/intellij/execution/dashboard/RunDashboardChecker.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runDashboardGroupingRule"/></include> ![Internal][internal] | [`RunDashboardGroupingRule`](%gh-ic%/platform/execution.dashboard/src/splitApi/frontend/RunDashboardGroupingRule.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runDashboardManagerProxy"/></include> ![Internal][internal] | [`RunDashboardManagerProxy`](%gh-ic%/platform/execution/src/com/intellij/execution/dashboard/RunDashboardManagerProxy.kt) |
+{sticky-header="true"}
+
+### intellij.platform.execution.serviceView.backend.xml
+
+[`intellij.platform.execution.serviceView.backend.xml`](%gh-ic%/platform/execution.serviceView/backend/resources/intellij.platform.execution.serviceView.backend.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.serviceViewLocatableSearcher"/></include> ![Internal][internal] | [`ServiceViewLocatableSearcher`](%gh-ic%/platform/execution.serviceView/backend/src/ServiceViewLocatableSearcher.kt) |
+{sticky-header="true"}
+
+### intellij.platform.execution.serviceView.xml
+
+[`intellij.platform.execution.serviceView.xml`](%gh-ic%/platform/execution.serviceView/resources/intellij.platform.execution.serviceView.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.backendServiceViewNavigatableProvider"/></include> ![Experimental][experimental] | [`BackendServiceViewNavigatableProvider`](%gh-ic%/platform/execution.serviceView/src/BackendServiceViewNavigatableProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.backendServiceViewSelectedItemProvider"/></include> ![Experimental][experimental] | [`BackendServiceViewSelectedItemProvider`](%gh-ic%/platform/execution.serviceView/src/BackendServiceViewSelectedItemProvider.kt) |
+{sticky-header="true"}
+
+### intellij.platform.execution.xml
+
+[`intellij.platform.execution.xml`](%gh-ic%/platform/execution/resources/intellij.platform.execution.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runContentManagerExtension"/></include> ![Internal][internal] | [`RunContentManagerExtension`](%gh-ic%/platform/execution/src/com/intellij/execution/ui/RunContentManagerExtension.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.feedback.xml
 
@@ -633,6 +870,29 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.feedback.idleFeedbackSurvey"/></include> | [`FeedbackSurvey`](%gh-ic%/platform/feedback/src/com/intellij/platform/feedback/FeedbackSurvey.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.feedback.csat.feedbackExtraDataProvider"/></include> ![Internal][internal] | [`CsatFeedbackExtraDataProvider`](%gh-ic%/platform/feedback/src/com/intellij/platform/feedback/csat/CsatFeedbackExtraDataProvider.kt) |
+{sticky-header="true"}
+
+### intellij.platform.icons.impl.intellij.xml
+
+[`intellij.platform.icons.impl.intellij.xml`](%gh-ic%/platform/icons-impl/intellij/resources/intellij.platform.icons.impl.intellij.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.icons.customLegacyIconSerializer"/></include> | [`CustomLegacyIconSerializer`](%gh-ic%/platform/icons-impl/intellij/src/com/intellij/platform/icons/impl/intellij/custom/CustomLegacyIconSerializer.kt) |
+{sticky-header="true"}
+
+### intellij.platform.ide.impl.xml
+
+[`intellij.platform.ide.impl.xml`](%gh-ic%/platform/platform-impl/resources/intellij.platform.ide.impl.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editor.interLineBreakpointConfigurationProvider"/></include> ![Internal][internal] | [`InterLineBreakpointConfigurationProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/editor/impl/InterLineBreakpointConfigurationProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorEmptyStateComponentProvider"/></include> ![Internal][internal] | [`EditorEmptyStateComponentProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/EditorEmptyStateComponentProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorEmptyTextProvider"/></include> ![Internal][internal] | [`EditorEmptyTextProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/EditorEmptyTextProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.imageReaderWriterSpi"/></include> | `IIOServiceProvider` |
+{sticky-header="true"}
 
 ### intellij.platform.ide.newUiOnboarding.xml
 
@@ -641,7 +901,50 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.ide.newUiOnboarding"/></include> | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.ide.newUiOnboarding.browserPageRenderer"/></include> ![Internal][internal] | [`NewUiOnboardingBrowserPageRenderer`](%gh-ic%/platform/new-ui-onboarding/src/com/intellij/platform/ide/newUiOnboarding/NewUiOnboardingBrowserPageRenderer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.ide.newUiOnboarding.step"/></include> ![Internal][internal] | [`NewUiOnboardingStep`](%gh-ic%/platform/new-ui-onboarding/src/com/intellij/platform/ide/newUiOnboarding/NewUiOnboardingStep.kt) |
+{sticky-header="true"}
+
+### intellij.platform.ide.nonModalWelcomeScreen.backend.xml
+
+[`intellij.platform.ide.nonModalWelcomeScreen.backend.xml`](%gh-ic%/platform/non-modal-welcome-screen/backend/resources/intellij.platform.ide.nonModalWelcomeScreen.backend.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.ide.welcomeScreenFeatureBackend"/></include> ![Internal][internal] | [`WelcomeScreenFeatureBackend`](%gh-ic%/platform/non-modal-welcome-screen/backend/src/WelcomeScreenFeatureBackend.kt) |
+{sticky-header="true"}
+
+### intellij.platform.ide.nonModalWelcomeScreen.xml
+
+[`intellij.platform.ide.nonModalWelcomeScreen.xml`](%gh-ic%/platform/non-modal-welcome-screen/resources/intellij.platform.ide.nonModalWelcomeScreen.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.ide.welcomeScreenContentProvider"/></include> ![Internal][internal] | [`WelcomeRightTabContentProvider`](%gh-ic%/platform/non-modal-welcome-screen/src/com/intellij/platform/ide/nonModalWelcomeScreen/rightTab/WelcomeRightTabContentProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.ide.welcomeScreenCustomTabProvider"/></include> ![Internal][internal] | [`WelcomeRightCustomTabProvider`](%gh-ic%/platform/non-modal-welcome-screen/src/com/intellij/platform/ide/nonModalWelcomeScreen/rightTab/WelcomeRightCustomTabProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.ide.welcomeScreenFeatureUi"/></include> ![Internal][internal] | [`WelcomeScreenFeatureUI`](%gh-ic%/platform/non-modal-welcome-screen/src/com/intellij/platform/ide/nonModalWelcomeScreen/rightTab/WelcomeScreenFeatureUI.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.ide.welcomeScreenRightTabBannerProvider"/></include> ![Internal][internal] | [`WelcomeScreenRightTabBannerProvider`](%gh-ic%/platform/non-modal-welcome-screen/src/com/intellij/platform/ide/nonModalWelcomeScreen/rightTab/WelcomeScreenRightTabBannerProvider.kt) |
+{sticky-header="true"}
+
+### intellij.platform.ide.xml
+
+[`intellij.platform.ide.xml`](%gh-ic%/platform/platform-api/resources/intellij.platform.ide.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.focusedComponentProvider"/></include> ![Internal][internal] | [`FocusedComponentProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ide/FocusedComponentProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.hwFacadeProvider"/></include> ![Internal][internal] | [`HwFacadeProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/HwFacadeProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.proxySettingsListener"/></include> ![Internal][internal] | [`ProxySettingsListener`](%gh-ic%/platform/platform-api/src/com/intellij/util/net/ProxySettingsListener.kt) |
+{sticky-header="true"}
+
+### intellij.platform.ijent.community.ui.xml
+
+[`intellij.platform.ijent.community.ui.xml`](%gh-ic%/platform/ijent/ui/resources/intellij.platform.ijent.community.ui.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.ijent.dashboard.tab"/></include> ![Internal][internal] | [`IjentDashboardTab`](%gh-ic%/platform/ijent/ui/src/com/intellij/platform/ijent/community/ui/actions/dashboard/IjentDashboardEP.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.inline.completion.xml
 
@@ -650,6 +953,17 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inline.completion.shortcutHintListener"/></include> ![Internal][internal] | [`InlineCompletionShortcutHintListener`](%gh-ic%/platform/inline-completion/shared/src/shortcut/InlineCompletionShortcutHintListener.kt) |
+{sticky-header="true"}
+
+### intellij.platform.inspect.xml
+
+[`intellij.platform.inspect.xml`](%gh-ic%/platform/inspect/resources/intellij.platform.inspect.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectResultsConsumer"/></include> ![Internal][internal] | [`InspectResultsConsumer`](%gh-ic%/platform/inspect/src/com/intellij/codeInspection/InspectResultsConsumer.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionGroupProvider"/></include> | [`InspectionGroupProvider`](%gh-ic%/platform/inspect/src/com/intellij/codeInspection/inspectionProfile/InspectionGroupProvider.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.kernel.xml
 
@@ -658,6 +972,30 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.entityTypes"/></include> | [`EntityTypeProvider`](%gh-ic%/platform/kernel/shared/src/EntityTypeProvider.kt) |
+{sticky-header="true"}
+
+### intellij.platform.lang.impl.xml
+
+[`intellij.platform.lang.impl.xml`](%gh-ic%/platform/lang-impl/resources/intellij.platform.lang.impl.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.canBeSelectedInProjectPaneProvider"/></include> ![Internal][internal] | [`CanBeSelectedInProjectPaneProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/impl/canBeSelected/CanBeSelectedInProjectPaneProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runInspectionDialogExtension"/></include> ![Experimental][experimental] | [`RunInspectionDialogExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInspection/actions/RunInspectionDialogExtension.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.scratchLanguageFilter"/></include> ![Internal][internal] | [`ScratchFileTypeFilter`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/scratch/ScratchFileTypeFilter.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.usageInfoFilter"/></include> ![Internal][internal] | [`UsageInfoAdapterFilter`](%gh-ic%/platform/lang-impl/src/com/intellij/find/impl/usageAdapters.kt) |
+{sticky-header="true"}
+
+### intellij.platform.lsp.impl.xml
+
+[`intellij.platform.lsp.impl.xml`](%gh-ic%/platform/lsp-impl/resources/intellij.platform.lsp.impl.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.lsp.documentAdapter"/></include> ![Internal][internal] | [`LspDocumentAdapter`](%gh-ic%/platform/lsp-impl/src/impl/LspDocumentAdapter.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.lsp.integrationProvider"/></include> | [`LspIntegrationProvider`](%gh-ic%/platform/lsp/src/api/LspIntegrationProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.lsp.serverSupportProvider"/></include> ![Deprecated][deprecated] | [`LspServerSupportProvider`](%gh-ic%/platform/lsp/src/api/LspServerSupportProvider.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.ml.impl.xml
 
@@ -667,6 +1005,7 @@ EXCLUDING:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.ml.impl.approach"/></include> ![Internal][internal] | [`MLTaskApproachBuilder`](%gh-ic%/platform/ml-api/src/com/intellij/platform/ml/MLTask.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.ml.impl.turboComplete.smartPipelineRunner"/></include> ![Internal][internal] | [`SmartPipelineRunner`](%gh-ic%/platform/ml-impl/src/com/intellij/platform/ml/impl/turboComplete/SmartPipelineRunner.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.navbar.backend.xml
 
@@ -675,6 +1014,7 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.navbar.item.provider"/></include> | [`NavBarItemProvider`](%gh-ic%/platform/navbar/backend/src/NavBarItemProvider.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.polySymbols.backend.xml
 
@@ -685,10 +1025,11 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.codeCompletionItemCustomizer"/></include> | [`PolySymbolCodeCompletionItemCustomizer`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/completion/PolySymbolCodeCompletionItemCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.inspectionToolMapping"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.problemQuickFixProvider"/></include> | [`PolySymbolProblemQuickFixProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/inspections/PolySymbolProblemQuickFixProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.psiLinkedSymbol"/></include> | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.psiLinkedSymbolProvider"/></include> | [`PsiLinkedPolySymbolProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.psiReferenceCacheInfoProvider"/></include> | [`PsiPolySymbolReferenceCacheInfoProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/references/PsiPolySymbolReferenceCacheInfoProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.psiReferenceProvider"/></include> | [`PsiPolySymbolReferenceProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/references/PsiPolySymbolReferenceProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.psiSourcedSymbol"/></include> | `n/a` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.psiSourcedSymbolProvider"/></include> | [`PsiSourcedPolySymbolProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiSourcedPolySymbolProvider.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.polySymbols.xml
 
@@ -713,6 +1054,26 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.webTypes.filter"/></include> | [`PolySymbolFilter`](%gh-ic%/platform/polySymbols/src-web/com/intellij/polySymbols/webTypes/filters/PolySymbolFilter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.webTypes.symbolFactory"/></include> | [`WebTypesSymbolFactory`](%gh-ic%/platform/polySymbols/src-web/com/intellij/polySymbols/webTypes/WebTypesSymbolFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.polySymbols.webTypes.symbolTypeSupportFactory"/></include> ![Internal][internal] | [`WebTypesSymbolTypeSupportFactory`](%gh-ic%/platform/polySymbols/src-web/com/intellij/polySymbols/webTypes/WebTypesSymbolTypeSupportFactory.kt) |
+{sticky-header="true"}
+
+### intellij.platform.problemsView.frontend.xml
+
+[`intellij.platform.problemsView.frontend.xml`](%gh-ic%/platform/problemsView/frontend/resources/intellij.platform.problemsView.frontend.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.frontendProblemsViewContentProvider"/></include> | [`FrontendProblemsViewContentProvider`](%gh-ic%/platform/problemsView/frontend/src/com/intellij/platform/problemsView/frontend/FrontendProblemsViewContentProvider.kt) |
+{sticky-header="true"}
+
+### intellij.platform.projectFrame.xml
+
+[`intellij.platform.projectFrame.xml`](%gh-ic%/platform/project-frame/resources/intellij.platform.projectFrame.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectFrameActionExclusion"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectFrameCapabilitiesProvider"/></include> ![Non-Dynamic][non-dynamic] ![Experimental][experimental] ![Internal][internal] | [`ProjectFrameCapabilitiesProvider`](%gh-ic%/platform/project-frame/src/com/intellij/openapi/wm/ex/ProjectFrameCapabilities.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.recentFiles.frontend.xml
 
@@ -720,8 +1081,18 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentFiles.excluder"/></include> ![Internal][internal] | [`RecentFilesExcluder`](%gh-ic%/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/RecentFilesExcluder.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentFiles.advertisementProvider"/></include> ![Internal][internal] | [`RecentFilesAdvertisementProvider`](%gh-ic%/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/RecentFilesAdvertisementProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentFiles.navigator"/></include> ![Internal][internal] | [`RecentFilesNavigator`](%gh-ic%/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/RecentFilesNavigator.kt) |
+{sticky-header="true"}
+
+### intellij.platform.recentFiles.xml
+
+[`intellij.platform.recentFiles.xml`](%gh-ic%/platform/recentFiles/shared/resources/intellij.platform.recentFiles.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentFiles.excluder"/></include> ![Internal][internal] | [`RecentFilesExcluder`](%gh-ic%/platform/recentFiles/shared/src/com/intellij/platform/recentFiles/shared/RecentFilesExcluder.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.remoteServers.impl.xml
 
@@ -734,6 +1105,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.remoteServer.deploymentSource.type"/></include> | [`DeploymentSourceType`](%gh-ic%/platform/remote-servers/api/src/com/intellij/remoteServer/configuration/deployment/DeploymentSourceType.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.remoteServer.runConfigurationExtension"/></include> | [`DeployToServerRunConfigurationExtension`](%gh-ic%/platform/remote-servers/impl/src/com/intellij/remoteServer/impl/configuration/deployment/DeployToServerRunConfigurationExtension.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.remoteServer.type"/></include> | [`ServerType`](%gh-ic%/platform/remote-servers/api/src/com/intellij/remoteServer/ServerType.java) |
+{sticky-header="true"}
 
 ### intellij.platform.rpc.backend.xml
 
@@ -741,7 +1113,19 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.rpc.backend.documentSync"/></include> ![Internal][internal] | [`DocumentSync`](%gh-ic%/platform/kernel/rpc.backend/src/impl/sync.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.rpc.backend.remoteApiProvider"/></include> | [`RemoteApiProvider`](%gh-ic%/platform/kernel/rpc.backend/src/RemoteApiProvider.kt) |
+{sticky-header="true"}
+
+### intellij.platform.rpc.topics.xml
+
+[`intellij.platform.rpc.topics.xml`](%gh-ic%/platform/remote-topics/shared/resources/intellij.platform.rpc.topics.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.rpc.applicationRemoteTopicListener"/></include> ![Internal][internal] | [`ApplicationRemoteTopicListener`](%gh-ic%/platform/remote-topics/shared/src/com/intellij/platform/rpc/topics/ApplicationRemoteTopicListener.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.rpc.projectRemoteTopicListener"/></include> ![Internal][internal] | [`ProjectRemoteTopicListener`](%gh-ic%/platform/remote-topics/shared/src/com/intellij/platform/rpc/topics/ProjectRemoteTopicListener.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.searchEverywhere.frontend.xml
 
@@ -749,7 +1133,10 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhere.tabFactory"/></include> ![Experimental][experimental] ![Internal][internal] | [`SeTabFactory`](%gh-ic%/platform/searchEverywhere/frontend/src/SeTabFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhere.mlService"/></include> ![Internal][internal] | [`SeMlService`](%gh-ic%/platform/searchEverywhere/frontend/src/ml/SeMlService.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhere.previewPanelListener"/></include> ![Internal][internal] | [`SePreviewPanelListener`](%gh-ic%/platform/searchEverywhere/frontend/src/SePreviewPanelListener.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhere.tabFactory"/></include> ![Experimental][experimental] | [`SeTabFactory`](%gh-ic%/platform/searchEverywhere/frontend/src/SeTabFactory.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.searchEverywhere.xml
 
@@ -757,7 +1144,9 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhere.itemsProviderFactory"/></include> ![Experimental][experimental] ![Internal][internal] | [`SeItemsProviderFactory`](%gh-ic%/platform/searchEverywhere/shared/src/SeItemsProviderFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhere.itemsProviderFactory"/></include> ![Experimental][experimental] | [`SeItemsProviderFactory`](%gh-ic%/platform/searchEverywhere/shared/src/SeItemsProviderFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhere.legacyItemPresentationProvider"/></include> ![Experimental][experimental] | [`SeLegacyItemPresentationProvider`](%gh-ic%/platform/searchEverywhere/shared/src/SeLegacyItemPresentationProvider.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.settings.local.xml
 
@@ -766,6 +1155,16 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.settingsController"/></include> ![Internal][internal] | [`DelegatedSettingsController`](%gh-ic%/platform/settings/src/com/intellij/platform/settings/SettingsController.kt) |
+{sticky-header="true"}
+
+### intellij.platform.smRunner.xml
+
+[`intellij.platform.smRunner.xml`](%gh-ic%/platform/smRunner/resources/intellij.platform.smRunner.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.importTestOutput"/></include> | [`ImportTestOutputExtension`](%gh-ic%/platform/smRunner/src/com/intellij/execution/testframework/sm/runner/history/ImportTestOutputExtension.java) |
+{sticky-header="true"}
 
 ### intellij.platform.statistics.devkit.xml
 
@@ -773,7 +1172,31 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.internal.statistic.devkit.toolwindow.logGroupActionsProvider"/></include> ![Internal][internal] | [`StatisticsLogGroupActionsProvider`](%gh-ic%/platform/statistics/devkit/src/com/intellij/internal/statistic/devkit/toolwindow/StatisticsLogGroupActionsProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.internal.statistic.devkit.toolwindow.logGroupActionsProvider"/></include> ![Internal][internal] | [`StatisticsLogGroupActionsProvider`](%gh-ic%/platform/statistics/devkit/src/com/intellij/platform/statistics/devkit/toolwindow/StatisticsLogGroupActionsProvider.kt) |
+{sticky-header="true"}
+
+### intellij.platform.structuralSearch.xml
+
+[`intellij.platform.structuralSearch.xml`](%gh-ic%/platform/structuralsearch/resources/intellij.platform.structuralSearch.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.structuralsearch.filterProvider"/></include> | [`FilterProvider`](%gh-ic%/platform/structuralsearch/source/com/intellij/structuralsearch/plugin/ui/filters/FilterProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.structuralsearch.profile"/></include> | [`StructuralSearchProfile`](%gh-ic%/platform/structuralsearch/source/com/intellij/structuralsearch/StructuralSearchProfile.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.structuralsearch.scriptEngine"/></include> ![Internal][internal] | [`StructuralSearchScriptEngine`](%gh-ic%/platform/structuralsearch/source/com/intellij/structuralsearch/StructuralSearchScriptEngine.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.structuralsearch.specialXmlTagExtractor"/></include> | [`SpecialElementExtractor`](%gh-ic%/platform/structuralsearch/source/com/intellij/structuralsearch/SpecialElementExtractor.java) |
+{sticky-header="true"}
+
+### intellij.platform.structureView.xml
+
+[`intellij.platform.structureView.xml`](%gh-ic%/platform/structure-view-impl/resources/intellij.platform.structureView.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.logicalStructureElementsProvider"/></include> ![Experimental][experimental] | [`LogicalStructureElementsProvider`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/structureView/logical/LogicalStructureElementsProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.logicalStructureTreeElementProvider"/></include> ![Experimental][experimental] | [`LogicalStructureTreeElementProvider`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/structureView/logical/LogicalStructureTreeElementProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.structurePopupProvider"/></include> ![Internal][internal] | [`StructurePopupProvider`](%gh-ic%/platform/structure-view-impl/src/com/intellij/platform/structureView/impl/StructurePopup.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.syntax.psi.xml
 
@@ -781,10 +1204,11 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.syntax.cancellationProviderExtension"/></include> ![Experimental][experimental] | [`CancellationProviderExtension`](%gh-ic%/platform/syntax/syntax-util/src/com/intellij/platform/syntax/util/cancellation/CancellationProviderExtension.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.syntax.cancellationProviderExtension"/></include> | [`CancellationProviderExtension`](%gh-ic%/platform/syntax/syntax-util/src/com/intellij/platform/syntax/util/cancellation/CancellationProviderExtension.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.syntax.elementTypeConverter"/></include> | [`ElementTypeConverterFactory`](%gh-ic%/platform/syntax/syntax-psi/src/com/intellij/platform/syntax/psi/ElementTypeConverter.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.syntax.logProvider"/></include> ![Experimental][experimental] | [`LogProvider`](%gh-ic%/platform/syntax/syntax-util/src/com/intellij/platform/syntax/util/log/LogProviderExtension.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.syntax.syntaxDefinition"/></include> ![Experimental][experimental] | [`LanguageSyntaxDefinition`](%gh-ic%/platform/syntax/syntax-api/src/com/intellij/platform/syntax/LanguageSyntaxDefinition.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.syntax.logProvider"/></include> | [`LogProvider`](%gh-ic%/platform/syntax/syntax-util/src/com/intellij/platform/syntax/util/log/LogProviderExtension.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.syntax.syntaxDefinition"/></include> | [`LanguageSyntaxDefinition`](%gh-ic%/platform/syntax/syntax-api/src/com/intellij/platform/syntax/LanguageSyntaxDefinition.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.tasks.xml
 
@@ -794,6 +1218,37 @@ EXCLUDING:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.tasks.contextProvider"/></include> | [`WorkingContextProvider`](%gh-ic%/platform/tasks-platform-api/src/com/intellij/tasks/context/WorkingContextProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.tasks.repositoryType"/></include> | [`TaskRepositoryType`](%gh-ic%/platform/tasks-platform-api/src/com/intellij/tasks/TaskRepositoryType.java) |
+{sticky-header="true"}
+
+### intellij.platform.testIntegration.ui.xml
+
+[`intellij.platform.testIntegration.ui.xml`](%gh-ic%/platform/testIntegration-ui/resources/intellij.platform.testIntegration.ui.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testCreator"/></include> ![DumbAware][dumb-aware] | [`TestCreator`](%gh-ic%/platform/testIntegration-ui/src/com/intellij/testIntegration/TestCreator.java) |
+{sticky-header="true"}
+
+### intellij.platform.testIntegration.xml
+
+[`intellij.platform.testIntegration.xml`](%gh-ic%/platform/testIntegration/resources/intellij.platform.testIntegration.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testFinder"/></include> | [`TestFinder`](%gh-ic%/platform/testIntegration/src/com/intellij/testIntegration/TestFinder.java) |
+{sticky-header="true"}
+
+### intellij.platform.testRunner.xml
+
+[`intellij.platform.testRunner.xml`](%gh-ic%/platform/testRunner/resources/intellij.platform.testRunner.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testActionProvider"/></include> | [`ToggleModelActionProvider`](%gh-ic%/platform/testRunner/src/com/intellij/execution/testframework/ToggleModelActionProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testDiffProvider"/></include> | [`TestDiffProvider`](%gh-ic%/platform/testRunner/src/com/intellij/execution/testframework/actions/TestDiffProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testFramework"/></include> ![DumbAware][dumb-aware] | [`TestFramework`](%gh-ic%/platform/testIntegration/src/com/intellij/testIntegration/TestFramework.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testStatusListener"/></include> | [`TestStatusListener`](%gh-ic%/platform/testRunner/src/com/intellij/execution/testframework/TestStatusListener.java) |
+{sticky-header="true"}
 
 ### intellij.platform.tips.xml
 
@@ -802,6 +1257,38 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.tipAndTrickPromotionFactory"/></include> ![Internal][internal] | [`TipAndTrickPromotionFactory`](%gh-ic%/platform/tips-of-the-day/src/com/intellij/ide/util/TipAndTrickPromotionFactory.kt) |
+{sticky-header="true"}
+
+### intellij.platform.uast.ide.xml
+
+[`intellij.platform.uast.ide.xml`](%gh-ic%/uast/uast-common-ide/resources/intellij.platform.uast.ide.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.uast.generate.uastCodeGenerationPlugin"/></include> ![Experimental][experimental] | [`UastCodeGenerationPlugin`](%gh-ic%/uast/uast-common-ide/src/org/jetbrains/uast/generate/UastCodeGenerationPlugin.kt) |
+{sticky-header="true"}
+
+### intellij.platform.uast.xml
+
+[`intellij.platform.uast.xml`](%gh-ic%/uast/uast-common/resources/intellij.platform.uast.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.uast.analysis.uastAnalysisPlugin"/></include> ![Experimental][experimental] | [`UastAnalysisPlugin`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/analysis/UastAnalysisPlugin.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.uast.evaluation.uastEvaluatorExtension"/></include> ![Experimental][experimental] | [`UEvaluatorExtension`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/evaluation/UEvaluatorExtension.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.uast.uastLanguagePlugin"/></include> | [`UastLanguagePlugin`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastLanguagePlugin.kt) |
+{sticky-header="true"}
+
+### intellij.platform.ui.jcef.xml
+
+[`intellij.platform.ui.jcef.xml`](%gh-ic%/platform/ui.jcef/resources/intellij.platform.ui.jcef.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cefDelegate"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`CefDelegate`](%gh-ic%/platform/ui.jcef/jcef/CefDelegate.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cefNativeBundleProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`JBCefNativeBundleProvider`](%gh-ic%/platform/ui.jcef/jcef/JBCefNativeBundleProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jcef.appRequiredArgumentsProvider"/></include> ![Non-Dynamic][non-dynamic] | [`JBCefAppRequiredArgumentsProvider`](%gh-ic%/platform/ui.jcef/jcef/JBCefAppRequiredArgumentsProvider.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.warmup.xml
 
@@ -811,6 +1298,30 @@ EXCLUDING:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectBuildWarmupSupport"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] ![Project-Level][project-level] | [`ProjectBuildWarmupSupport`](%gh-ic%/platform/warmup/src/com/intellij/warmup/ProjectBuildWarmupSupport.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectIndexesWarmupSupport"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] ![Project-Level][project-level] | [`ProjectIndexesWarmupSupport`](%gh-ic%/platform/warmup/src/com/intellij/warmup/ProjectIndexesWarmupSupport.kt) |
+{sticky-header="true"}
+
+### intellij.platform.welcomeScreen.xml
+
+[`intellij.platform.welcomeScreen.xml`](%gh-ic%/platform/welcome-screen/resources/intellij.platform.welcomeScreen.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.noProjectStateHandler"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`NoProjectStateHandler`](%gh-ic%/platform/welcome-screen/src/com/intellij/openapi/wm/ex/NoProjectStateHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectClosingTransitionHandler"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`ProjectClosingTransitionHandler`](%gh-ic%/platform/welcome-screen/src/com/intellij/openapi/wm/ex/ProjectClosingTransitionHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.welcomeScreenProjectProvider"/></include> ![Internal][internal] | [`WelcomeScreenProjectProvider`](%gh-ic%/platform/welcome-screen/src/com/intellij/openapi/wm/ex/WelcomeScreenProjectProvider.kt) |
+{sticky-header="true"}
+
+### intellij.regexp.xml
+
+[`intellij.regexp.xml`](%gh-ic%/RegExpSupport/resources/intellij.regexp.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.regExpCapabilitiesProvider"/></include> | [`RegExpCapabilitiesProvider`](%gh-ic%/RegExpSupport/src/org/intellij/lang/regexp/RegExpCapabilitiesProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.regExpLanguageHost"/></include> | [`RegExpLanguageHost`](%gh-ic%/RegExpSupport/src/org/intellij/lang/regexp/RegExpLanguageHost.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.regExpMatcherProvider"/></include> | [`RegExpMatcherProvider`](%gh-ic%/RegExpSupport/src/org/intellij/lang/regexp/RegExpMatcherProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.regExpModifierProvider"/></include> | [`RegExpModifierProvider`](%gh-ic%/RegExpSupport/src/org/intellij/lang/regexp/RegExpModifierProvider.java) |
+{sticky-header="true"}
 
 ### intellij.settingsSync.core.xml
 
@@ -821,6 +1332,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.settingsSync.communicatorProvider"/></include> ![Internal][internal] | [`SettingsSyncCommunicatorProvider`](%gh-ic%/platform/settings-sync-core/src/com/intellij/settingsSync/core/communicator/SettingsSyncCommunicatorProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.settingsSync.settingsProvider"/></include> ![Internal][internal] | [`SettingsProvider`](%gh-ic%/platform/settings-sync-core/src/com/intellij/settingsSync/core/SettingsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.settingsSyncMigration"/></include> ![Internal][internal] | [`SettingsSyncMigration`](%gh-ic%/platform/settings-sync-core/src/com/intellij/settingsSync/core/SettingsSyncMigration.kt) |
+{sticky-header="true"}
 
 ### intellij.spellchecker.xml
 
@@ -834,10 +1346,23 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spellchecker.dictionary.customDictionaryProvider"/></include> | [`CustomDictionaryProvider`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/dictionary/CustomDictionaryProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spellchecker.dictionary.runtimeDictionaryProvider"/></include> | [`RuntimeDictionaryProvider`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/dictionary/RuntimeDictionaryProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spellchecker.dictionaryLayersProvider"/></include> ![Internal][internal] | [`DictionaryLayersProvider`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/DictionaryLevel.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spellchecker.languages"/></include> ![Deprecated][deprecated] ![Removal][removal] ![Internal][internal] | [`NaturalLanguagesProvider`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/grazie/NaturalLanguagesProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spellchecker.lifecycle"/></include> ![Experimental][experimental] | [`SpellcheckerLifecycle`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/grazie/SpellcheckerLifecycle.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spellchecker.quickFixFactory"/></include> ![Internal][internal] | [`SpellCheckerQuickFixFactory`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/quickfixes/SpellCheckerQuickFixFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spellchecker.support"/></include> ![DumbAware][dumb-aware] | [`SpellcheckingStrategy`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java) |
+{sticky-header="true"}
+
+### intellij.xml.analysis.impl.xml
+
+[`intellij.xml.analysis.impl.xml`](%gh-ic%/xml/xml-analysis-impl/resources/intellij.xml.analysis.impl.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.skipReferenceCheck"/></include> | [`HtmlSkipReferenceCheck`](%gh-ic%/xml/xml-analysis-impl/src/com/intellij/codeInsight/daemon/impl/analysis/HtmlSkipReferenceCheck.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.implicitIdRefProvider"/></include> | [`ImplicitIdRefProvider`](%gh-ic%/xml/xml-analysis-impl/src/com/intellij/psi/impl/source/resolve/reference/impl/providers/ImplicitIdRefProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.nsColorProvider"/></include> | [`XmlNSColorProvider`](%gh-ic%/xml/xml-analysis-impl/src/com/intellij/codeInsight/daemon/impl/analysis/XmlNSColorProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.undefinedElementFixProvider"/></include> | [`XmlUndefinedElementFixProvider`](%gh-ic%/xml/xml-analysis-impl/src/com/intellij/xml/XmlUndefinedElementFixProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.validateHandler"/></include> | [`ValidateXmlHandler`](%gh-ic%/xml/xml-analysis-impl/src/com/intellij/xml/actions/validate/ValidateXmlHandler.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.xmlAttributeRenameProvider"/></include> | [`XmlUnknownAttributeQuickFixProvider`](%gh-ic%/xml/xml-analysis-impl/src/com/intellij/codeInspection/htmlInspections/XmlUnknownAttributeQuickFixProvider.java) |
+{sticky-header="true"}
 
 ### intellij.xml.analysis.xml
 
@@ -846,6 +1371,8 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.xmlSuppressionProvider"/></include> ![DumbAware][dumb-aware] | [`XmlSuppressionProvider`](%gh-ic%/xml/xml-analysis-api/src/com/intellij/codeInspection/XmlSuppressionProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.xmlTagRuleProvider"/></include> | [`XmlTagRuleProvider`](%gh-ic%/xml/xml-analysis-api/src/com/intellij/xml/XmlTagRuleProvider.java) |
+{sticky-header="true"}
 
 ### intellij.xml.dom.impl.xml
 
@@ -857,6 +1384,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dom.extender"/></include> | [`DomExtender`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/reflect/DomExtender.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dom.fileMetaData"/></include> | [`DomFileDescription`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/DomFileDescription.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dom.implementation"/></include> | [`DomElement`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/DomElement.java) |
+{sticky-header="true"}
 
 ### intellij.xml.dom.xml
 
@@ -869,23 +1397,44 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dom.gotoSuper"/></include> | [`DomElementNavigationProvider`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/DomElementNavigationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dom.uiControlsProvider"/></include> ![Obsolete][obsolete] ![Non-Dynamic][non-dynamic] | [`Consumer`](%gh-ic%/platform/util/src/com/intellij/util/Consumer.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.moduleContextProvider"/></include> | [`ModuleContextProvider`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/ModuleContextProvider.java) |
+{sticky-header="true"}
 
-### intellij.xml.frontback.impl.xml
+### intellij.xml.emmet.xml
 
-[`intellij.xml.frontback.impl.xml`](%gh-ic%/xml/xml-frontback-impl/resources/intellij.xml.frontback.impl.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.codestyle.panel"/></include> | [`HtmlCodeStylePanelExtension`](%gh-ic%/xml/xml-frontback-impl/src/com/intellij/application/options/HtmlCodeStylePanelExtension.java) |
-
-### intellij.xml.frontend.split.xml
-
-[`intellij.xml.frontend.split.xml`](%gh-ic%/xml/xml-frontend-split/resources/intellij.xml.frontend.split.xml)
+[`intellij.xml.emmet.xml`](%gh-ic%/xml/emmet/resources/intellij.xml.emmet.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.embeddedTokenHighlighter"/></include> | [`EmbeddedTokenHighlighter`](%gh-ic%/xml/xml-frontback-impl/src/com/intellij/ide/highlighter/EmbeddedTokenHighlighter.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.zenCodingFilter"/></include> | [`ZenCodingFilter`](%gh-ic%/xml/emmet/src/com/intellij/codeInsight/template/emmet/filters/ZenCodingFilter.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.zenCodingGenerator"/></include> | [`ZenCodingGenerator`](%gh-ic%/xml/emmet/src/com/intellij/codeInsight/template/emmet/generators/ZenCodingGenerator.java) |
+{sticky-header="true"}
+
+### intellij.xml.impl.xml
+
+[`intellij.xml.impl.xml`](%gh-ic%/xml/impl/resources/intellij.xml.impl.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.htmlInTextCompletionEnabler"/></include> | [`HtmlInTextCompletionEnabler`](%gh-ic%/xml/impl/src/com/intellij/codeInsight/completion/HtmlInTextCompletionEnabler.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.htmlInTextCompletionPopupExtension"/></include> | [`HtmlInTextCompletionPopupExtension`](%gh-ic%/xml/impl/src/com/intellij/codeInsight/completion/HtmlInTextCompletionPopupExtension.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.htmlScriptInjectionBlocker"/></include> | [`HtmlScriptInjectionBlocker`](%gh-ic%/xml/impl/src/com/intellij/psi/impl/source/html/HtmlScriptInjectionBlocker.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.scriptDocumentationProvider"/></include> ![Obsolete][obsolete] | [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.webSmartKeysConfigurable"/></include> | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.namespaceHelper"/></include> | [`XmlNamespaceHelper`](%gh-ic%/xml/impl/src/com/intellij/xml/XmlNamespaceHelper.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.relatedToHtmlFilesContributor"/></include> | [`RelatedToHtmlFilesContributor`](%gh-ic%/xml/impl/src/com/intellij/navigation/RelatedToHtmlFilesContributor.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.tagNameProvider"/></include> | [`XmlTagNameProvider`](%gh-ic%/xml/impl/src/com/intellij/xml/XmlTagNameProvider.java) |
+{sticky-header="true"}
+
+### intellij.xml.parser.xml
+
+[`intellij.xml.parser.xml`](%gh-ic%/xml/xml-parser/resources/intellij.xml.parser.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.embeddedTokenTypesProvider"/></include> | [`EmbeddedTokenTypesProvider`](%gh-ic%/xml/xml-parser/src/com/intellij/lexer/EmbeddedTokenTypesProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.embeddedContentSupport"/></include> | [`HtmlEmbeddedContentSupport`](%gh-ic%/xml/xml-parser/src/com/intellij/html/embedding/HtmlEmbeddedContentSupport.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.scriptContentProvider"/></include> | [`HtmlScriptContentProvider`](%gh-ic%/xml/xml-parser/src/com/intellij/lang/HtmlScriptContentProvider.java) |
+{sticky-header="true"}
 
 ### intellij.xml.psi.impl.xml
 
@@ -893,15 +1442,16 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.embeddedTokenHighlighter"/></include> | [`EmbeddedTokenHighlighter`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/ide/highlighter/EmbeddedTokenHighlighter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.attributeValueProvider"/></include> | [`HtmlAttributeValueProvider`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/html/impl/providers/HtmlAttributeValueProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.attributeDescriptorsProvider"/></include> | [`XmlAttributeDescriptorsProvider`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/xml/XmlAttributeDescriptorsProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.elementDescriptorProvider"/></include> | [`XmlElementDescriptorProvider`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/psi/impl/source/xml/XmlElementDescriptorProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.idContributor"/></include> | [`XmlIdContributor`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/xml/util/XmlIdContributor.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.implicitIdRefProvider"/></include> | [`ImplicitIdRefProvider`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/psi/impl/source/resolve/reference/impl/providers/ImplicitIdRefProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.implicitNamespaceDescriptorProvider"/></include> | [`ImplicitNamespaceDescriptorProvider`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/javaee/ImplicitNamespaceDescriptorProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.psiPolicy"/></include> | [`XmlPsiPolicy`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/psi/impl/source/xml/XmlPsiPolicy.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.startTagEndToken"/></include> | [`StartTagEndTokenProvider`](%gh-ic%/xml/xml-frontback-impl/src/com/intellij/psi/xml/StartTagEndTokenProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.startTagEndToken"/></include> | [`StartTagEndTokenProvider`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/psi/xml/StartTagEndTokenProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.xmlExtension"/></include> | [`XmlExtension`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/xml/XmlExtension.java) |
+{sticky-header="true"}
 
 ### intellij.xml.psi.xml
 
@@ -909,6 +1459,7 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.compatibleLanguage"/></include> ![Experimental][experimental] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.standardResource"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.standardResourceProvider"/></include> | [`StandardResourceProvider`](%gh-ic%/xml/xml-psi-api/src/com/intellij/javaee/StandardResourceProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.autoPopupEnabler"/></include> ![Experimental][experimental] | [`XmlAutoPopupEnabler`](%gh-ic%/xml/xml-psi-api/src/com/intellij/xml/psi/codeInsight/XmlAutoPopupEnabler.java) |
@@ -917,6 +1468,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.schemaProvider"/></include> ![DumbAware][dumb-aware] | [`XmlSchemaProvider`](%gh-ic%/xml/xml-psi-api/src/com/intellij/xml/XmlSchemaProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.xmlCustomTagHighlightingStrategy"/></include> ![Experimental][experimental] | [`XmlCustomTagHighlightingStrategy`](%gh-ic%/xml/xml-psi-api/src/com/intellij/openapi/editor/XmlCustomTagHighlightingStrategy.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.xmlTypedHandlersAdditionalSupport"/></include> | [`XmlTypedHandlersAdditionalSupport`](%gh-ic%/xml/xml-psi-api/src/com/intellij/openapi/editor/XmlTypedHandlersAdditionalSupport.java) |
+{sticky-header="true"}
 
 ### intellij.xml.structureView.xml
 
@@ -926,6 +1478,16 @@ EXCLUDING:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xmlStructureViewBuilderProvider"/></include> | [`XmlStructureViewBuilderProvider`](%gh-ic%/xml/xml-structure-view-api/src/com/intellij/ide/structureView/xml/XmlStructureViewBuilderProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xmlStructureViewElementProvider"/></include> | [`XmlStructureViewElementProvider`](%gh-ic%/xml/xml-structure-view-api/src/com/intellij/ide/structureView/xml/XmlStructureViewElementProvider.java) |
+{sticky-header="true"}
+
+### intellij.xml.ui.common.xml
+
+[`intellij.xml.ui.common.xml`](%gh-ic%/xml/xml-ui-common/resources/intellij.xml.ui.common.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.codestyle.panel"/></include> | [`HtmlCodeStylePanelExtension`](%gh-ic%/xml/xml-ui-common/src/com/intellij/application/options/HtmlCodeStylePanelExtension.java) |
+{sticky-header="true"}
 
 ### LangExtensionPoints.xml
 
@@ -935,7 +1497,7 @@ EXCLUDING:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.aliasingPsiTargetMapper"/></include> | [`AliasingPsiTargetMapper`](%gh-ic%/platform/core-api/src/com/intellij/psi/targets/AliasingPsiTargetMapper.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.analyzeStacktraceFilter"/></include> ![Project-Level][project-level] ![DumbAware][dumb-aware] | [`Filter`](%gh-ic%/platform/execution/src/com/intellij/execution/filters/Filter.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.analyzeStacktraceRunContentProvider"/></include> ![Experimental][experimental] ![Project-Level][project-level] | [`StacktraceTabContentProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/unscramble/StacktraceTabContentProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.analyzeStacktraceRunContentProvider"/></include> ![Experimental][experimental] | [`StacktraceTabContentProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/unscramble/StacktraceTabContentProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.anchorReferenceProvider"/></include> | [`PathReferenceProvider`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/paths/PathReferenceProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.annotator"/></include> ![DumbAware][dumb-aware] | [`Annotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.anonymousElementProvider"/></include> | [`AnonymousElementProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/navigation/AnonymousElementProvider.java) |
@@ -948,27 +1510,25 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.callHierarchyProvider"/></include> | [`HierarchyProvider`](%gh-ic%/platform/lang-api/src/com/intellij/ide/hierarchy/HierarchyProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cantBeStatic"/></include> | [`Condition`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeBlockSupportHandler"/></include> | [`CodeBlockSupportHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/CodeBlockSupportHandler.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeCompletionConfigurable"/></include> | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeFoldingOptionsProvider"/></include> | [`CodeFoldingOptionsProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/editor/CodeFoldingOptionsProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.codeVision.settings.defaults"/></include> ![Experimental][experimental] | [`CodeVisionSettingsDefaults`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/codeVision/settings/CodeVisionSettingsDefaults.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.codeVisionProvider"/></include> ![Experimental][experimental] | [`CodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/CodeVisionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.codeVisionProviderAnchorProvider"/></include> ![Internal][internal] | [`CodeVisionProviderAnchorProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/CodeVisionProviderAnchorProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.codeVisionProviderFactory"/></include> | [`CodeVisionProviderFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/CodeVisionProviderFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.codeVisionSettingsPreviewLanguage"/></include> | `n/a` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.completion.command.factory"/></include> ![DumbAware][dumb-aware] | [`CommandCompletionFactory`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/command/CommandCompletionFactory.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.completion.command.provider"/></include> ![DumbAware][dumb-aware] | [`CommandProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/command/CommandProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.completion.error.intention"/></include> ![DumbAware][dumb-aware] | [`ErrorFixCommandProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/completion/command/commands/DirectIntentionCommandProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.completion.intention.offset.provider"/></include> | [`IntentionCommandOffsetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/completion/command/commands/DirectIntentionCommandProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.completion.intention.skipper"/></include> | [`IntentionCommandSkipper`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/completion/command/commands/DirectIntentionCommandProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.daemon.impl.injectedLanguageHighlightingRangeReducer"/></include> ![Non-Dynamic][non-dynamic] ![Experimental][experimental] | [`InjectedLanguageHighlightingRangeReducer`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/InjectedLanguageHighlightingRangeReducer.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.daemonBoundCodeVisionProvider"/></include> | [`DaemonBoundCodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/codeVision/DaemonBoundCodeVisionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.declarativeInlayProvider"/></include> ![DumbAware][dumb-aware] | [`InlayHintsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/declarative/InlayHintsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.declarativeInlayProviderCustomSettingsProvider"/></include> | [`InlayHintsCustomSettingsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/declarative/InlayHintsCustomSettingsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.declarativeInlayProviderFactory"/></include> | [`InlayHintsProviderFactory`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/declarative/InlayHintsProviderFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.delegateMethods"/></include> | [`LanguageCodeInsightActionHandler`](%gh-ic%/platform/lang-api/src/com/intellij/lang/LanguageCodeInsightActionHandler.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.documentation.render.itemUpdateProvider"/></include> ![Internal][internal] | [`DocRenderItemUpdateProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/documentation/render/DocRenderItemUpdateProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.gotoSuper"/></include> | [`CodeInsightActionHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/CodeInsightActionHandler.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.highlightingProjectOrWorkspaceFileOverride"/></include> ![Internal][internal] | [`HighlightingProjectOrWorkspaceFileOverride`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/analysis/HighlightingProjectOrWorkspaceFileOverride.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.implementMethod"/></include> | [`LanguageCodeInsightActionHandler`](%gh-ic%/platform/lang-api/src/com/intellij/lang/LanguageCodeInsightActionHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.inlayActionHandler"/></include> | [`InlayActionHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/declarative/InlayActionHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.inlayHintsSwitch"/></include> | [`InlayHintsSwitch`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/InlayHintsSwitch.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.inlayInteractionHandler"/></include> ![Internal][internal] | [`InlayInteractionHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/declarative/impl/interaction/InlayInteractionHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.inlayProvider"/></include> | [`InlayHintsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/InlayHintsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.inlayProviderFactory"/></include> ![DumbAware][dumb-aware] | [`InlayHintsProviderFactory`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/InlayHintsProviderFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.lineMarkerProvider"/></include> ![DumbAware][dumb-aware] | [`LineMarkerProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/LineMarkerProvider.java) |
@@ -976,14 +1536,15 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.parameterHintsExcludeListConfigProvider"/></include> ![Internal][internal] | [`ParameterHintsExcludeListConfigProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/parameters/ParameterHintsExcludeListConfigProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.parameterInfo"/></include> ![DumbAware][dumb-aware] | [`ParameterInfoHandler`](%gh-ic%/platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.parameterInfo.controller.provider"/></include> | [`ParameterInfoControllerProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hint/ParameterInfoControllerProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.parameterInfo.listener"/></include> | [`ParameterInfoListener`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hint/ParameterInfoListener.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.parameterInfo.listener"/></include> ![Internal][internal] | [`ParameterInfoListener`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hint/ParameterInfoListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.parameterNameHints"/></include> | [`InlayParameterHintsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/InlayParameterHintsProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.parameterNameHintsSuppressor"/></include> | [`ParameterNameHintsSuppressor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/ParameterNameHintsSuppressor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.surroundWithRangeAdjuster"/></include> | [`SurroundWithRangeAdjuster`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/generation/surroundWith/SurroundWithRangeAdjuster.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.typeInfo"/></include> ![DumbAware][dumb-aware] | [`ExpressionTypeProvider`](%gh-ic%/platform/lang-api/src/com/intellij/lang/ExpressionTypeProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.unresolvedReferenceQuickFixProvider"/></include> | [`UnresolvedReferenceQuickFixProvider`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/quickfix/UnresolvedReferenceQuickFixProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeStyleSettingsProvider"/></include> | [`CodeStyleSettingsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/psi/codeStyle/CodeStyleSettingsProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeVisionPainterProvider"/></include> ![Non-Dynamic][non-dynamic] | [`ICodeVisionEntryBasePainter`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/ui/renderers/painters/ICodeVisionEntryBasePainter.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeVisionContextExtensionProvider"/></include> ![Internal][internal] | [`CodeVisionContextExtensionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/EditorCodeVisionContext.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeVisionPainterProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`ICodeVisionEntryBasePainter`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/ui/renderers/painters/ICodeVisionEntryBasePainter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.colorAndFontDescriptorProvider"/></include> | [`ColorAndFontDescriptorsProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorAndFontDescriptorsProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.colorAndFontPanelFactory"/></include> | [`ColorAndFontPanelFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/colors/ColorAndFontPanelFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.colorProvider"/></include> | [`ElementColorProvider`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/editor/ElementColorProvider.java) |
@@ -1010,10 +1571,8 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.changeLocalityDetector"/></include> | [`ChangeLocalityDetector`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/ChangeLocalityDetector.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.essentialHighlightingRestarterDisablement"/></include> | [`EssentialHighlightingRestarterDisablement`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/EssentialHighlightingRestarterDisablement.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.externalAnnotatorsFilter"/></include> | [`ExternalAnnotatorsFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.highlightInfoFilter"/></include> | [`HighlightInfoFilter`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/HighlightInfoFilter.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.indentsPassFilter"/></include> | [`IndentsPassFilter`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/IndentsPassFilter.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.intentionActionFilter"/></include> | [`IntentionActionFilter`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/IntentionActionFilter.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.statusItemMerger"/></include> | [`StatusItemMerger`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/StatusItemMerger.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.indentGuidePassFilter"/></include> | [`IndentGuidePassFilter`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/indentGuide/IndentGuidePassFilter.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.statusItemMerger"/></include> ![Deprecated][deprecated] ![Removal][removal] | [`StatusItemMerger`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/StatusItemMerger.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.daemon.tooltipActionProvider"/></include> | [`TooltipActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/tooltips/TooltipActionProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.declarationRangeHandler"/></include> | [`DeclarationRangeHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/DeclarationRangeHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.defaultHighlightingSettingProvider"/></include> ![DumbAware][dumb-aware] | [`DefaultHighlightingSettingProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/impl/analysis/DefaultHighlightingSettingProvider.java) |
@@ -1022,9 +1581,10 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.defaultTemplatePropertiesProvider"/></include> | [`DefaultTemplatePropertiesProvider`](%gh-ic%/platform/lang-api/src/com/intellij/ide/fileTemplates/DefaultTemplatePropertiesProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.definitionsScopedSearch"/></include> | [`QueryExecutor`](%gh-ic%/platform/core-api/src/com/intellij/util/QueryExecutor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diffPreviewProvider"/></include> ![Non-Dynamic][non-dynamic] | [`DiffPreviewProvider`](%gh-ic%/platform/diff-api/src/com/intellij/openapi/diff/impl/settings/DiffPreviewProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.documentation.documentationDownloader"/></include> ![Experimental][experimental] | [`DocumentationDownloader`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/documentation/actions/DocumentationDownloader.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dynamicContextProvider"/></include> | [`DynamicContextProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/paths/DynamicContextProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorAppearanceConfigurable"/></include> | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorAppearanceConfigurable"/></include> ![Internal][internal] | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorAppearanceInlineDocHandler"/></include> ![Internal][internal] | [`InlineDocsAdditionalConfigurable`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/editor/InlineDocAdditionalHandlerEP.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorCompletionConfigurable"/></include> ![Internal][internal] | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorOptionsProvider"/></include> | [`EditorOptionsProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorSearchAreaProvider"/></include> ![Experimental][experimental] | [`EditorSearchAreaProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/find/impl/livePreview/EditorSearchAreaProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorSmartKeysConfigurable"/></include> | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
@@ -1043,7 +1603,6 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.facet.toolWindow"/></include> ![DumbAware][dumb-aware] | [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.facetType"/></include> | [`FacetType`](%gh-ic%/platform/lang-core/src/com/intellij/facet/FacetType.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.favoriteNodeProvider"/></include> ![Deprecated][deprecated] ![Removal][removal] ![Project-Level][project-level] | [`FavoriteNodeProvider`](%gh-ic%/platform/lang-api/src/com/intellij/ide/favoritesTreeView/FavoriteNodeProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.favoritesListProvider"/></include> ![Deprecated][deprecated] ![Internal][internal] ![Project-Level][project-level] | [`FavoritesListProvider`](%gh-ic%/platform/favoritesTreeView/src/com/intellij/ide/favoritesTreeView/FavoritesListProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.filePasteProvider"/></include> | [`PasteProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ide/PasteProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileStructureGroupRuleProvider"/></include> | [`FileStructureGroupRuleProvider`](%gh-ic%/platform/usageView-impl/src/com/intellij/usages/impl/FileStructureGroupRuleProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileTemplateGroup"/></include> | [`FileTemplateGroupDescriptorFactory`](%gh-ic%/platform/lang-api/src/com/intellij/ide/fileTemplates/FileTemplateGroupDescriptorFactory.java) |
@@ -1051,6 +1610,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileTypeStatisticProvider"/></include> ![Deprecated][deprecated] | [`FileTypeStatisticProvider`](%gh-ic%/platform/platform-impl/internal/src/com/intellij/internal/statistic/fileTypes/FileTypeStatisticProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.filetype.prebuiltStubsProvider"/></include> ![Deprecated][deprecated] ![Internal][internal] | [`PrebuiltStubsProvider`](%gh-ic%/platform/indexing-impl/src/com/intellij/psi/stubs/PrebuiltStubs.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.filetype.stubBuilder"/></include> | [`BinaryFileStubBuilder`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/BinaryFileStubBuilder.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.findActionSearchableOptionsFilter"/></include> ![Internal][internal] | [`FindActionSearchableOptionsFilter`](%gh-ic%/platform/lang-api/src/com/intellij/util/gotoByName/FindActionSearchableOptionsFilter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.findInProjectExtension"/></include> ![Internal][internal] | [`FindInProjectExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/find/impl/FindInProjectExtension.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.findUsagesHandlerFactory"/></include> ![Project-Level][project-level] | [`FindUsagesHandlerFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/find/findUsages/FindUsagesHandlerFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.focusModeProvider"/></include> ![Experimental][experimental] | [`FocusModeProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/focusMode/FocusModeProvider.java) |
@@ -1063,6 +1623,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.gotoClassContributor"/></include> | [`ChooseByNameContributor`](%gh-ic%/platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.gotoFileContributor"/></include> | [`ChooseByNameContributor`](%gh-ic%/platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.gotoFileCustomizer"/></include> | [`GotoFileCustomizer`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/util/gotoByName/GotoFileCustomizer.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.gotoFileFuzzyMatcherFactory"/></include> ![Internal][internal] | [`GotoFileFuzzyMatcherFactory`](%gh-ic%/platform/core-api/src/com/intellij/util/fuzzyMatching/GotoFileFuzzyMatcherFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.gotoRelatedProvider"/></include> | [`GotoRelatedProvider`](%gh-ic%/platform/lang-api/src/com/intellij/navigation/GotoRelatedProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.gotoSymbolContributor"/></include> | [`ChooseByNameContributor`](%gh-ic%/platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.gotoTargetPresentationProvider"/></include> | [`GotoTargetPresentationProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/navigation/GotoTargetPresentationProvider.java) |
@@ -1084,12 +1645,9 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.indexPatternBuilder"/></include> | [`IndexPatternBuilder`](%gh-ic%/platform/indexing-impl/src/com/intellij/psi/impl/search/IndexPatternBuilder.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.indexPatternProvider"/></include> ![Non-Dynamic][non-dynamic] | [`IndexPatternProvider`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/IndexPatternProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.indexPatternSearch"/></include> | [`QueryExecutor`](%gh-ic%/platform/core-api/src/com/intellij/util/QueryExecutor.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.indexableEntityProvider"/></include> ![Experimental][experimental] ![Internal][internal] | [`IndexableEntityProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/util/indexing/roots/IndexableEntityProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.indexableIteratorBuilderHandler"/></include> | [`IndexableIteratorBuilderHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/util/indexing/roots/builders/IndexableIteratorBuilderHandler.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inlineCompletionConfigurable"/></include> | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inlinePrompt"/></include> ![Internal][internal] | [`InlinePromptExtension`](%gh-ic%/platform/analysis-api/src/com/intellij/inlinePrompt/InlinePromptExtension.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionProfileActionProvider"/></include> | [`InspectionProfileActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/profile/codeInspection/ui/InspectionProfileActionProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionResultsExportActionProvider"/></include> ![DumbAware][dumb-aware] | [`InspectionResultsExportActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInspection/ui/actions/InspectionResultsExportActionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionResultsExportActionProvider"/></include> ![Internal][internal] ![DumbAware][dumb-aware] | [`InspectionResultsExportActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInspection/ui/actions/InspectionResultsExportActionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionTreeAdvertiser"/></include> | [`InspectionTreeAdvertiser`](%gh-ic%/platform/lang-impl/src/com/intellij/profile/codeInspection/ui/InspectionTreeAdvertiser.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.intentionMenuContributor"/></include> ![Internal][internal] | [`IntentionMenuContributor`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/IntentionMenuContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.intentionPopupProvider"/></include> | [`IntentionPopupProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/intention/impl/IntentionPopupProvider.kt) |
@@ -1107,17 +1665,16 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.foldingBuilder"/></include> ![DumbAware][dumb-aware] | [`FoldingBuilder`](%gh-ic%/platform/core-api/src/com/intellij/lang/folding/FoldingBuilder.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.implementationTextProcessor"/></include> | [`ImplementationTextProcessor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/ImplementationTextProcessor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.implementationTextSelectioner"/></include> | [`ImplementationTextSelectioner`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/ImplementationTextSelectioner.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.logicalStructureElementsProvider"/></include> ![Experimental][experimental] | [`LogicalStructureElementsProvider`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/structureView/logical/LogicalStructureElementsProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.logicalStructureTreeElementProvider"/></include> ![Experimental][experimental] | [`LogicalStructureTreeElementProvider`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/structureView/logical/LogicalStructureTreeElementProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.psiElementExternalizer"/></include> | [`PsiElementExternalizer`](%gh-ic%/platform/lang-api/src/com/intellij/lang/PsiElementExternalizer.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.psiStructureViewFactory"/></include> | [`PsiStructureViewFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.sliceProvider"/></include> | [`SliceLanguageSupportProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/slicer/SliceLanguageSupportProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.structureViewExtension"/></include> | [`StructureViewExtension`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/structureView/StructureViewExtension.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.structureViewExtension"/></include> | [`StructureViewExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/structureView/StructureViewExtension.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.surroundDescriptor"/></include> | [`SurroundDescriptor`](%gh-ic%/platform/lang-api/src/com/intellij/lang/surroundWith/SurroundDescriptor.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.symbolSearchTarget"/></include> | [`SymbolSearchTargetFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/find/usages/symbol/SymbolSearchTargetFactory.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.symbolSearchTarget"/></include> ![Experimental][experimental] | [`SymbolSearchTargetFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/find/usages/symbol/SymbolSearchTargetFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.symbolTypeProvider"/></include> ![Experimental][experimental] | [`SymbolTypeProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/navigation/SymbolTypeProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.syntaxHighlighter"/></include> | [`SyntaxHighlighter`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.unwrapDescriptor"/></include> | [`UnwrapDescriptor`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/unwrap/UnwrapDescriptor.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.legacyRunDashboardServiceSubstitutor"/></include> ![Internal][internal] | [`LegacyRunDashboardServiceSubstitutor`](%gh-ic%/platform/lang-api/src/com/intellij/execution/dashboard/LegacyRunDashboardServiceSubstitutor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.library.presentationProvider"/></include> | [`LibraryPresentationProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/roots/libraries/LibraryPresentationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.library.type"/></include> | [`LibraryType`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/roots/libraries/LibraryType.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.librarySettingsProvider"/></include> | [`LibrarySettingsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/roots/ui/configuration/LibrarySettingsProvider.java) |
@@ -1141,8 +1698,6 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.microservices.urlInlayAction"/></include> | [`UrlPathInlayAction`](%gh-ic%/platform/lang-api/src/com/intellij/microservices/url/inlay/UrlPathInlayAction.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.microservices.urlInlayLanguagesProvider"/></include> | [`UrlPathInlayLanguagesProvider`](%gh-ic%/platform/lang-api/src/com/intellij/microservices/url/inlay/UrlPathInlayLanguagesProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.microservices.urlResolverFactory"/></include> | [`UrlResolverFactory`](%gh-ic%/platform/lang-api/src/com/intellij/microservices/url/UrlResolverFactory.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mlCodeCompletionConfigurable"/></include> ![Internal][internal] | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mlCompletionFeaturesCollector"/></include> ![Internal][internal] | [`InlineCompletionFeaturesCollector`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/inline/completion/features/InlineCompletionFeaturesCollector.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.modelScopeItemPresenter"/></include> ![Non-Dynamic][non-dynamic] | [`ModelScopeItemPresenter`](%gh-ic%/platform/lang-impl/src/com/intellij/analysis/dialog/ModelScopeItemPresenter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.module.workingDirectoryProvider"/></include> | [`WorkingDirectoryProvider`](%gh-ic%/platform/execution-impl/src/com/intellij/openapi/module/WorkingDirectoryProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.moduleBuilder"/></include> | [`ModuleBuilder`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) |
@@ -1169,7 +1724,6 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.backend.documentation.psiTargetProvider"/></include> | [`PsiDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/PsiDocumentationTargetProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.backend.documentation.symbolTargetProvider"/></include> ![Experimental][experimental] | [`SymbolDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/SymbolDocumentationTargetProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.backend.documentation.targetProvider"/></include> | [`DocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTargetProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.ijent.ijentExecFileProvider"/></include> ![Internal][internal] | [`IjentExecFileProvider`](%gh-ic%/platform/ijent/src/com/intellij/platform/ijent/IjentExecFileProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.lang.lsWidget.itemsProvider"/></include> ![Experimental][experimental] | [`LanguageServiceWidgetItemsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/platform/lang/lsWidget/LanguageServiceWidgetItemsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pluginExternalResources.unpackToPlugin"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.presentationProvider"/></include> | [`PresentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/PresentationProvider.java) |
@@ -1177,6 +1731,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.printOption"/></include> | [`PrintOption`](%gh-ic%/platform/lang-impl/src/com/intellij/codeEditor/printing/PrintOption.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.problemFileHighlightFilter"/></include> ![Project-Level][project-level] | [`Condition`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.problemHighlightFilter"/></include> | [`ProblemHighlightFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/ProblemHighlightFilter.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.problemsViewHighlightingProblemFactory"/></include> ![Internal][internal] | [`HighlightingProblemFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/analysis/problemsView/toolWindow/HighlightingProblemFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.problemsViewPanelProvider"/></include> ![Project-Level][project-level] | [`ProblemsViewPanelProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/analysis/problemsView/toolWindow/ProblemsViewPanelProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.programRunner"/></include> | [`ProgramRunner`](%gh-ic%/platform/execution/src/com/intellij/execution/runners/ProgramRunner.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.project.converterProvider"/></include> | [`ConverterProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/conversion/ConverterProvider.java) |
@@ -1192,7 +1747,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectViewPane"/></include> ![Project-Level][project-level] | [`AbstractProjectViewPane`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/impl/AbstractProjectViewPane.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectViewPaneSelectionHelper"/></include> | [`ProjectViewPaneSelectionHelper`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/impl/ProjectViewPaneSelectionHelper.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.properties.files.provider"/></include> | [`PropertiesProvider`](%gh-ic%/platform/lang-api/src/com/intellij/properties/provider/PropertiesProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.declarationProvider"/></include> | [`PsiSymbolDeclarationProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/PsiSymbolDeclarationProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.declarationProvider"/></include> ![Experimental][experimental] | [`PsiSymbolDeclarationProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/PsiSymbolDeclarationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.referenceProvider"/></include> ![Non-Dynamic][non-dynamic] | [`PsiReferenceProvider`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.readWriteAccessDetector"/></include> | [`ReadWriteAccessDetector`](%gh-ic%/platform/core-api/src/com/intellij/codeInsight/highlighting/ReadWriteAccessDetector.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.readerModeMatcher"/></include> | [`ReaderModeMatcher`](%gh-ic%/platform/editor-ui-api/src/com/intellij/codeInsight/actions/ReaderModeMatcher.kt) |
@@ -1210,16 +1765,16 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runAnything.helpGroup"/></include> | [`RunAnythingHelpGroup`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/runAnything/groups/RunAnythingHelpGroup.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runConfigurationBeforeRunProviderDelegate"/></include> | [`RunConfigurationBeforeRunProviderDelegate`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/impl/RunConfigurationBeforeRunProviderDelegate.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runConfigurationProducer"/></include> ![DumbAware][dumb-aware] | [`RunConfigurationProducer`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runConfigurationProducerSuppressor"/></include> ![Experimental][experimental] | [`RunConfigurationProducerSuppressor`](%gh-ic%/platform/lang-api/src/com/intellij/execution/RunConfigurationProducerService.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runConfigurationTargetEnvironmentAdjusterFactory"/></include> ![Internal][internal] | [`Factory`](%gh-ic%/platform/execution/src/com/intellij/execution/target/RunConfigurationTargetEnvironmentAdjuster.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runConfigurationTemplateProvider"/></include> ![Project-Level][project-level] | [`RunConfigurationTemplateProvider`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/impl/RunManagerImpl.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runConfigurationsSettings"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`RunConfigurationsSettings`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationsSettings.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runDashboardCustomizer"/></include> | [`RunDashboardCustomizer`](%gh-ic%/platform/lang-api/src/com/intellij/execution/dashboard/RunDashboardCustomizer.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runDashboardDefaultTypesProvider"/></include> | [`RunDashboardDefaultTypesProvider`](%gh-ic%/platform/lang-api/src/com/intellij/execution/dashboard/RunDashboardDefaultTypesProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runDashboardGroupingRule"/></include> | [`RunDashboardGroupingRule`](%gh-ic%/platform/lang-api/src/com/intellij/execution/dashboard/RunDashboardGroupingRule.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runLineMarkerContributor"/></include> ![DumbAware][dumb-aware] | [`RunLineMarkerContributor`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/lineMarker/RunLineMarkerContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runToolbarProcess"/></include> | [`RunToolbarProcess`](%gh-ic%/platform/execution/src/com/intellij/execution/runToolbar/RunToolbarProcess.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.runningApplicationUpdaterProvider"/></include> | [`RunningApplicationUpdaterProvider`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/update/RunningApplicationUpdaterProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.safeDeleteTargetProvider"/></include> | [`SafeDeleteTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/safeDelete/api/SafeDeleteTargetProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.safeDeleteTargetProvider"/></include> ![Experimental][experimental] | [`SafeDeleteTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/safeDelete/api/SafeDeleteTargetProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.saveAndSyncHandlerListener"/></include> ![Experimental][experimental] ![Internal][internal] | [`SaveAndSyncHandlerListener`](%gh-ic%/platform/platform-api/src/com/intellij/ide/SaveAndSyncHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.saveFileAsTemplateHandler"/></include> | [`SaveFileAsTemplateHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/SaveFileAsTemplateHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.scopeDescriptorProvider"/></include> | [`ScopeDescriptorProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/util/scopeChooser/ScopeDescriptorProvider.kt) |
@@ -1230,7 +1785,6 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sdkFinder"/></include> | [`SdkFinder`](%gh-ic%/platform/projectModel-impl/src/com/intellij/openapi/roots/impl/SdkFinder.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sdkType"/></include> | [`SdkType`](%gh-ic%/platform/lang-core/src/com/intellij/openapi/projectRoots/SdkType.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhere.manager"/></include> ![Internal][internal] | [`SearchEverywhereManagerFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/SearchEverywhereManagerFactory.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhere.splitIncompatible"/></include> ![Internal][internal] | [`SearchEverywhereSplitIncompatible`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/SearchEverywhereManagerFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhereClassifier"/></include> | [`SearchEverywhereClassifier`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/SearchEverywhereClassifier.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhereContributor"/></include> | [`SearchEverywhereContributorFactory`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereContributorFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhereEssentialContributorsMarker"/></include> ![Internal][internal] | [`SearchEverywhereEssentialContributorMarker`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereEssentialContributorMarker.kt) |
@@ -1251,15 +1805,13 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.statistician"/></include> | [`Statistician`](%gh-ic%/platform/analysis-api/src/com/intellij/psi/statistics/Statistician.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.stepsBeforeRunProvider"/></include> ![Project-Level][project-level] ![DumbAware][dumb-aware] | [`BeforeRunTaskProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/BeforeRunTaskProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.structureViewBuilder"/></include> | [`StructureViewBuilder`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewBuilder.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.symbolDeclarationPresentationProvider"/></include> | [`SymbolDeclarationPresentationProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/presentation/SymbolDeclarationPresentationProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.symbolDeclarationPresentationProvider"/></include> ![Experimental][experimental] | [`SymbolDeclarationPresentationProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/presentation/SymbolDeclarationPresentationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.symbolNavigation"/></include> ![Experimental][experimental] | [`SymbolNavigationProvider`](%gh-ic%/platform/core-api/src/com/intellij/navigation/SymbolNavigationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.targetElementEvaluator"/></include> | [`TargetElementEvaluator`](%gh-ic%/platform/core-impl/src/com/intellij/codeInsight/TargetElementEvaluator.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.targetElementUtilExtender"/></include> | [`TargetElementUtilExtender`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/TargetElementUtilExtender.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.templateCompletionProcessor"/></include> | [`TemplateCompletionProcessor`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/template/macro/TemplateCompletionProcessor.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testActionProvider"/></include> | [`ToggleModelActionProvider`](%gh-ic%/platform/testRunner/src/com/intellij/execution/testframework/ToggleModelActionProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testCreator"/></include> ![DumbAware][dumb-aware] | [`TestCreator`](%gh-ic%/platform/lang-api/src/com/intellij/testIntegration/TestCreator.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testDiffProvider"/></include> | [`TestDiffProvider`](%gh-ic%/platform/testRunner/src/com/intellij/execution/testframework/actions/TestDiffProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testFinder"/></include> | [`TestFinder`](%gh-ic%/platform/lang-api/src/com/intellij/testIntegration/TestFinder.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.templateFilter"/></include> ![Internal][internal] | [`TemplateFilter`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/TemplateFilter.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.templateGroupHintProvider"/></include> ![Internal][internal] | [`TemplateGroupHintProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/TemplateGroupHintProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testSrcLocator"/></include> ![Deprecated][deprecated] ![Removal][removal] | [`TestLocationProvider`](%gh-ic%/platform/execution-impl/src/com/intellij/testIntegration/TestLocationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.todoExtraPlaces"/></include> | [`ExtraPlaceChecker`](%gh-ic%/platform/indexing-impl/src/com/intellij/psi/impl/cache/impl/todo/TodoIndexers.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.todoIndexer"/></include> | [`DataIndexer`](%gh-ic%/platform/util/src/com/intellij/util/indexing/DataIndexer.java) |
@@ -1284,6 +1836,21 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.usageViewFactory"/></include> | [`UsageViewFactory`](%gh-ic%/platform/usageView-impl/src/com/intellij/usages/impl/UsageViewFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.usageViewPopupFactory"/></include> ![Internal][internal] | [`UsageViewPopupFactory`](%gh-ic%/platform/usageView-impl/src/com/intellij/usages/impl/UsageViewPopup.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceModel.optionalExclusionContributor"/></include> ![Experimental][experimental] | [`OptionalExclusionContributor`](%gh-ic%/platform/lang-impl/src/com/intellij/workspaceModel/ide/OptionalExclusionContributor.kt) |
+{sticky-header="true"}
+
+### MinimapExtensionPoints.xml
+
+[`MinimapExtensionPoints.xml`](%gh-ic%/platform/platform-resources/src/META-INF/MinimapExtensionPoints.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.minimapFileSupportPolicy"/></include> | [`MinimapFileSupportPolicy`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/minimap/model/MinimapFileSupportPolicy.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.minimapInteractionPolicy"/></include> | [`MinimapInteractionPolicy`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/minimap/interaction/MinimapInteractionPolicy.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.minimapLayerFactory"/></include> | [`MinimapLayerFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/minimap/layers/MinimapLayerFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.minimapLayerVisibilityPolicy"/></include> | [`MinimapLayerVisibilityPolicy`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/minimap/layers/MinimapLayerVisibilityPolicy.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.minimapLayoutPolicy"/></include> | [`MinimapLayoutPolicy`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/minimap/layout/MinimapLayoutPolicy.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.minimapTokenRenderPolicy"/></include> | [`MinimapTokenRenderPolicy`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/minimap/render/MinimapTokenRenderPolicy.kt) |
+{sticky-header="true"}
 
 ### OpenTelemetryExtensions.xml
 
@@ -1292,6 +1859,7 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openTelemetryExporterProvider"/></include> ![Internal][internal] | [`OpenTelemetryExporterProvider`](%gh-ic%/platform/diagnostic/telemetry-impl/src/OpenTelemetryExporterProvider.kt) |
+{sticky-header="true"}
 
 ### PlatformExecutionActions.xml
 
@@ -1299,10 +1867,22 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.execution.consolePauseStateProvider"/></include> ![Internal][internal] | [`ExecutionConsolePauseStateProvider`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/ui/ExecutionConsolePauseStateProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.execution.displayDescriptorChooser"/></include> | [`DisplayDescriptorChooser`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/StoppableRunDescriptors.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.execution.impl.runSessionService"/></include> ![Internal][internal] | [`RunSessionService`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/RunSessionService.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.execution.processHandlerPidProvider"/></include> ![Internal][internal] | [`ProcessHandlerPidProvider`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/impl/ProcessHandlerPidProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.multilaunch.condition.template"/></include> ![Experimental][experimental] | [`ConditionTemplate`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/multilaunch/execution/conditions/ConditionTemplate.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.multilaunch.task.definition"/></include> ![Experimental][experimental] | [`TaskExecutableTemplate`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/multilaunch/execution/executables/TaskExecutableTemplate.kt) |
+{sticky-header="true"}
+
+### PlatformExecutionExtensions.xml
+
+[`PlatformExecutionExtensions.xml`](%gh-ic%/platform/platform-resources/src/META-INF/PlatformExecutionExtensions.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.execution.inlineResumeCreator"/></include> | [`InlineResumeCreator`](%gh-ic%/platform/execution/src/com/intellij/execution/InlineResumeCreator.kt) |
+{sticky-header="true"}
 
 ### PlatformExtensionPoints.xml
 
@@ -1320,11 +1900,12 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.actionOnSaveInfoProvider"/></include> | [`ActionOnSaveInfoProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/actionsOnSave/ActionOnSaveInfoProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.actionPromoter"/></include> | [`ActionPromoter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPromoter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.activityTracker"/></include> | [`ActivityTracker`](%gh-ic%/platform/backend/observation/src/com/intellij/platform/backend/observation/ActivityTracker.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.adEntityProvider"/></include> ![Experimental][experimental] | [`AdEntityProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/editor/impl/ad/document/AdEntityProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.adEntityProvider"/></include> | [`AdEntityProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/editor/impl/ad/document/AdEntityProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.additionalTextAttributes"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.additionalTextAttributesProvider"/></include> ![Internal][internal] | [`AdditionalTextAttributesProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/editor/colors/impl/AdditionalTextAttributesProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.advancedSetting"/></include> ![Internal][internal] | `n/a` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.aiDataCollectionExternalSettings"/></include> ![Internal][internal] | [`AiDataCollectionExternalSettings`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/gdpr/ui/consents/AiDataCollectionConsentUi.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.aiDataCollectionExternalSettings"/></include> ![Internal][internal] | [`AiDataCollectionExternalSettings`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/gdpr/ui/consents/AiDataCollectionExternalSettings.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.anActionSerializer"/></include> ![Internal][internal] | [`AnActionSerializer`](%gh-ic%/platform/platform-impl/rpc/src/com/intellij/ide/rpc/AnActionId.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.appStarter"/></include> | [`ApplicationStarter`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/ApplicationStarter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.applicationConfigurable"/></include> | [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.applicationSettings"/></include> ![Experimental][experimental] | [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) |
@@ -1338,9 +1919,8 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.bundledInspectionProfile"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.bundledKeymap"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.bundledQuickListsProvider"/></include> | [`BundledQuickListsProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/BundledQuickListsProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cachedValuesFactory"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`CachedValuesFactory`](%gh-ic%/platform/core-impl/src/com/intellij/util/CachedValuesFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cachedValuesFactory"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] ![Project-Level][project-level] | [`CachedValuesFactory`](%gh-ic%/platform/core-impl/src/com/intellij/util/CachedValuesFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cachesInvalidator"/></include> | [`CachesInvalidator`](%gh-ic%/platform/ide-core/src/com/intellij/ide/caches/CachesInvalidator.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cefDelegate"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`CefDelegate`](%gh-ic%/platform/ui.jcef/jcef/CefDelegate.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.classpathStorageProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`ClasspathStorageProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/roots/impl/storage/ClasspathStorageProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.folding.collapseBlockHandler"/></include> | [`CollapseBlockHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/folding/CollapseBlockHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.codeInsight.linkHandler"/></include> | [`TooltipLinkHandler`](%gh-ic%/platform/platform-api/src/com/intellij/codeInsight/highlighting/TooltipLinkHandler.java) |
@@ -1350,9 +1930,11 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.colorAndFontOptionsImportHandler"/></include> | [`ImportHandler`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/colors/ImportHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.colorPickerListenerFactory"/></include> | [`ColorPickerListenerFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/ColorPickerListenerFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.commandLineEnvCustomizer"/></include> ![Experimental][experimental] | [`CommandLineEnvCustomizer`](%gh-ic%/platform/platform-api/src/com/intellij/execution/process/GeneralCommandLineEnvCustomizerService.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.commercialBannerImageProvider"/></include> ![Internal][internal] | [`BannerImageProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/BannerImageProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.config.codeVisionGroupSettingProvider"/></include> | [`CodeVisionGroupSettingProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/settings/CodeVisionGroupSettingProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.config.inlayGroupSettingProvider"/></include> | [`InlayGroupSettingProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/settings/InlayGroupSettingProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.config.inlaySettingsProvider"/></include> | [`InlaySettingsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/settings/InlaySettingsProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.configFolderChangedListener"/></include> | [`ConfigFolderChangedListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/project/impl/shared/SharedConfigFolderUtil.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.configurablesPatcher"/></include> ![Experimental][experimental] ![Internal][internal] | [`ConfigurablesPatcher`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/actions/ConfigurablesPatcher.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.contentTabActionProvider"/></include> | [`ContentTabActionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/content/tabActions/ContentTabAction.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.coursesStorageProvider"/></include> | [`CoursesStorageProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/welcomeScreen/learnIde/coursesInProgress/CoursesStorageProvider.kt) |
@@ -1364,7 +1946,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dataValidators"/></include> ![Internal][internal] | [`DataValidators`](%gh-ic%/platform/ide-core-impl/src/com/intellij/ide/impl/DataValidators.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.defaultToolWindowLayout"/></include> | [`DefaultToolWindowLayoutExtension`](%gh-ic%/platform/platform-impl/src/com/intellij/toolWindow/defaultToolWindowlayoutProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.defender.config"/></include> | [`Extension`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/WindowsDefenderChecker.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dependencyCollector"/></include> | [`DependencyCollector`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/DependencyCollector.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dependencyCollector"/></include> ![Internal][internal] | [`DependencyCollector`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/DependencyCollector.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dependencySupport"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.deuteranopiaSupport"/></include> ![Non-Dynamic][non-dynamic] | [`ColorBlindnessSupport`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/ui/ColorBlindnessSupport.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diagnostic.specialPathsProvider"/></include> ![Internal][internal] | [`SpecialPathsProvider`](%gh-ic%/platform/platform-api/src/com/intellij/diagnostic/specialPaths/SpecialPathsProvider.kt) |
@@ -1377,7 +1959,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diff.impl.DiffToolSubstitutor"/></include> ![Internal][internal] | [`DiffToolSubstitutor`](%gh-ic%/platform/diff-impl/src/com/intellij/diff/impl/DiffToolSubstitutor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diff.lang.DiffIgnoredRangeProvider"/></include> | [`DiffIgnoredRangeProvider`](%gh-ic%/platform/diff-impl/src/com/intellij/diff/lang/DiffIgnoredRangeProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diff.lang.DiffLangSpecificAdjuster"/></include> | [`DiffLangSpecificProvider`](%gh-ic%/platform/diff-impl/src/com/intellij/diff/lang/DiffLangSpecificProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diff.merge.MergeTool"/></include> | [`MergeTool`](%gh-ic%/platform/diff-api/src/com/intellij/diff/merge/MergeTool.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diff.merge.MergeTool"/></include> | [`MergeTool`](%gh-ic%/platform/diff-api/src/com/intellij/diff/merge/MergeTool.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diff.merge.conflict.semantic.resolver"/></include> | [`LangSpecificMergeConflictResolver`](%gh-ic%/platform/diff-impl/src/com/intellij/diff/merge/LangSpecificMergeConflictResolver.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diff.merge.external.AutomaticExternalMergeTool"/></include> | [`AutomaticExternalMergeTool`](%gh-ic%/platform/diff-api/src/com/intellij/diff/merge/external/AutomaticExternalMergeTool.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.directoryProjectConfigurator"/></include> | [`DirectoryProjectConfigurator`](%gh-ic%/platform/platform-impl/src/com/intellij/platform/DirectoryProjectConfigurator.kt) |
@@ -1390,6 +1972,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editor.rd.localSupport"/></include> ![Internal][internal] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorActionHandler"/></include> | [`EditorActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorAutoClosingHandler"/></include> ![Experimental][experimental] ![Internal][internal] | [`EditorAutoClosingHandler`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/EditorAutoClosingHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorCompositeProvider"/></include> ![Internal][internal] | [`EditorCompositeProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/FileEditorManagerImpl.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorFactoryMouseListener"/></include> | [`EditorMouseListener`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/event/EditorMouseListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorFactoryMouseMotionListener"/></include> | [`EditorMouseMotionListener`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/event/EditorMouseMotionListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorFileSwapper"/></include> | [`EditorFileSwapper`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/EditorFileSwapper.java) |
@@ -1403,7 +1986,9 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorTypedHandler"/></include> ![Removal][removal] ![Non-Dynamic][non-dynamic] | [`TypedActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.endUserAgreementUpdater"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.errorHandler"/></include> | [`ErrorReportSubmitter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSubmitter.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.errorReportSink"/></include> ![Experimental][experimental] | [`ErrorReportSink`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSink.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eventLogCategory"/></include> | [`EventLogCategory`](%gh-ic%/platform/ide-core/src/com/intellij/notification/EventLogCategory.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.execution.ongoingRunConfigurationProvider"/></include> ![Internal][internal] | [`OngoingRunConfigurationProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/OngoingRunConfigurationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.execution.syntheticConfigurationTypeProvider"/></include> ![Experimental][experimental] | [`SyntheticConfigurationTypeProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/SyntheticConfigurationTypeProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.executionActionSuppressor"/></include> ![Experimental][experimental] ![Internal][internal] | [`ExecutionActionSuppressor`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/ExecutionActionSuppressor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.experimentalFeature"/></include> | `n/a` |
@@ -1412,6 +1997,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.featureStatisticsBundle"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.feedbackDescriptionProvider"/></include> | [`FeedbackDescriptionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/FeedbackDescriptionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileBreadcrumbsCollector"/></include> ![Project-Level][project-level] | [`FileBreadcrumbsCollector`](%gh-ic%/platform/platform-api/src/com/intellij/codeInsight/breadcrumbs/FileBreadcrumbsCollector.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileChooserCustomizer"/></include> ![Internal][internal] | [`FileChooserCustomizer`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/fileChooser/FileChooserCustomizer.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileDocumentManagerListener"/></include> | [`FileDocumentManagerListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManagerListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileDocumentSynchronizationVetoer"/></include> | [`FileDocumentSynchronizationVetoer`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/fileEditor/FileDocumentSynchronizationVetoer.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileDropHandler"/></include> | [`FileDropHandler`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/editor/FileDropHandler.kt) |
@@ -1425,7 +2011,8 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileTypeUsageSchemaDescriptor"/></include> ![Internal][internal] | [`FileTypeUsageSchemaDescriptor`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/statistic/collectors/fus/fileTypes/FileTypeUsageSchemaDescriptor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.findInDirectoryScopeProvider"/></include> ![Experimental][experimental] ![Internal][internal] | [`FindInDirectoryScopeProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/find/impl/FindInDirectoryScopeProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.flsConfigurationProvider"/></include> ![Internal][internal] | [`FLSConfigurationProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/impl/FLSConfigurationProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fragments.dsl.builder.extender"/></include> ![Experimental][experimental] ![Internal][internal] | [`FragmentsDslBuilderExtender`](%gh-ic%/platform/platform-api/src/com/intellij/execution/ui/utils/FragmentsDslBuilder.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fragments.dsl.builder.extender"/></include> ![Internal][internal] | [`FragmentsDslBuilderExtender`](%gh-ic%/platform/platform-api/src/com/intellij/execution/ui/utils/FragmentsDslBuilder.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.frontend.splitComponentProvider"/></include> ![Internal][internal] | [`SplitComponentProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/split/SplitComponentProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.frontendDocumentIdRegistry"/></include> ![Internal][internal] | [`FrontendDocumentIdRegistry`](%gh-ic%/platform/platform-impl/rpc/src/com/intellij/ide/rpc/BackendBasedDocument.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.frontendEditorBinder"/></include> ![Internal][internal] | [`FrontendEditorBinder`](%gh-ic%/platform/platform-impl/rpc/src/com/intellij/ide/rpc/BackendBasedDocument.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.generalOptionsProvider"/></include> ![Non-Dynamic][non-dynamic] | [`SearchableConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/SearchableConfigurable.java) |
@@ -1443,18 +2030,19 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.iconMapper"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.iconMapperSuppressor"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.ide.dynamicPluginVetoer"/></include> | [`DynamicPluginVetoer`](%gh-ic%/platform/core-api/src/com/intellij/ide/plugins/DynamicPluginVetoer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.ide.gdpr.traceConsentManager"/></include> ![Internal][internal] | [`TraceConsentManager`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/gdpr/trace/TraceConsentManager.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.ideEventQueueDispatcher"/></include> | [`EventDispatcher`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/IdeEventQueue.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.idePerformanceListener"/></include> ![Experimental][experimental] ![Internal][internal] | [`PerformanceListener`](%gh-ic%/platform/core-api/src/com/intellij/diagnostic/PerformanceListener.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.ideRootPaneNorth"/></include> ![Non-Dynamic][non-dynamic] | [`IdeRootPaneNorthExtension`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/IdeRootPaneNorthExtension.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.ideRootPaneNorth"/></include> | [`IdeRootPaneNorthExtension`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/IdeRootPaneNorthExtension.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.ideStartupWizard"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`IdeStartupWizard`](%gh-ic%/platform/platform-impl/bootstrap/src/com/intellij/platform/ide/bootstrap/IdeStartupWizard.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.inspectionPopupLevelChangePolicy"/></include> ![Internal][internal] | [`InspectionPopupLevelChangePolicy`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/editor/impl/InspectionPopupLevelChangePolicy.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.interactiveCourseFactory"/></include> | [`InteractiveCourseFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/InteractiveCourseFactory.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.internal.ml.featureProvider"/></include> ![Internal][internal] | [`MLFeatureProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/completion/ml/MLFeatureProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.internal.performanceTests.projectInitializationDiagnosticHandler"/></include> | [`ProjectInitializationDiagnosticHandler`](%gh-ic%/platform/platform-api/src/com/intellij/internal/performanceTests/ProjectInitializationDiagnosticHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.internal.statistic.extensibility.eventLogToolWindowEPLogProvider"/></include> | [`StatisticsEventLogToolWindowEPLogProvider`](%gh-ic%/platform/statistics/src/com/intellij/internal/statistic/extensibility/StatisticsEventLogToolWindowEPLogProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.itemPresentationProvider"/></include> | [`ItemPresentationProvider`](%gh-ic%/platform/core-api/src/com/intellij/navigation/ItemPresentationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.iw.actionProvider"/></include> | [`InspectionWidgetActionProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/markup/InspectionWidgetActionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jbProtocolCommand"/></include> | [`JBProtocolCommand`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/application/JBProtocolCommand.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jbProtocolRevisionResolver"/></include> | [`JBProtocolRevisionResolver`](%gh-ic%/platform/lang-impl/src/com/intellij/navigation/JBProtocolRevisionResolver.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jcef.appRequiredArgumentsProvider"/></include> ![Non-Dynamic][non-dynamic] | [`JBCefAppRequiredArgumentsProvider`](%gh-ic%/platform/ui.jcef/jcef/JBCefAppRequiredArgumentsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jdkDownloader.jdkInstallerListener"/></include> ![Internal][internal] | [`JdkInstallerListener`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/projectRoots/impl/jdkDownloader/JdkInstaller.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jdkUpdateCheckContributor"/></include> | [`JdkUpdateCheckContributor`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/projectRoots/impl/jdkDownloader/JdkUpdater.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jps.plugin"/></include> | `n/a` |
@@ -1465,22 +2053,25 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.logLevelConfigurationListener"/></include> ![Internal][internal] | [`Listener`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/logs/LogLevelConfigurationManager.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.logsPreprocessor"/></include> ![Internal][internal] | [`LogProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/logsUploader/LogProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lowLevelProjectOpenProcessor"/></include> ![Internal][internal] | [`LowLevelProjectOpenProcessor`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/project/ex/LowLevelProjectOpenProcessor.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mac.dockMenuActions"/></include> ![Non-Dynamic][non-dynamic] ![Experimental][experimental] ![Internal][internal] | [`MacDockMenuActions`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/mac/MacDockMenuActions.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.managedCacheFactory"/></include> ![Internal][internal] | [`ManagedCacheFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/util/io/cache/ManagedCacheFactory.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.meetNewUiCustomization"/></include> ![Internal][internal] | [`MeetNewUiCustomization`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/experimental/meetNewUi/MeetNewUiCustomization.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mac.dockMenuActions"/></include> ![Experimental][experimental] ![Internal][internal] | [`MacDockMenuActions`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/mac/MacDockMenuActions.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.managedCacheFactory"/></include> | [`ManagedCacheFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/util/io/cache/ManagedCacheFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mouseWheelEventProcessor"/></include> ![Internal][internal] | [`MouseWheelEventInterceptor`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/MouseWheelEventInterceptor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.multipleFileOpener"/></include> ![Internal][internal] | [`MultipleFileOpener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/impl/MultipleFileOpener.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.navbarLeftSide"/></include> ![Internal][internal] | [`NavBarLeftSideExtension`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/navigationToolbar/NavBarLeftSideExtension.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProject.onboarding.tips"/></include> ![Internal][internal] | [`NewProjectOnboardingTips`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/NewProjectOnboardingTips.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.generator"/></include> | [`GeneratorNewProjectWizard`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/GeneratorNewProjectWizard.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.language"/></include> ![Deprecated][deprecated] | [`LanguageNewProjectWizard`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/LanguageNewProjectWizard.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.language"/></include> ![Deprecated][deprecated] ![Internal][internal] | [`LanguageNewProjectWizard`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/LanguageNewProjectWizard.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.languageGenerator"/></include> | [`LanguageGeneratorNewProjectWizard`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/language/LanguageGeneratorNewProjectWizard.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.nonLockedIdeEventQueueDispatcher"/></include> | [`NonLockedEventDispatcher`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/IdeEventQueue.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.nonModalSettingsPolicy"/></include> ![Internal][internal] | [`NonModalSettingsPolicy`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/NonModalSettingsPolicy.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.nonProjectFileWritingAccessExtension"/></include> ![Project-Level][project-level] | [`NonProjectFileWritingAccessExtension`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/NonProjectFileWritingAccessExtension.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.notification.group"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.notification.parentGroup"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.notificationRemindLaterHandler"/></include> | [`NotificationRemindLaterHandler`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationRemindLaterHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.notificationRouter"/></include> ![Internal][internal] | [`NotificationRouter`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationRouter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.obsoleteStorage"/></include> ![Internal][internal] | `n/a` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openInBrowserFloatingToolbarSuppressor"/></include> | [`OpenInBrowserFloatingToolbarSuppressor`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/browsers/actions/OpenInBrowserBaseGroupAction.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openAnotherToolHandler"/></include> ![Internal][internal] | [`OpenAnotherToolHandler`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/updateSettings/impl/pluginsAdvertisement/OpenAnotherToolHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openInBrowserFloatingToolbarSuppressor"/></include> ![Internal][internal] | [`OpenInBrowserFloatingToolbarSuppressor`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/browsers/actions/OpenInBrowserFloatingToolbarSuppressor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pathMacroContributor"/></include> | [`PathMacroContributor`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/PathMacroContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pathMacroExpandableProtocol"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pathMacroFilter"/></include> | [`PathMacroFilter`](%gh-ic%/jps/model-serialization/src/com/intellij/openapi/application/PathMacroFilter.java) |
@@ -1488,42 +2079,50 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.ml.descriptor"/></include> ![Internal][internal] | [`TierDescriptor`](%gh-ic%/platform/ml-api/src/com/intellij/platform/ml/TierDescriptor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.ml.environmentExtender"/></include> ![Internal][internal] | [`EnvironmentExtender`](%gh-ic%/platform/ml-api/src/com/intellij/platform/ml/environment/EnvironmentExtender.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.platform.ml.taskListener"/></include> ![Internal][internal] | [`MLTaskGroupListener`](%gh-ic%/platform/ml-api/src/com/intellij/platform/ml/monitoring/MLApproachListener.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pluginCategoryPromotionProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`PluginCategoryPromotionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/PluginCategoryPromotionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pluginInitializationErrorHandler"/></include> ![Internal][internal] | [`PluginInitializationErrorHandler`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/PluginInitializationErrorHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pluginInstallationCustomization"/></include> ![Internal][internal] | [`PluginInstallationCustomization`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/newui/PluginInstallationCustomization.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pluginManagerCustomizer"/></include> ![Internal][internal] | [`PluginManagerCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/newui/PluginManagerCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pluginReplacement"/></include> | [`PluginReplacement`](%gh-ic%/platform/platform-api/src/com/intellij/ide/plugins/PluginReplacement.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pluginRepositoryAuthProvider"/></include> | [`PluginRepositoryAuthProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/auth/PluginRepositoryAuthProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pluginRepositoryAuthProvider"/></include> ![Internal][internal] | [`PluginRepositoryAuthProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/auth/PluginRepositoryAuthProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pluginSuggestionProvider"/></include> ![Internal][internal] | [`PluginSuggestionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/updateSettings/impl/pluginsAdvertisement/PluginSuggestionProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pluginsViewCustomizer"/></include> ![Experimental][experimental] ![Internal][internal] | [`PluginsViewCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/newui/PluginsViewCustomizer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pluginsViewCustomizer"/></include> ![Internal][internal] | [`PluginsViewCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/newui/PluginsViewCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.productivityFeaturesProvider"/></include> | [`ProductivityFeaturesProvider`](%gh-ic%/platform/platform-api/src/com/intellij/featureStatistics/ProductivityFeaturesProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectAttachProcessor"/></include> | [`ProjectAttachProcessor`](%gh-ic%/platform/ide-core/src/com/intellij/projectImport/ProjectAttachProcessor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectCloseHandler"/></include> | [`ProjectCloseHandler`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ProjectCloseHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectConfigurable"/></include> ![Project-Level][project-level] | [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectCustomDataSynchronizer"/></include> ![Experimental][experimental] | [`ProjectCustomDataSynchronizer`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/ProjectCustomDataSynchronizer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectFrameToolWindowLayout"/></include> ![Internal][internal] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectNameProvider"/></include> | [`ProjectNameProvider`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/project/ex/ProjectNameProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectOpenProcessor"/></include> | [`ProjectOpenProcessor`](%gh-ic%/platform/platform-api/src/com/intellij/projectImport/ProjectOpenProcessor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectOriginInfoProvider"/></include> ![Internal][internal] | [`ProjectOriginInfoProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/impl/ProjectOriginInfoProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectPreInit"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`InitProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectServiceContainerCustomizer"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`ProjectServiceContainerCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/project/impl/ProjectManagerImpl.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectServiceContainerCustomizer"/></include> ![Internal][internal] | [`ProjectServiceContainerCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/project/impl/ProjectManagerImpl.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectSetProcessor"/></include> | [`ProjectSetProcessor`](%gh-ic%/platform/platform-api/src/com/intellij/projectImport/ProjectSetProcessor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectSettings"/></include> ![Experimental][experimental] ![Project-Level][project-level] | [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectStoreClassProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`ProjectStoreFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/project/impl/ProjectStoreFactory.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectStorePathCustomizer"/></include> ![Experimental][experimental] ![Internal][internal] | [`ProjectStorePathCustomizer`](%gh-ic%/platform/projectModel-impl/src/com/intellij/configurationStore/ProjectStorePathCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectTaskManagerListener"/></include> ![Internal][internal] | [`ProjectTaskManagerListenerExtensionPoint`](%gh-ic%/platform/lang-impl/src/com/intellij/task/impl/ProjectTaskManagerListenerExtensionPoint.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectTemplate"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectTemplatesFactory"/></include> | [`ProjectTemplatesFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/platform/ProjectTemplatesFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectTypesProvider"/></include> ![Experimental][experimental] | [`ProjectTypesProvider`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ProjectTypesProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectUndoProvider"/></include> ![Project-Level][project-level] | [`UndoProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/command/impl/UndoProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectViewPaneExtractor"/></include> ![Internal][internal] | [`ProjectViewPaneModelExtractor`](%gh-ic%/platform/platform-api/src/com/intellij/ui/viewModel/extraction/ProjectViewPaneModelExtractor.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectWidgetActionsFilter"/></include> ![Internal][internal] | [`ProjectWidgetActionsFilter`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/headertoolbar/ProjectWidgetActionsFilter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.protanopiaSupport"/></include> ![Non-Dynamic][non-dynamic] | [`ColorBlindnessSupport`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/ui/ColorBlindnessSupport.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.protocolHandler"/></include> | [`ProtocolHandler`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ProtocolHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.protocolNavigationCommandProcessor"/></include> ![Internal][internal] | [`ProtocolNavigationCommandProcessor`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/protocolHandler/ProtocolNavigationCommandProcessor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.proxySettingsOverrideProvider"/></include> | [`ProxySettingsOverrideProvider`](%gh-ic%/platform/platform-api/src/com/intellij/util/net/ProxySettingsOverrideProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rawEditorTypedHandler"/></include> ![Removal][removal] ![Non-Dynamic][non-dynamic] | [`TypedActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentProjectsBranchesProvider"/></include> | [`RecentProjectsBranchesProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/vcs/RecentProjectsBranchesProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentProjectsProvider"/></include> ![Internal][internal] | [`RecentProjectProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/RecentProjectProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentProjectsBranchesProvider"/></include> ![Internal][internal] | [`RecentProjectsBranchesProvider`](%gh-ic%/platform/platform-impl/recentProjects/src/ide/vcs/RecentProjectsBranchesProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentProjectsProvider"/></include> ![Internal][internal] | [`RecentProjectProvider`](%gh-ic%/platform/platform-impl/recentProjects/src/ide/RecentProjectProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recoveryAction"/></include> ![Internal][internal] | [`RecoveryAction`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/actions/cache/Saul.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.remote.credentialsLanguageContribution"/></include> | [`CredentialsLanguageContribution`](%gh-ic%/platform/platform-impl/remote/src/com/intellij/remote/ext/CredentialsLanguageContribution.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.remote.credentialsType"/></include> | [`CredentialsType`](%gh-ic%/platform/remote-core/src/remote/CredentialsType.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.remote.customDataContextSerializer"/></include> ![Experimental][experimental] | [`CustomDataContextSerializer`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/CustomDataContextSerializer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.remote.pathMappingProvider"/></include> | [`PathMappingProvider`](%gh-ic%/platform/platform-impl/remote/src/com/intellij/remote/PathMappingProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.remote.targetAwarePathMappingProvider"/></include> ![Internal][internal] | [`TargetAwarePathMappingProvider`](%gh-ic%/platform/platform-impl/remote/src/com/intellij/remote/TargetAwarePathMappingProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rpc.documentVersionAccessor"/></include> ![Internal][internal] | [`DocumentPatchVersionAccessor`](%gh-ic%/platform/platform-impl/rpc/src/com/intellij/ide/rpc/DocumentPatchVersionAccessor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.schemeExporter"/></include> | [`SchemeExporter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/SchemeExporter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.schemeImporter"/></include> | [`SchemeImporter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/SchemeImporter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.search.additionalOptionsLocation"/></include> | [`AdditionalLocationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ide/ui/search/SearchableOptionsRegistrar.java) |
@@ -1542,6 +2141,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.statistic.eventLog.externalEventLogSettings"/></include> ![Internal][internal] | [`ExternalEventLogSettings`](%gh-ic%/platform/statistics/src/com/intellij/internal/statistic/eventLog/ExternalEventLogSettings.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.statistic.eventLog.externalListenerProvider"/></include> ![Internal][internal] | [`ExternalEventLogListenerProviderExtension`](%gh-ic%/platform/statistics/src/com/intellij/internal/statistic/eventLog/ExternalEventLogListenerProviderExtension.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.statistic.eventLog.fusStateEventTracker"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`FeatureUsageStateEventTracker`](%gh-ic%/platform/statistics/src/com/intellij/internal/statistic/eventLog/fus/FeatureUsageStateEventTracker.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.statistic.eventLog.ideShutdownSessionTypeProvider"/></include> ![Internal][internal] | [`IdeShutdownSessionTypeProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/featureStatistics/fusCollectors/IdeShutdownSessionTypeProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.statistics.actionCustomPlaceAllowlist"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.statistics.actionIdsHolder"/></include> ![Internal][internal] | [`ActionIdsHolder`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/statistic/collectors/fus/actions/persistence/ActionIdsHolder.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.statistics.applicationUsagesCollector"/></include> ![Internal][internal] | [`ApplicationUsagesCollector`](%gh-ic%/platform/statistics/src/com/intellij/internal/statistic/service/fus/collectors/ApplicationUsagesCollector.kt) |
@@ -1559,7 +2159,6 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.stripTrailingSpacesFilterFactory"/></include> | [`StripTrailingSpacesFilterFactory`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/StripTrailingSpacesFilterFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.subprojectInfoProvider"/></include> ![Internal][internal] | [`SubprojectInfoProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/project/workspace/SubprojectInfoProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.systemProperty"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testStatusListener"/></include> | [`TestStatusListener`](%gh-ic%/platform/testRunner/src/com/intellij/execution/testframework/TestStatusListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.textEditorCustomizer"/></include> ![Internal][internal] | [`TextEditorCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/text/TextEditorCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.textEditorNecromancerAwaker"/></include> | [`NecromancerAwaker`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/editor/impl/zombie/Necromancer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.themeMetadataProvider"/></include> | `n/a` |
@@ -1568,10 +2167,12 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.tipAndTrick"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.titleInfoProvider"/></include> | [`TitleInfoProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/TitleInfoProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.toolWindow"/></include> ![DumbAware][dumb-aware] | [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.toolWindow.splitContentProvider"/></include> ![Experimental][experimental] | [`ToolWindowSplitContentProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/toolWindow/ToolWindowSplitContentProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.toolWindowAllowlist"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.toolWindowContentExtractor"/></include> ![Internal][internal] | [`ToolWindowContentExtractor`](%gh-ic%/platform/platform-api/src/com/intellij/ui/viewModel/extraction/ToolWindowContentExtractor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.toolWindowExtractor"/></include> ![Internal][internal] | [`ToolWindowViewModelExtractor`](%gh-ic%/platform/platform-api/src/com/intellij/ui/viewModel/extraction/ToolWindowViewModelExtractor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.toolWindowExtractorMode"/></include> ![Experimental][experimental] | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.toolWindowLayoutProfileProvider"/></include> ![Internal][internal] | [`ToolWindowLayoutProfileProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/toolWindow/ToolWindowLayoutProfileProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.toolWindowTabInEditorHelper"/></include> ![Experimental][experimental] ![Internal][internal] | [`ToolWindowTabInEditorHelper`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/tabInEditor/ToolWindowTabInEditorHelper.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.toolbarQuickAction"/></include> | [`ToolbarAddQuickActionInfo`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/customization/ToolbarAddQuickActionInfo.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.trailingSpacesOptionsProvider"/></include> | [`TrailingSpacesOptionsProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/fileEditor/TrailingSpacesOptionsProvider.java) |
@@ -1586,10 +2187,14 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.uiChangeListener"/></include> ![Internal][internal] | [`Listener`](%gh-ic%/platform/core-ui/src/ui/ExperimentalUI.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.uiDataRule"/></include> | [`UiDataRule`](%gh-ic%/platform/core-ui/src/openapi/actionSystem/UiDataProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.uiPluginManagerController"/></include> ![Internal][internal] | [`UiPluginManagerController`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/newui/UiPluginManagerController.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.undoManagerProvider"/></include> ![Internal][internal] | [`UndoManagerProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/command/undo/UndoManagerProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.undoProvider"/></include> | [`UndoProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/command/impl/UndoProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.undoReportHandler"/></include> ![Internal][internal] | [`UndoReportHandler`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/command/impl/UndoReportHandler.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.universalFileChooserContributor"/></include> ![Internal][internal] | [`UniversalFileChooserContributor`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileChooser/universal/UniversalFileChooserContributor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.unknownSdkContributor"/></include> | [`UnknownSdkContributor`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/projectRoots/impl/UnknownSdkCollector.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.unknownSdkResolver"/></include> | [`UnknownSdkResolver`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/roots/ui/configuration/UnknownSdkResolver.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.updateCheckFirstRunDeferral"/></include> ![Internal][internal] | [`UpdateCheckFirstRunDeferral`](%gh-ic%/platform/platform-impl/update-checker/src/com/intellij/openapi/updateSettings/impl/UpdateCheckFirstRunDeferral.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.updateRequestParametersContributor"/></include> ![Internal][internal] | [`UpdateRequestParametersContributor`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/updateSettings/impl/UpdateRequestParametersContributor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.updateSettingsProvider"/></include> | [`UpdateSettingsProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/updateSettings/impl/UpdateSettingsProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.updateSettingsUIProvider"/></include> | [`UpdateSettingsUIProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/updateSettings/impl/UpdateSettingsUIProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.updatesInfoProvider"/></include> ![Internal][internal] | [`ExternalUpdateProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ExternalUpdateProvider.kt) |
@@ -1603,13 +2208,15 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.warmupConfigurator"/></include> ![Deprecated][deprecated] ![Removal][removal] | [`WarmupConfigurator`](%gh-ic%/platform/platform-api/src/com/intellij/ide/warmup/WarmupConfigurator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.webBrowserUrlProvider"/></include> ![DumbAware][dumb-aware] | [`WebBrowserUrlProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ide/browsers/WebBrowserUrlProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.webHelpProvider"/></include> | [`WebHelpProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/help/WebHelpProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.welcome.projectDetector"/></include> | [`ProjectDetector`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/welcomeScreen/ProjectDetector.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.welcome.projectDetector"/></include> | [`ProjectDetector`](%gh-ic%/platform/welcome-screen-impl/src/com/intellij/openapi/wm/impl/welcomeScreen/ProjectDetector.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.welcomeFrameProvider"/></include> | [`WelcomeFrameProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/WelcomeFrameProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.welcomeScreen"/></include> ![Non-Dynamic][non-dynamic] | [`WelcomeScreenProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/WelcomeScreenProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.welcomeScreenCustomization"/></include> ![Experimental][experimental] | [`WelcomeScreenCustomization`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/WelcomeScreenCustomization.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.welcomeTabFactory"/></include> | [`WelcomeTabFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/WelcomeTabFactory.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.javaScriptDebuggerStarter"/></include> | [`JavaScriptDebuggerStarter`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/browsers/JavaScriptDebuggerStarter.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.whatsNewPageProvider"/></include> ![Internal][internal] | [`WhatsNewPageProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/actions/WhatsNewPageProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.javaScriptDebuggerStarter"/></include> ![Internal][internal] | [`JavaScriptDebuggerStarter`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/browsers/JavaScriptDebuggerStarter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.urlOpener"/></include> | [`UrlOpener`](%gh-ic%/platform/platform-api/src/com/intellij/ide/browsers/UrlOpener.java) |
+{sticky-header="true"}
 
 ### PlatformLangComponents.xml
 
@@ -1617,10 +2224,11 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.autoHintsSuppressor"/></include> ![Internal][internal] | [`AutoHintsSuppressor`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/AutoHintsSuppressor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diagnostic.freezeAnalysis"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`FreezeAnalysis`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/FreezeNotifier.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.diagnostic.freezeNotifier"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`FreezeNotifier`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/FreezeNotifier.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.noProjectStateHandler"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`NoProjectStateHandler`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/ex/NoProjectStateHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.registerToolWindowTaskProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`RegisterToolWindowTaskProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/toolWindow/toolwindow.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.welcomeScreenProjectProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`WelcomeScreenProjectProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/ex/WelcomeScreenProjectProvider.kt) |
+{sticky-header="true"}
 
 ### ProjectModel.xml
 
@@ -1635,6 +2243,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.orderRootType"/></include> ![Non-Dynamic][non-dynamic] | [`OrderRootType`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/OrderRootType.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.primaryModuleManager"/></include> | [`PrimaryModuleManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/module/PrimaryModuleManager.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectFileScanner"/></include> ![Internal][internal] | [`IndexableFileScanner`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/roots/IndexableFileScanner.java) |
+{sticky-header="true"}
 
 ### ProjectModelImpl.xml
 
@@ -1644,10 +2253,11 @@ EXCLUDING:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.additionalLibraryRootsProvider"/></include> | [`AdditionalLibraryRootsProvider`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pathMacroSubstitutorProvider"/></include> ![Internal][internal] | [`PathMacroSubstitutorProvider`](%gh-ic%/platform/projectModel-impl/src/com/intellij/openapi/components/impl/PathMacroSubstitutorProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectExtension"/></include> ![Internal][internal] ![Project-Level][project-level] | [`ProjectExtension`](%gh-ic%/platform/projectModel-impl/src/com/intellij/openapi/roots/ProjectExtension.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectPathMacroContributor"/></include> ![Internal][internal] | [`ProjectWidePathMacroContributor`](%gh-ic%/platform/projectModel-impl/src/com/intellij/openapi/components/impl/ProjectWidePathMacroContributor.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectPathMacroContributor"/></include> ![Internal][internal] | [`ProjectWidePathMacroContributor`](%gh-ic%/platform/projectModel-impl/src/com/intellij/openapi/components/impl/ProjectWidePathMacroContributor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceFileIndexContributorEnforcer"/></include> ![Deprecated][deprecated] ![Internal][internal] | [`WorkspaceFileIndexContributorEnforcer`](%gh-ic%/platform/projectModel-impl/src/com/intellij/workspaceModel/core/fileIndex/WorkspaceFileIndexContributorEnforcer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceModel.facetContributor"/></include> ![Internal][internal] | [`WorkspaceFacetContributor`](%gh-ic%/platform/lang-impl/src/com/intellij/workspaceModel/ide/legacyBridge/WorkspaceFacetContributor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceModel.moduleExtensionBridgeFactory"/></include> ![Internal][internal] | [`ModuleExtensionBridgeFactory`](%gh-ic%/platform/projectModel-impl/src/com/intellij/workspaceModel/ide/legacyBridge/ModuleExtensionBridgeFactory.kt) |
+{sticky-header="true"}
 
 ### ProjectModelLangExtensions.xml
 
@@ -1656,6 +2266,7 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.facetIgnorer"/></include> ![Internal][internal] | [`FacetIgnorer`](%gh-ic%/platform/lang-impl/src/com/intellij/facet/impl/invalid/FacetIgnorer.kt) |
+{sticky-header="true"}
 
 ### RefactoringExtensionPoints.xml
 
@@ -1683,6 +2294,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.updateAddedFileProcessor"/></include> | [`UpdateAddedFileProcessor`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/file/UpdateAddedFileProcessor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vetoRenameCondition"/></include> | [`Condition`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.virtualFileQualifiedNameProvider"/></include> | [`VirtualFileQualifiedNameProvider`](%gh-ic%/platform/refactoring/src/com/intellij/ide/actions/VirtualFileQualifiedNameProvider.java) |
+{sticky-header="true"}
 
 ### RefactoringLangExtensionPoints.xml
 
@@ -1700,23 +2312,15 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.refactoring.introduceParameterObject"/></include> | [`IntroduceParameterObjectDelegate`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/introduceParameterObject/IntroduceParameterObjectDelegate.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.refactoring.invertBoolean"/></include> | [`InvertBooleanDelegate`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/invertBoolean/InvertBooleanDelegate.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.refactoring.moveDirectoryWithClassesHelper"/></include> | [`MoveDirectoryWithClassesHelper`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/move/moveClassesOrPackages/MoveDirectoryWithClassesHelper.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.refactoring.moveFileInvalidationStrategy"/></include> ![Internal][internal] | [`MoveFileInvalidationStrategy`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/move/moveClassesOrPackages/MoveFileInvalidationStrategy.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.refactoring.moveHandler"/></include> | [`MoveHandlerDelegate`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/move/MoveHandlerDelegate.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.refactoring.pushDown"/></include> | [`PushDownDelegate`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/memberPushDown/PushDownDelegate.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.refactoring.pushDown"/></include> ![Internal][internal] | [`PushDownDelegate`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/memberPushDown/PushDownDelegate.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.refactoring.safeDeleteAvailability"/></include> ![Internal][internal] | [`SafeDeleteAvailability`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/safeDelete/SafeDeleteAvailability.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.refactoring.safeDeleteProcessor"/></include> | [`SafeDeleteProcessorDelegate`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/safeDelete/SafeDeleteProcessorDelegate.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rename.symbolRenameTargetFactory"/></include> | [`SymbolRenameTargetFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/symbol/SymbolRenameTargetFactory.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rename.symbolRenameTargetFactory"/></include> ![Experimental][experimental] | [`SymbolRenameTargetFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/symbol/SymbolRenameTargetFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.renameFileActionProvider"/></include> | [`RenameFileActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/actions/RenameFileActionProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.suggestedRefactoringSupport"/></include> | [`SuggestedRefactoringSupport`](%gh-ic%/platform/lang-api/src/com/intellij/refactoring/suggested/SuggestedRefactoringSupport.kt) |
-
-### RegExpPlugin.xml
-
-[`RegExpPlugin.xml`](%gh-ic%/RegExpSupport/resources/META-INF/RegExpPlugin.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.regExpCapabilitiesProvider"/></include> | [`RegExpCapabilitiesProvider`](%gh-ic%/RegExpSupport/src/org/intellij/lang/regexp/RegExpCapabilitiesProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.regExpLanguageHost"/></include> | [`RegExpLanguageHost`](%gh-ic%/RegExpSupport/src/org/intellij/lang/regexp/RegExpLanguageHost.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.regExpMatcherProvider"/></include> | [`RegExpMatcherProvider`](%gh-ic%/RegExpSupport/src/org/intellij/lang/regexp/RegExpMatcherProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.regExpModifierProvider"/></include> | [`RegExpModifierProvider`](%gh-ic%/RegExpSupport/src/org/intellij/lang/regexp/RegExpModifierProvider.java) |
+{sticky-header="true"}
 
 ### RemoteDevUtil.xml
 
@@ -1725,24 +2329,7 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.remoteDev.configureClientHook"/></include> | [`ConfigureClientHook`](%gh-ic%/platform/remoteDev-util/src/com/intellij/remoteDev/downloader/ConfigureClientHook.kt) |
-
-### smRunner.xml
-
-[`smRunner.xml`](%gh-ic%/platform/smRunner/resources/META-INF/smRunner.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.importTestOutput"/></include> | [`ImportTestOutputExtension`](%gh-ic%/platform/smRunner/src/com/intellij/execution/testframework/sm/runner/history/ImportTestOutputExtension.java) |
-
-### structuralsearch.xml
-
-[`structuralsearch.xml`](%gh-ic%/platform/structuralsearch/resources/META-INF/structuralsearch.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.structuralsearch.filterProvider"/></include> | [`FilterProvider`](%gh-ic%/platform/structuralsearch/source/com/intellij/structuralsearch/plugin/ui/filters/FilterProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.structuralsearch.profile"/></include> | [`StructuralSearchProfile`](%gh-ic%/platform/structuralsearch/source/com/intellij/structuralsearch/StructuralSearchProfile.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.structuralsearch.specialXmlTagExtractor"/></include> | [`SpecialElementExtractor`](%gh-ic%/platform/structuralsearch/source/com/intellij/structuralsearch/SpecialElementExtractor.java) |
+{sticky-header="true"}
 
 ### UsageViewActions.xml
 
@@ -1752,6 +2339,7 @@ EXCLUDING:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.generatedSourceUsageFilter"/></include> | [`GeneratedSourceUsageFilter`](%gh-ic%/platform/usageView/src/com/intellij/usages/rules/GeneratedSourceUsageFilter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.usages.usageReferenceClassProvider"/></include> ![Non-Dynamic][non-dynamic] | [`UsageReferenceClassProvider`](%gh-ic%/platform/usageView/src/com/intellij/usages/impl/UsageReferenceClassProvider.kt) |
+{sticky-header="true"}
 
 ### WorkspaceModel.xml
 
@@ -1761,6 +2349,8 @@ EXCLUDING:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspace.bridgeInitializer"/></include> ![Internal][internal] | [`BridgeInitializer`](%gh-ic%/platform/backend/workspace/src/BridgeInitializer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceModel.preUpdateHandler"/></include> ![Internal][internal] | [`WorkspaceModelPreUpdateHandler`](%gh-ic%/platform/backend/workspace/src/WorkspaceModelPreUpdateHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceModel.serializerHook"/></include> ![Internal][internal] | [`WorkspaceModelSerializerHook`](%gh-ic%/platform/backend/workspace/src/WorkspaceModelSerializerHook.kt) |
+{sticky-header="true"}
 
 ### WorkspaceModelExtensions.xml
 
@@ -1769,8 +2359,10 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceModel.customFacetRelatedEntitySerializer"/></include> ![Internal][internal] | [`CustomFacetRelatedEntitySerializer`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/serialization/impl/CustomFacetRelatedEntitySerializer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceModel.customImlComponentNameContributor"/></include> ![Experimental][experimental] | [`CustomImlComponentNameContributor`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/serialization/CustomImlComponentNameContributor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceModel.customModuleComponentSerializer"/></include> ![Internal][internal] | [`CustomModuleComponentSerializer`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/serialization/impl/CustomModuleComponentSerializer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceModel.customModuleRootsSerializer"/></include> ![Internal][internal] | [`CustomModuleRootsSerializer`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/serialization/impl/CustomModuleRootsSerializer.kt) |
+{sticky-header="true"}
 
 ### WorkspaceModelImpl.xml
 
@@ -1781,77 +2373,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.directoryIndexExcludePolicy"/></include> ![Project-Level][project-level] | [`DirectoryIndexExcludePolicy`](%gh-ic%/platform/projectModel-impl/src/com/intellij/openapi/roots/impl/DirectoryIndexExcludePolicy.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceModel.entityLifecycleSupporter"/></include> ![Experimental][experimental] | [`WorkspaceEntityLifecycleSupporter`](%gh-ic%/platform/backend/workspace/src/WorkspaceEntityLifecycleSupporter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.workspaceModel.fileIndexContributor"/></include> | [`WorkspaceFileIndexContributor`](%gh-ic%/platform/projectModel-impl/src/com/intellij/workspaceModel/core/fileIndex/WorkspaceFileIndexContributor.kt) |
-
-### xdebugger.xml
-
-[`xdebugger.xml`](%gh-ic%/platform/xdebugger-impl/resources/META-INF/xdebugger.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.attachDebuggerProvider"/></include> | [`XAttachDebuggerProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/attach/XAttachDebuggerProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.attachHostProvider"/></include> | [`XAttachHostProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/attach/XAttachHostProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.attachHostSettingsProvider"/></include> | [`XAttachHostSettingsProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/ui/attach/dialog/extensions/XAttachHostSettingsProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.breakpointGroupingRule"/></include> | [`XBreakpointGroupingRule`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/breakpoints/ui/XBreakpointGroupingRule.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.breakpointType"/></include> | [`XBreakpointType`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/breakpoints/XBreakpointType.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.configurableProvider"/></include> | [`DebuggerConfigurableProvider`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/settings/DebuggerConfigurableProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.controlExceptionBreakpointSupport"/></include> | [`ControlExceptionBreakpointSupport`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/codeinsight/ControlExceptionBreakpointSupport.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.customEvaluateHandler"/></include> ![Internal][internal] | [`XDebuggerCustomEvaluateHandler`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/actions/handlers/XDebuggerCustomEvaluateHandler.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.customMuteBreakpointHandler"/></include> ![Internal][internal] | [`XDebuggerCustomMuteBreakpointHandler`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/actions/handlers/XDebuggerCustomMuteBreakpointHandler.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.debuggerSupport"/></include> ![Deprecated][deprecated] | [`DebuggerSupport`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/DebuggerSupport.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.dialog.item.presentation.provider"/></include> ![Experimental][experimental] | [`XAttachDialogItemPresentationProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/ui/attach/dialog/extensions/XAttachDialogItemPresentationProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.dialog.presentation.provider"/></include> ![Experimental][experimental] | [`XAttachDialogPresentationProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/ui/attach/dialog/extensions/XAttachDialogPresentationProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.dialog.process.view.provider"/></include> ![Internal][internal] | [`XAttachToProcessViewProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/ui/attach/dialog/extensions/XAttachToProcessViewProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.hotSwapInDebugSessionEnabler"/></include> ![Experimental][experimental] | [`HotSwapInDebugSessionEnabler`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/hotswap/api.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.hotSwapUiExtension"/></include> ![Internal][internal] | [`HotSwapUiExtension`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/hotswap/ui.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.inlineBreakpointsDisabler"/></include> ![Experimental][experimental] | [`InlineBreakpointsDisabler`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/breakpoints/InlineBreakpointsDisabler.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.inlineValuePopupProvider"/></include> | [`InlineValuePopupProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/inline/InlineValuePopupProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.managerProxy"/></include> ![Internal][internal] | [`XDebugManagerProxy`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/frame/XDebugManagerProxy.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.nodeLinkActionProvider"/></include> ![Experimental][experimental] | [`XDebuggerNodeLinkActionProvider`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/collection/visualizer/XDebuggerNodeLinkActionProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.settings"/></include> | [`XDebuggerSettings`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/settings/XDebuggerSettings.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.splitDebuggerModeEnabler"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`XDebuggerSplitModeEnabler`](%gh-ic%/platform/xdebugger-impl/src/com/intellij/xdebugger/impl/XDebuggerSplitModeEnabler.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.textValueVisualizer"/></include> ![Experimental][experimental] | [`TextValueVisualizer`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/ui/TextValueVisualizer.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xdebugger.xValueCustomDescriptorSerializerProvider"/></include> ![Internal][internal] | [`XValueCustomDescriptorSerializerProvider`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/frame/XValueDescriptor.kt) |
-
-### XmlAnalysisImpl.xml
-
-[`XmlAnalysisImpl.xml`](%gh-ic%/xml/xml-analysis-impl/resources/META-INF/XmlAnalysisImpl.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.nsColorProvider"/></include> | [`XmlNSColorProvider`](%gh-ic%/xml/xml-analysis-impl/src/com/intellij/codeInsight/daemon/impl/analysis/XmlNSColorProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.undefinedElementFixProvider"/></include> | [`XmlUndefinedElementFixProvider`](%gh-ic%/xml/xml-analysis-impl/src/com/intellij/xml/XmlUndefinedElementFixProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.validateHandler"/></include> | [`ValidateXmlHandler`](%gh-ic%/xml/xml-analysis-impl/src/com/intellij/xml/actions/validate/ValidateXmlHandler.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.xmlAttributeRenameProvider"/></include> | [`XmlUnknownAttributeQuickFixProvider`](%gh-ic%/xml/xml-analysis-impl/src/com/intellij/codeInspection/htmlInspections/XmlUnknownAttributeQuickFixProvider.java) |
-
-### XmlImpl.xml
-
-[`XmlImpl.xml`](%gh-ic%/xml/impl/resources/META-INF/XmlImpl.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.htmlInTextCompletionEnabler"/></include> ![Internal][internal] | [`HtmlInTextCompletionEnabler`](%gh-ic%/xml/impl/src/com/intellij/codeInsight/completion/HtmlInTextCompletionEnabler.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.htmlInTextCompletionPopupExtension"/></include> ![Internal][internal] | [`HtmlInTextCompletionPopupExtension`](%gh-ic%/xml/impl/src/com/intellij/codeInsight/completion/HtmlInTextCompletionPopupExtension.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.compatibleLanguage"/></include> ![Experimental][experimental] | `n/a` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.htmlScriptInjectionBlocker"/></include> | [`HtmlScriptInjectionBlocker`](%gh-ic%/xml/impl/src/com/intellij/psi/impl/source/html/HtmlScriptInjectionBlocker.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.scriptDocumentationProvider"/></include> ![Obsolete][obsolete] | [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.webSmartKeysConfigurable"/></include> | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.namespaceHelper"/></include> | [`XmlNamespaceHelper`](%gh-ic%/xml/impl/src/com/intellij/xml/XmlNamespaceHelper.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.relatedToHtmlFilesContributor"/></include> | [`RelatedToHtmlFilesContributor`](%gh-ic%/xml/impl/src/com/intellij/navigation/RelatedToHtmlFilesContributor.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.tagNameProvider"/></include> | [`XmlTagNameProvider`](%gh-ic%/xml/impl/src/com/intellij/xml/XmlTagNameProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.zenCodingFilter"/></include> | [`ZenCodingFilter`](%gh-ic%/xml/impl/src/com/intellij/codeInsight/template/emmet/filters/ZenCodingFilter.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.zenCodingGenerator"/></include> | [`ZenCodingGenerator`](%gh-ic%/xml/impl/src/com/intellij/codeInsight/template/emmet/generators/ZenCodingGenerator.java) |
-
-### XmlPlugin.xml
-
-[`XmlPlugin.xml`](%gh-ic%/platform/platform-resources/src/META-INF/XmlPlugin.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.embeddedTokenHighlighter"/></include> | [`EmbeddedTokenHighlighter`](%gh-ic%/xml/xml-frontback-impl/src/com/intellij/ide/highlighter/EmbeddedTokenHighlighter.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.embeddedTokenTypesProvider"/></include> | [`EmbeddedTokenTypesProvider`](%gh-ic%/xml/xml-parser/src/com/intellij/lexer/EmbeddedTokenTypesProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.embeddedContentSupport"/></include> | [`HtmlEmbeddedContentSupport`](%gh-ic%/xml/xml-parser/src/com/intellij/html/embedding/HtmlEmbeddedContentSupport.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.html.scriptContentProvider"/></include> | [`HtmlScriptContentProvider`](%gh-ic%/xml/xml-parser/src/com/intellij/lang/HtmlScriptContentProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.xml.xmlTagRuleProvider"/></include> | [`XmlTagRuleProvider`](%gh-ic%/xml/xml-analysis-api/src/com/intellij/xml/XmlTagRuleProvider.java) |
+{sticky-header="true"}
 
 
 ## External System
@@ -1860,18 +2382,12 @@ EXCLUDING:
 
 | Topic | Listener |
 |-------|----------|
+| [`ExternalSystemAutoImportAwareListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.externalSystem.autoimport.ExternalSystemAutoImportAwareListener)  ![Internal][internal] ![Project-Level][project-level] | [`ExternalSystemAutoImportAwareListener`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/autoimport/ExternalSystemAutoImportAwareListener.kt) |
 | [`ExternalSystemProjectNotificationAware#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.externalSystem.autoimport.ExternalSystemProjectNotificationAware.Listener)  | [`Listener`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/autoimport/ExternalSystemProjectNotificationAware.kt) |
 | [`ProjectDataImportListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.externalSystem.service.project.manage.ProjectDataImportListener)  ![Project-Level][project-level] | [`ProjectDataImportListener`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataImportListener.java) |
 | [`ExternalSystemTestUtil#SETTINGS_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.platform.externalSystem.testFramework.TestExternalSystemSettingsListener)  | [`TestExternalSystemSettingsListener`](%gh-ic%/platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/TestExternalSystemSettingsListener.java) |
+{sticky-header="true"}
 
-
-### ExternalSystemDependencyUpdater.xml
-
-[`ExternalSystemDependencyUpdater.xml`](%gh-ic%/platform/external-system-api/dependency-updater/resources/META-INF/ExternalSystemDependencyUpdater.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.externalSystem.dependencyModifier"/></include> ![Experimental][experimental] ![Project-Level][project-level] | [`ExternalDependencyModificator`](%gh-ic%/platform/external-system-api/dependency-updater/src/com/intellij/externalSystem/ExternalDependencyModificator.java) |
 
 ### ExternalSystemExtensionPoints.xml
 
@@ -1882,6 +2398,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dependencySubstitutionCoordinateContributor"/></include> ![Internal][internal] | [`DependencySubstitutionExtension`](%gh-ic%/platform/external-system-impl/src/com/intellij/platform/externalSystem/impl/dependencySubstitution/DependencySubstitutionExtension.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.externalExecutionAware"/></include> ![Experimental][experimental] | [`ExternalSystemExecutionAware`](%gh-ic%/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/execution/ExternalSystemExecutionAware.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.externalIconProvider"/></include> | [`ExternalSystemIconProvider`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ui/ExternalSystemIconProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.externalProjectData.extension"/></include> ![Internal][internal] | [`ProjectDataImportExtension`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/ProjectDataManager.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.externalProjectDataService"/></include> | [`ProjectDataService`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataService.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.externalProjectStructureCustomizer"/></include> | [`ExternalProjectStructureCustomizer`](%gh-ic%/platform/external-system-impl/src/com/intellij/openapi/externalSystem/importing/ExternalProjectStructureCustomizer.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.externalProjectWatcherContributor"/></include> ![Deprecated][deprecated] | [`Contributor`](%gh-ic%/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/project/autoimport/ExternalSystemProjectsWatcherImpl.java) |
@@ -1913,6 +2430,16 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.libraryDataServiceExtension"/></include> ![Internal][internal] | [`LibraryDataServiceExtension`](%gh-ic%/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/project/manage/LibraryDataServiceExtension.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openapi.externalSystem.autoimport.autoReloadTypeProviderExtension"/></include> ![Internal][internal] | [`DefaultAutoReloadTypeProvider`](%gh-ic%/platform/external-system-impl/src/com/intellij/openapi/externalSystem/autoimport/DefaultAutoReloadTypeProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openapi.externalSystem.projectSetupExtension"/></include> ![Internal][internal] | [`ExternalSystemProjectSetupExtension`](%gh-ic%/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/project/manage/ExternalSystemProjectSetupExtension.kt) |
+{sticky-header="true"}
+
+### intellij.platform.externalSystem.dependencyUpdater.xml
+
+[`intellij.platform.externalSystem.dependencyUpdater.xml`](%gh-ic%/platform/external-system-api/dependency-updater/resources/intellij.platform.externalSystem.dependencyUpdater.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.externalSystem.dependencyModifier"/></include> ![Experimental][experimental] ![Project-Level][project-level] | [`ExternalDependencyModificator`](%gh-ic%/platform/external-system-api/dependency-updater/src/com/intellij/externalSystem/ExternalDependencyModificator.java) |
+{sticky-header="true"}
 
 
 ## Version Control
@@ -1929,8 +2456,8 @@ EXCLUDING:
 | [`ProjectLevelVcsManager#VCS_CONFIGURATION_CHANGED`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.VcsMappingListener)  ![Project-Level][project-level] | [`VcsMappingListener`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/VcsMappingListener.java) |
 | [`ChangeListAvailabilityListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.changes.ChangeListAvailabilityListener)  ![Internal][internal] | [`ChangeListAvailabilityListener`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeListAvailabilityListener.java) |
 | [`ChangeListListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.changes.ChangeListListener)  | [`ChangeListListener`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeListListener.java) |
-| [`ChangesViewModifier#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.changes.ChangesViewModifier.ChangesViewModifierListener)  ![Project-Level][project-level] | [`ChangesViewModifierListener`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ChangesViewModifier.java) |
-| [`ChangesViewWorkflowManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.changes.ChangesViewWorkflowManager.ChangesViewWorkflowListener)  ![Project-Level][project-level] | [`ChangesViewWorkflowListener`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ChangesViewWorkflowManager.java) |
+| [`ChangesViewModifier#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.changes.ChangesViewModifier.ChangesViewModifierListener)  ![Project-Level][project-level] | [`ChangesViewModifierListener`](%gh-ic%/platform/vcs-impl/shared/src/com/intellij/openapi/vcs/changes/ChangesViewModifier.java) |
+| [`ChangesViewWorkflowManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.changes.ChangesViewWorkflowManager.ChangesViewWorkflowListener)  ![Project-Level][project-level] | [`ChangesViewWorkflowListener`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ChangesViewWorkflowManager.kt) |
 | [`ChangeListManagerImpl#LISTS_LOADED`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.changes.LocalChangeListsLoadedListener)  ![Project-Level][project-level] | [`LocalChangeListsLoadedListener`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/changes/LocalChangeListsLoadedListener.java) |
 | [`VcsAnnotationRefresher#LOCAL_CHANGES_CHANGED`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.changes.VcsAnnotationRefresher)  | [`VcsAnnotationRefresher`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/VcsAnnotationRefresher.java) |
 | [`VcsEditorTabFilesListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.changes.VcsEditorTabFilesListener)  ![Internal][internal] | [`VcsEditorTabFilesListener`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/VcsEditorTabFilesManager.kt) |
@@ -1950,10 +2477,11 @@ EXCLUDING:
 | [`CommitModeManager#SETTINGS`](https://jb.gg/ipe/listeners?topics=com.intellij.vcs.commit.CommitModeManager.SettingsListener)  | [`SettingsListener`](%gh-ic%/platform/vcs-impl/src/com/intellij/vcs/commit/CommitModeManager.kt) |
 | [`CommitMessageInspectionProfile#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.vcs.commit.message.CommitMessageInspectionProfile.ProfileListener)  | [`ProfileListener`](%gh-ic%/platform/vcs-impl/src/com/intellij/vcs/commit/message/CommitMessageInspectionProfile.java) |
 | [`VcsProjectLog#VCS_PROJECT_LOG_CHANGED`](https://jb.gg/ipe/listeners?topics=com.intellij.vcs.log.impl.VcsProjectLog.ProjectLogListener)  ![Project-Level][project-level] | [`ProjectLogListener`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/impl/VcsProjectLog.kt) |
-| [`VcsLogBookmarksListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.vcs.log.ui.VcsLogBookmarksListener)  | [`VcsLogBookmarksListener`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/ui/VcsLogBookmarkProvider.kt) |
+| [`VcsLogBookmarksListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.vcs.log.ui.VcsLogBookmarksListener)  ![Internal][internal] | [`VcsLogBookmarksListener`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/ui/VcsLogBookmarkSupport.kt) |
 | [`VcsLogCustomColumnListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.vcs.log.ui.table.column.VcsLogCustomColumnListener)  | [`VcsLogCustomColumnListener`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/ui/table/column/VcsLogCustomColumn.kt) |
 | [`CommitLinksResolveListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.vcs.log.ui.table.links.CommitLinksResolveListener)  ![Experimental][experimental] ![Project-Level][project-level] | [`CommitLinksResolveListener`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/ui/table/links/CommitLinksProvider.kt) |
 | [`RemoteRevisionsCache#REMOTE_VERSION_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
+{sticky-header="true"}
 
 
 ### intellij.platform.lvcs.impl.xml
@@ -1963,6 +2491,7 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.history.activityPresentationProvider"/></include> ![Experimental][experimental] | [`ActivityPresentationProvider`](%gh-ic%/platform/lvcs-api/src/com/intellij/history/ActivityPresentationProvider.kt) |
+{sticky-header="true"}
 
 ### intellij.platform.vcs.dvcs.impl.xml
 
@@ -1980,14 +2509,29 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pushDialogCustomizer"/></include> ![Internal][internal] | [`PushDialogCustomizer`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/push/PushDialogCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.pushSupport"/></include> ![Project-Level][project-level] | [`PushSupport`](%gh-ic%/platform/dvcs-api/src/com/intellij/dvcs/push/PushSupport.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcsRepositoryCreator"/></include> | [`VcsRepositoryCreator`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/repo/VcsRepositoryCreator.java) |
+{sticky-header="true"}
 
-### intellij.platform.vcs.impl.backend.xml
+### intellij.platform.vcs.impl.frontend.xml
 
-[`intellij.platform.vcs.impl.backend.xml`](%gh-ic%/platform/vcs-impl/backend/resources/intellij.platform.vcs.impl.backend.xml)
+[`intellij.platform.vcs.impl.frontend.xml`](%gh-ic%/platform/vcs-impl/frontend/resources/intellij.platform.vcs.impl.frontend.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.impl.backend.treeNodeConverter"/></include> ![Internal][internal] | [`NodeToEntityConverter`](%gh-ic%/platform/vcs-impl/backend/src/com/intellij/platform/vcs/impl/backend/shelf/ChangesBrowserNodeConverter.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.frontendChangesViewContentProvider"/></include> | [`FrontendChangesViewContentProvider`](%gh-ic%/platform/vcs-impl/frontend/src/com/intellij/platform/vcs/impl/frontend/changes/FrontendChangesViewContentProvider.kt) |
+{sticky-header="true"}
+
+### intellij.platform.vcs.impl.shared.xml
+
+[`intellij.platform.vcs.impl.shared.xml`](%gh-ic%/platform/vcs-impl/shared/resources/intellij.platform.vcs.impl.shared.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.changesGroupingPolicy"/></include> | [`ChangesGroupingPolicyFactory`](%gh-ic%/platform/vcs-impl/shared/src/com/intellij/openapi/vcs/changes/ui/ChangesGroupingPolicyFactory.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openapi.vcs.merge.resolveActionProvider"/></include> ![Internal][internal] | [`MergeResolveActionProvider`](%gh-ic%/platform/vcs-impl/shared/src/com/intellij/openapi/vcs/merge/MergeResolveActionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.changes.changesTreeNodeFactory"/></include> ![Internal][internal] | [`ChangesTreeNodeFactory`](%gh-ic%/platform/vcs-impl/shared/src/com/intellij/platform/vcs/impl/shared/changes/ChangesTreeNodeFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.changes.changesViewModifier"/></include> ![Project-Level][project-level] | [`ChangesViewModifier`](%gh-ic%/platform/vcs-impl/shared/src/com/intellij/openapi/vcs/changes/ChangesViewModifier.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.changes.changesViewNodeAction"/></include> ![Experimental][experimental] ![Project-Level][project-level] | [`ChangesViewNodeAction`](%gh-ic%/platform/vcs-impl/shared/src/com/intellij/openapi/vcs/changes/ChangesViewNodeAction.java) |
+{sticky-header="true"}
 
 ### intellij.platform.vcs.log.impl.xml
 
@@ -1998,10 +2542,24 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.customVcsLogUiFactoryProvider"/></include> ![Experimental][experimental] ![Project-Level][project-level] | [`CustomVcsLogUiFactoryProvider`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/impl/CustomVcsLogUiFactoryProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.fileHistoryPerformanceListener"/></include> ![Internal][internal] | [`FileHistoryPerformanceListener`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/history/FileHistoryPerformanceListener.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.logHighlighterFactory"/></include> | [`VcsLogHighlighterFactory`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/ui/highlighters/VcsLogHighlighterFactory.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.logProvider"/></include> ![Project-Level][project-level] | [`VcsLogProvider`](%gh-ic%/platform/vcs-log/api/src/com/intellij/vcs/log/VcsLogProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.logProvider"/></include> ![Project-Level][project-level] | [`VcsLogProvider`](%gh-ic%/platform/vcs-log/api/src/com/intellij/vcs/log/VcsLogProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.log.bookmarkSupport"/></include> ![Internal][internal] | [`VcsLogBookmarkSupport`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/ui/VcsLogBookmarkSupport.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcsLogChangesTreeBuilder"/></include> ![Experimental][experimental] ![Internal][internal] | [`VcsLogChangesTreeModifier`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/ui/frame/VcsLogChangesTreeModifier.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcsLogCommitStatusProvider"/></include> ![Experimental][experimental] | [`VcsCommitExternalStatusProvider`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/ui/frame/VcsCommitExternalStatusProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcsLogCustomColumn"/></include> | [`VcsLogCustomColumn`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/ui/table/column/VcsLogCustomColumn.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcsLogFileHistoryHandler"/></include> ![Experimental][experimental] ![Project-Level][project-level] | [`VcsLogFileHistoryHandler`](%gh-ic%/platform/vcs-log/api/src/com/intellij/vcs/log/VcsLogFileHistoryHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcsLogRefreshActionListener"/></include> ![Internal][internal] | [`VcsLogRefreshActionListener`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/ui/actions/VcsLogRefreshActionListener.kt) |
+{sticky-header="true"}
+
+### intellij.platform.vcs.shared.xml
+
+[`intellij.platform.vcs.shared.xml`](%gh-ic%/platform/vcs-api/shared/resources/intellij.platform.vcs.shared.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openapi.vcs.changes.ui.filePathIconProvider"/></include> | [`FilePathIconProvider`](%gh-ic%/platform/vcs-api/shared/src/com/intellij/openapi/vcs/changes/FilePathIconProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.changeListDecorator"/></include> ![Project-Level][project-level] | [`ChangeListDecorator`](%gh-ic%/platform/vcs-api/shared/src/com/intellij/openapi/vcs/changes/ChangeListDecorator.java) |
+{sticky-header="true"}
 
 ### VcsExtensionPoints.xml
 
@@ -2009,7 +2567,6 @@ EXCLUDING:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.changesGroupingPolicy"/></include> | [`ChangesGroupingPolicyFactory`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ui/ChangesGroupingPolicyFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.changesViewContent"/></include> ![Project-Level][project-level] | [`ChangesViewContentProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ui/ChangesViewContentProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.checkinHandlerFactory"/></include> | [`CheckinHandlerFactory`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/checkin/CheckinHandlerFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.checkoutCompletedListener"/></include> | [`CheckoutListener`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/checkout/CheckoutListener.java) |
@@ -2024,7 +2581,6 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openapi.vcs.changes.actions.CreatePatchFromChangesAction.Dialog.ExtensionProvider"/></include> | [`AnActionExtensionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/AnActionExtensionProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openapi.vcs.changes.actions.diff.ChangeDiffRequestProvider"/></include> | [`ChangeDiffRequestProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/actions/diff/ChangeDiffRequestProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openapi.vcs.changes.actions.diff.ChangeDiffViewerWrapperProvider"/></include> ![Internal][internal] | [`ChangeDiffViewerWrapperProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/actions/diff/ChangeDiffViewerWrapperProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openapi.vcs.changes.ui.filePathIconProvider"/></include> | [`FilePathIconProvider`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/changes/FilePathIconProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openapi.vcs.changes.ui.shareProjectAction"/></include> ![Internal][internal] | [`ShareProjectActionProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ui/VcsToolWindowEmptyState.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openapi.vcs.changes.vcsPreservingExecutor"/></include> | [`VcsPreservingExecutor`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsPreservingExecutor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openapi.vcs.history.actions.GetVersionAction.ExtensionProvider"/></include> | [`AnActionExtensionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/AnActionExtensionProvider.java) |
@@ -2040,14 +2596,14 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.baseContentProvider"/></include> ![Project-Level][project-level] | [`VcsBaseContentProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/impl/VcsBaseContentProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.branchStateProvider"/></include> ![Project-Level][project-level] | [`BranchStateProvider`](%gh-ic%/platform/vcs-api/src/com/intellij/vcs/branch/BranchStateProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.changeListChangeAssigner"/></include> ![Experimental][experimental] ![Project-Level][project-level] | [`ChangeListChangeAssigner`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ChangeListChangeAssigner.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.changeListDecorator"/></include> ![Project-Level][project-level] | [`ChangeListDecorator`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeListDecorator.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.changeListClassifierProvider"/></include> ![Internal][internal] | [`ChangeListClassifierProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/vcs/commit/ChangeListClassifierProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.changes.changesViewConflictsBannerCustomizer"/></include> ![Internal][internal] ![Project-Level][project-level] | [`ChangesViewConflictsBannerCustomizer`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/merge/ChangesViewConflictsBannerCustomizer.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.changes.changesViewModifier"/></include> ![Project-Level][project-level] | [`ChangesViewModifier`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ChangesViewModifier.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.changes.changesViewNodeAction"/></include> ![Experimental][experimental] ![Project-Level][project-level] | [`ChangesViewNodeAction`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ChangesViewNodeAction.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.changes.localCommitExecutor"/></include> ![Project-Level][project-level] | [`CommitExecutor`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/changes/CommitExecutor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.checkoutProcessor"/></include> | [`VcsCheckoutProcessor`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/VcsCheckoutProcessor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.codeVisionLanguageContext"/></include> ![Experimental][experimental] | [`VcsCodeVisionLanguageContext`](%gh-ic%/platform/vcs-api/src/com/intellij/codeInsight/hints/VcsCodeVisionLanguageContext.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.commitMessageInspection"/></include> ![DumbAware][dumb-aware] | [`BaseCommitMessageInspection`](%gh-ic%/platform/vcs-impl/src/com/intellij/vcs/commit/message/BaseCommitMessageInspection.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.commitMessageProvider"/></include> | [`CommitMessageProvider`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ui/CommitMessageProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.commitSuccessNotificationActionProvider"/></include> ![Internal][internal] | [`CommitSuccessNotificationActionProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/vcs/commit/CommitSuccessNotificationActionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.consoleFolding"/></include> | [`VcsConsoleFolding`](%gh-ic%/platform/vcs-impl/src/com/intellij/vcs/console/VcsConsoleView.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.defaultCommitMessagePolicy"/></include> ![Internal][internal] | [`DefaultCommitMessagePolicy`](%gh-ic%/platform/vcs-impl/src/com/intellij/vcs/commit/DefaultCommitMessagePolicy.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.diffRevisionMetadataProvider"/></include> | [`DiffRevisionMetadataProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/diff/impl/DiffRevisionMetadataProvider.kt) |
@@ -2055,6 +2611,9 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.fileListenerIgnoredFilesProvider"/></include> ![Experimental][experimental] | [`VcsFileListenerIgnoredFilesProvider`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/VcsFileListenerIgnoredFilesProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.fileStatusProvider"/></include> ![Project-Level][project-level] | [`FileStatusProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/vcs/impl/FileStatusProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.ignoredFilesHolder"/></include> ![Project-Level][project-level] | [`Provider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/VcsManagedFilesHolder.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.impl.backend.treeNodeConverter"/></include> ![Internal][internal] | [`NodeToEntityConverter`](%gh-ic%/platform/vcs-impl/src/com/intellij/vcs/shelf/ChangesBrowserNodeConverter.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.impl.changeListDiffViewerDecorator"/></include> ![Internal][internal] | [`ChangeListDiffViewerDecorator`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/actions/diff/lst/ChangeListDiffViewerDecorator.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.issueDocumentationTargetProvider"/></include> ![Experimental][experimental] | [`IssueDocumentationTargetProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/IssueDocumentationTargetProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.lineStatusClientIdRenderer"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] ![Project-Level][project-level] | [`LineStatusClientIdRenderer`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/ex/LineStatusClientIdRenderer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.pathsToRefreshProvider"/></include> ![Internal][internal] ![Project-Level][project-level] | [`VcsPathsToRefreshProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/vcs/commit/VcsPathsToRefreshProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.resolvedConflictsFilesHolder"/></include> ![Project-Level][project-level] | [`Provider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/VcsManagedFilesHolder.java) |
@@ -2062,6 +2621,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.shelveSilentlyTitleProvider"/></include> ![Experimental][experimental] | [`ShelveSilentlyTitleProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/shelf/ShelveSilentlyTitleProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.taskHandler"/></include> ![Project-Level][project-level] | [`VcsTaskHandler`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/VcsTaskHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.unversionedFilesHolder"/></include> ![Project-Level][project-level] | [`Provider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/VcsManagedFilesHolder.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.updateOptionsDialogProvider"/></include> | [`UpdateOptionsDialogProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/update/UpdateOptionsDialogProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcs.vcsSymlinkResolver"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`VcsSymlinkResolver`](%gh-ic%/platform/vcs-api/src/com/intellij/vcs/VcsSymlinkResolver.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcsAnnotationGutterActionProvider"/></include> | [`AnnotationGutterActionProvider`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/annotate/AnnotationGutterActionProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcsAnnotationGutterColumnProvider"/></include> | [`AnnotationGutterColumnProvider`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/annotate/AnnotationGutterColumnProvider.java) |
@@ -2078,6 +2638,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcsSelectionProvider"/></include> | [`VcsSelectionProvider`](%gh-ic%/platform/vcs-api/src/com/intellij/vcsUtil/VcsSelectionProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcsSharedChecker"/></include> ![Internal][internal] ![Project-Level][project-level] | [`VcsSharedChecker`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/VcsSharedChecker.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vcsStartupActivity"/></include> ![Non-Dynamic][non-dynamic] | [`VcsStartupActivity`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/impl/VcsInitialization.kt) |
+{sticky-header="true"}
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # GoLand Plugin Development
 
@@ -99,11 +99,11 @@ To see how these attributes appear in a similar Gradle build script for PhpStorm
 The Go plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition.
 Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the Go plugin compatible with the IntelliJ Idea Ultimate version.
 
-| Gradle IntelliJ Plugin Attribute                                                 | Attribute Value                                                                                                                                                                                                           |
-|----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for IntelliJ IDEA Ultimate. The Go plugin isn't compatible with IntelliJ IDEA Community Edition.                                                                                                                     |
-| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | Set to the same `IU` BRANCH.BUILD as the GoLand target version, e.g. `193.5233.102`.                                                                                                                                      |
-| [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | <p>`org.jetbrains.plugins.go:193.5233.102.83` for the Go plugin.</p><p>See below for Go plugin version information.</p>                                                                                                   |
+| Gradle IntelliJ Plugin Attribute                                                 | Attribute Value                                                                                                                                                                                                          |
+|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for IntelliJ IDEA Ultimate.                                                                                                                     |
+| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | Set to the same `IU` BRANCH.BUILD as the GoLand target version, e.g. `193.5233.102`.                                                                                                                                     |
+| [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | <p>`org.jetbrains.plugins.go:193.5233.102.83` for the Go plugin.</p><p>See below for Go plugin version information.</p>                                                                                                  |
 | [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)           | <p>Path to locally installed target version of GoLand. For example, on macOS:</p><p><path>/Users/\$USERNAME\$/Library/Application Support/JetBrains/Toolbox/apps/Goland/ch-0/193.5233.112/GoLand.app/Contents</path>.</p> |
 
 </tab>
@@ -147,3 +147,7 @@ When learning new APIs, it is helpful to have some representative projects for r
 
 * [Go Method Generator](https://github.com/pkondratev/Intellij-go-method-generator)
 * [Go Builder Generator](https://github.com/OddCN/go-builder-generator-idea-plugin)
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>

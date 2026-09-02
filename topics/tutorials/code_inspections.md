@@ -33,7 +33,7 @@ It illustrates the components for a custom inspection plugin:
 * Writing an HTML [description](#inspection-description) of the inspection for display in the inspection preferences panel.
 * Creating a [test](#inspection-test) for the implemented inspection and quick fix.
 
-Although the code sample illustrates implementations of these components, it is often useful to see examples of inspections implemented in the [IntelliJ Community](%gh-ic%/README.md) code base.
+Although the code sample illustrates implementations of these components, it is often useful to see examples of inspections implemented in the [IntelliJ Platform](%gh-ic%/README.md) code base.
 To identify a given inspection's implementation classes, try to find an inspection [by name](explore_api.md#search-for-symbol-names) or [by UI texts](explore_api.md#search-by-ui-text).
 Consider also searching for existing implementations in [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.localInspection).
 
@@ -117,7 +117,6 @@ See the [Inspections](inspections.md) topic in UI Guidelines on important guidel
 Implicit in using [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) in the class hierarchy of the inspection implementation means following some conventions.
 
 * The inspection description file is expected to be located under <path>\$RESOURCES_ROOT_DIRECTORY\$/inspectionDescriptions/</path>.
-  If the inspection description file is to be located elsewhere, override `getDescriptionUrl()` in the inspection implementation class.
 * The name of the description file is expected to be the inspection <path>\$SHORT_NAME\$.html</path> as provided by the inspection description, or the inspection implementation class.
   If a short name is not provided, the IntelliJ Platform computes one by removing `Inspection` suffix from the implementation class name.
 

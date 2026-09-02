@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Integration Tests: API Interaction
 
-<primary-label ref="2023.2"/>
+<primary-label ref="2024.2"/>
 
 <link-summary>Walkthrough how to interact with API in integration tests.</link-summary>
 
@@ -14,35 +14,46 @@ For introduction and setting up dependencies, refer to [](integration_tests_intr
 
 The IDE and tests are running in different processes, which means some way to communicate between them is required.
 
-Driver framework uses Java Management Extensions (or JMX for short).
+Driver framework uses [Java Management Extensions](https://en.wikipedia.org/wiki/Java_Management_Extensions) (or JMX for short).
 JMX supports different connectors to manage the state of the JVM.
 Driver framework uses a standard Java Remote Method Invocation (RMI) protocol.
 This protocol allows tests to access objects and invoke methods in the JVM running the IDE.
 
 The architecture of RMI protocol is as follows:
-```mermaid
-sequenceDiagram
-    box rgb(240,240,240) Test Process
-    participant Test as Test (Client)
-    end
+```plantuml
+@startuml
+box "Test Process" #F0F0F0
+    participant "Test (Client)" as Test
+end box
 
-    box rgb(240,240,240) IDE Process
-    participant IDE as IDE (Server)
-    participant Registry as RMI registry
-    end
+box "IDE Process" #F0F0F0
+    participant "IDE (Server)" as IDE
+    participant "RMI registry" as Registry
+end box
 
-    Test->>Registry: 1. Look up remote object
-    Registry-->>Test: 2. Return stub reference
+Test ->> Registry: 1. Look up remote object
+Registry -->> Test: 2. Return stub reference
 
-    Note over Test: Stub is obtained<br/>for remote reference
+note over Test
+    Stub is obtained
+    for remote reference
+end note
 
-    activate Test
-    Test->>IDE: 3. Remote method call via stub
-    IDE->>IDE: 4. Process request and invoke actual method
-    IDE-->>Test: 5. Return serialized result
-    deactivate Test
+activate Test
+Test ->> IDE: 3. Remote method call via stub
+IDE ->> IDE: 4. Process request and invoke actual method
+IDE -->> Test: 5. Return serialized result
+deactivate Test
 
-    Note over IDE,Test: Each remote call involves:<br/>- Serialization of parameters<br/>- Network transfer<br/>- Deserialization<br/>- Method invocation<br/>- Serialization of result
+note over Test,IDE
+    Each remote call involves:
+    - Serialization of parameters
+    - Network transfer
+    - Deserialization
+    - Method invocation
+    - Serialization of result
+end note
+@enduml
 ```
 
 When a test needs to invoke a method on a remote object:
@@ -65,9 +76,13 @@ To demonstrate how this works in practice, add the following code to the plugin:
 ```kotlin
 package com.example.demo
 
+import com.intellij.openapi.components.Service
+
 object PluginStorage {
   @JvmStatic
-  fun getPluginStorage() = Storage("static method", listOf("static1", "static2"))
+  fun getPluginStorage() = Storage(
+    "static method", listOf("static1", "static2")
+  )
 }
 
 @Service
@@ -124,6 +139,7 @@ The `plugin` parameter specifies the ID of a plugin, where classes are located.
 This parameter is required since IntelliJ-based IDEs use separate [class loaders](plugin_class_loaders.md) for each plugin, and the code that will call methods on the IDE side (Invoker) needs to know where to search for them.
 
 There is built-in support for `@Remote` annotation inside IntelliJ IDEA:
+
 ![](remote-support.png){width="717"}
 
 Rename and move the target class refactorings will update the annotation accordingly.
@@ -139,13 +155,12 @@ fun testStubs() {
   Starter.newContext(
     "testExample",
     TestCase(
-      IdeProductProvider.IC,
+      IdeInfo.IdeaUltimate,
       GitHubProject.fromGithub(
         branchName = "master",
         repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
       )
     )
-      .withVersion("2024.3")
   )
     .apply {
       val pathToPlugin = System.getProperty("path.to.build.plugin")
@@ -166,7 +181,7 @@ fun testStubs() {
 }
 ```
 
-There are two methods that allow invoking methods: `service` and `utility`.
+There are two [`Driver`](%gh-ic%/platform/remote-driver/client/src/com/intellij/driver/client/Driver.kt) extension methods that allow invoking methods: `service()` and `utility()`.
 The first one will return an instance of a service, and the second will return an instance of any class.
 
 Project-level services require a `Project` stub.
@@ -179,6 +194,45 @@ service<ProjectManager>().getOpenProjects().singleOrNull()
 > Service and utility proxies can be acquired on each call, there is no need to cache them in clients.
 >
 {style="note"}
+
+## Contexts and Remote References
+
+To prevent memory leaks, Driver uses `java.lang.ref.WeakReference` for call results.
+
+Consider the following example:
+
+```kotlin
+val roots = driver.service(ProjectRootManager::class, driver.singleProject()).getContentRoots()
+val name = roots[0].getName() // may throw an error
+```
+
+In many cases, it throws an exception:
+
+```text
+Weak reference to variable x expired. Please use `Driver.withContext { }` for hard variable references.
+```
+
+To keep results alive across calls, wrap them in a context:
+
+```kotlin
+driver.withContext {
+  val roots = service<ProjectRootManager>(singleProject()).getContentRoots()
+  val name = roots[0].getName()
+
+  // results computed inside are guaranteed to be alive until the end of the block
+}
+```
+
+Contexts can be nested, and they can be used independently in helper methods, e.g.:
+
+```kotlin
+fun Driver.importGradleProject(project: Project? = null) {
+  withContext {
+    val forProject = project ?: singleProject()
+    utility(ImportGradleProjectUtil::class).importProject(forProject)
+  }
+}
+```
 
 ## JMX/RMI Limitations
 
@@ -195,4 +249,3 @@ As with any protocol, JMX/RMI has its limitations:
     * Lists of primitive values or `String` or `@Remote` references.
 * Only public methods can be called.
 * JMX/RMI can’t interact with suspend methods.
-

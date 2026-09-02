@@ -30,7 +30,7 @@ Newer IDE releases might not be supported fully in older releases of Gradle Inte
 
 </snippet>
 
-By default, the Gradle plugin will build a plugin project against the IntelliJ Platform defined by the latest EAP snapshot of the IntelliJ IDEA Community Edition.
+By default, the Gradle plugin will build a plugin project against the IntelliJ Platform defined by the latest EAP snapshot of the IntelliJ IDEA.
 
 If a matching version of the specified IntelliJ Platform is not available on the local machine, the Gradle plugin downloads the correct version and type.
 IntelliJ IDEA then indexes the build and any associated source code and JetBrains Java Runtime.
@@ -94,9 +94,8 @@ The Gradle plugin will add the necessary elements as part of the patching proces
 For those [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) attributes that contain descriptions such as [`patchPluginXml.changeNotes`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-changenotes) and [`patchPluginXml.pluginDescription`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-plugindescription), a `CDATA` block is not necessary when using HTML elements.
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
->
 
-As discussed in [](creating_plugin_project.md#components-of-a-wizard-generated-gradle-intellij-platform-plugin), the Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
+The Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
 However, the [](tools_gradle_intellij_plugin.md) does not combine and substitute those Gradle properties for the default [`<id>`](plugin_configuration_file.md#idea-plugin__id) and [`<name>`](plugin_configuration_file.md#idea-plugin__name) elements in the <path>plugin.xml</path> file.
 
 The best practice is to keep `project.version` current.

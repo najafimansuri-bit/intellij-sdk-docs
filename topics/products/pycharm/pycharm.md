@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PyCharm Plugin Development
 
@@ -18,7 +18,7 @@ Plugin projects for PyCharm can be developed using [IntelliJ IDEA](idea.md).
 <tabs>
 <tab title="IntelliJ Platform Gradle Plugin (2.x)">
 
-Define a dependency using [`pycharmCommunity()` or `pycharmProfessional()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md), see _Versions_ link on top of this page for all available versions.
+Define a dependency using [`pycharm()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md), see _Versions_ link on top of this page for all available versions.
 See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) for using a local installation.
 
 A dependency on the matching bundled `PythonCore`/`Pythonid` plugin (see [](#python-plugins) below) must be added using the [`bundledPlugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper.
@@ -35,7 +35,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    pycharmCommunity("<versionNumber>")
+    pycharm("<versionNumber>")
     bundledPlugin("PythonCore")
   }
 }
@@ -67,10 +67,10 @@ As described in [Configuring the plugin.xml File](dev_alternate_products.md#conf
 
 ### Python Plugins
 
-| Plugin                                                                                         | Plugin ID    | API                                 |
-|------------------------------------------------------------------------------------------------|--------------|-------------------------------------|
-| [Python Community Edition](https://plugins.jetbrains.com/plugin/7322-python-community-edition) | `PythonCore` | PyCharm Community Edition (`PC`)    |
-| [Python](https://plugins.jetbrains.com/plugin/631-python)                                      | `Pythonid`   | PyCharm Professional Edition (`PY`) |
+| Plugin                                                                                         | Plugin ID    | API                              |
+|------------------------------------------------------------------------------------------------|--------------|----------------------------------|
+| [Python Community Edition](https://plugins.jetbrains.com/plugin/7322-python-community-edition) | `PythonCore` | PyCharm Community Edition (`PC`) |
+| [Python](https://plugins.jetbrains.com/plugin/631-python)                                      | `Pythonid`   | PyCharm(`PY`)                    |
 
 #### Python Plugins 2024.2
 
@@ -82,7 +82,7 @@ When using functionality from `Pythonid`, a dependency on _both_ `PythonCore` an
 
 ## Available PyCharm APIs
 
-See [](intellij_community_plugins_extension_point_list.md) for PyCharm Community.
+See [](intellij_community_plugins_extension_point_list.md) for PyCharm.
 
 ## Additional Articles and Resources
 
@@ -93,3 +93,7 @@ See [](intellij_community_plugins_extension_point_list.md) for PyCharm Community
 When learning new development configurations, it is helpful to have some representative projects for reference:
 
 * [Flake8 Support](https://github.com/jansorg/pycharm-flake8) Adds support for flake8's `# noqa` comments in PyCharm.
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>

@@ -11,8 +11,6 @@ Learn how to build plugins using IntelliJ Platform SDK for the [JetBrains produc
 These samples show you how features work and help you jumpstart your plugins.
 
 > [!TIP]
-> To start a new plugin project, consider using [IntelliJ Platform Plugin Template][gh:template] which offers a pure boilerplate template to make it easier to create a new plugin project.
->
 > The code samples can also be found in the [IntelliJ SDK Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples) mirror repository.
 
 To learn more, browse [available Extension Points][docs:eps], explore Extension Point usages in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe) and learn how to [Explore the IntelliJ Platform API][docs:explore-api].
@@ -37,6 +35,7 @@ In the following table, you may find all available samples provided in the separ
 | Code Sample                                                                 | Description                                                                                                                                                       |
 |-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Action Basics](./action_basics)                                            | Action and Action Group patterns implementation, adds entries to the Tools menu.                                                                                  |
+| [Kotlin Class Name Convention Inspection](./code_inspection_qodana)         | Local Inspection Tool, checks Kotlin class name convention. Allows to be run in Qodana                                                                            |
 | [Comparing References Inspection](./comparing_string_references_inspection) | Local Inspection Tool, adds entries to **Settings &#124; Editor &#124; Inspections &#124; Java &#124; Probable Bugs**.                                            |
 | [Conditional Operator Intention](./conditional_operator_intention)          | Intention action, suggests converting a ternary operator into an `if` block and adds entry to **Settings &#124; Editor &#124; Intentions &#124; SDK Intentions**. |
 | [Editor Basics](./editor_basics)                                            | Basic Editor APIs example with editor popup menu with extra actions.                                                                                              |

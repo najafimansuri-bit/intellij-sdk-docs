@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Action System
 
@@ -99,7 +99,7 @@ Implementors must ensure that changing presentation and availability status hand
 > For example, checking selection in a tree or a list is considered valid, but working with the file system is not.
 >
 > If the new state of an action cannot be determined quickly, evaluation should be performed in the `AnAction.actionPerformed()` method
-> and the user [notified](notifications.md) accordingly if the context isn't suitable.
+> and the user [notified](informing_users.md) accordingly if the context isn't suitable.
 >
 {style="warning" title="Performance"}
 
@@ -443,7 +443,7 @@ Sometimes, it is required to execute actions programmatically, for example, exec
 Executing actions can be achieved with [`ActionUtils.invokeAction()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ex/ActionUtil.kt).
 
 > Executing actions programmatically should be avoided whenever possible.
-> If an action executed programmatically is under your control, extract its logic to a [service](plugin_services.md) or utility class and call it directly.
+> If an action executed programmatically is under your control, extract its logic to a [service](plugin_services.md) or utility class and call it directly, without the action execution context.
 >
 {style="warning"}
 
